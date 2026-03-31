@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+}
+
+allprojects {
+    version = mod_version
+    group = mod_group_id
+
+    // Apply common Java configuration to all projects
+    tasks.withType(JavaCompile).configureEach {
+        options.encoding = 'UTF-8'
+    }
+}
+
+subprojects {
+    // Common repositories for all subprojects
+    repositories {
+        mavenCentral()
+    }
+}
+
+// Task to clean all subprojects
+task cleanAll {
+    dependsOn gradle.includedBuilds*.task(':clean')
+    dependsOn subprojects.collect { it.tasks.named('clean') }
+}
