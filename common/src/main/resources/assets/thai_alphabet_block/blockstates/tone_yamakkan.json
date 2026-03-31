@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "thai_alphabet_block:block/tone_yamakkan"
+    },
+    "type=top": {
+      "model": "thai_alphabet_block:block/tone_yamakkan_top"
+    },
+    "type=double": {
+      "model": "thai_alphabet_block:block/tone_yamakkan_double"
+    }
+  }
+}

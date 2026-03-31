@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimuan"
+    },
+    "type=top": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimuan_top"
+    },
+    "type=double": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimuan_double"
+    }
+  }
+}

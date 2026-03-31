@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "thai_alphabet_block:block/vowel_mai_taikhu"
+    },
+    "type=top": {
+      "model": "thai_alphabet_block:block/vowel_mai_taikhu_top"
+    },
+    "type=double": {
+      "model": "thai_alphabet_block:block/vowel_mai_taikhu_double"
+    }
+  }
+}

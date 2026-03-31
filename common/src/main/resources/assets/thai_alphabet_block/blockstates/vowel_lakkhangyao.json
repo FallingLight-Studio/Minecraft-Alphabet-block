@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "thai_alphabet_block:block/vowel_lakkhangyao"
+    },
+    "type=top": {
+      "model": "thai_alphabet_block:block/vowel_lakkhangyao_top"
+    },
+    "type=double": {
+      "model": "thai_alphabet_block:block/vowel_lakkhangyao_double"
+    }
+  }
+}

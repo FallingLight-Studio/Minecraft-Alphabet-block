@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "thai_alphabet_block:block/vowel_sara_e"
+    },
+    "type=top": {
+      "model": "thai_alphabet_block:block/vowel_sara_e_top"
+    },
+    "type=double": {
+      "model": "thai_alphabet_block:block/vowel_sara_e_double"
+    }
+  }
+}

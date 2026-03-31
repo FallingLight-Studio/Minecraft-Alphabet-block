@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "thai_alphabet_block:block/tone_mai_tho"
+    },
+    "type=top": {
+      "model": "thai_alphabet_block:block/tone_mai_tho_top"
+    },
+    "type=double": {
+      "model": "thai_alphabet_block:block/tone_mai_tho_double"
+    }
+  }
+}
