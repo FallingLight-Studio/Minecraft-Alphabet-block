@@ -1,6 +1,51 @@
 {
   "variants": {
-    "": {
+    "color=white": {
+      "model": "thai_alphabet_block:block/consonant_kho_khon"
+    },
+    "color=orange": {
+      "model": "thai_alphabet_block:block/consonant_kho_khon"
+    },
+    "color=magenta": {
+      "model": "thai_alphabet_block:block/consonant_kho_khon"
+    },
+    "color=light_blue": {
+      "model": "thai_alphabet_block:block/consonant_kho_khon"
+    },
+    "color=yellow": {
+      "model": "thai_alphabet_block:block/consonant_kho_khon"
+    },
+    "color=lime": {
+      "model": "thai_alphabet_block:block/consonant_kho_khon"
+    },
+    "color=pink": {
+      "model": "thai_alphabet_block:block/consonant_kho_khon"
+    },
+    "color=gray": {
+      "model": "thai_alphabet_block:block/consonant_kho_khon"
+    },
+    "color=light_gray": {
+      "model": "thai_alphabet_block:block/consonant_kho_khon"
+    },
+    "color=cyan": {
+      "model": "thai_alphabet_block:block/consonant_kho_khon"
+    },
+    "color=purple": {
+      "model": "thai_alphabet_block:block/consonant_kho_khon"
+    },
+    "color=blue": {
+      "model": "thai_alphabet_block:block/consonant_kho_khon"
+    },
+    "color=brown": {
+      "model": "thai_alphabet_block:block/consonant_kho_khon"
+    },
+    "color=green": {
+      "model": "thai_alphabet_block:block/consonant_kho_khon"
+    },
+    "color=red": {
+      "model": "thai_alphabet_block:block/consonant_kho_khon"
+    },
+    "color=black": {
       "model": "thai_alphabet_block:block/consonant_kho_khon"
     }
   }

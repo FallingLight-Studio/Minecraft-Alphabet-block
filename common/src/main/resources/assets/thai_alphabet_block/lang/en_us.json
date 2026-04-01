@@ -68,5 +68,6 @@
   "block.thai_alphabet_block.vowel_sara_ue": "ึ (Sara Ue)",
   "block.thai_alphabet_block.vowel_sara_ue_short": "ั (Mai Hanakat)",
   "block.thai_alphabet_block.vowel_sara_uee": "ื (Sara Uee)",
-  "block.thai_alphabet_block.vowel_sara_uu": "ู (Sara Uu)"
+  "block.thai_alphabet_block.vowel_sara_uu": "ู (Sara Uu)",
+  "thai_alphabet_block.tip.dye": "Right-click with dye to tint the block (default: white). Use textures with transparency; models use tint index 0."
 }

@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:block/slab",
+  "parent": "thai_alphabet_block:block/tinted_slab_bottom",
   "textures": {
     "bottom": "thai_alphabet_block:block/tone_placeholder",
     "top": "thai_alphabet_block:block/tone_placeholder",

@@ -1,6 +1,51 @@
 {
   "variants": {
-    "": {
+    "color=white": {
+      "model": "thai_alphabet_block:block/consonant_cho_ching"
+    },
+    "color=orange": {
+      "model": "thai_alphabet_block:block/consonant_cho_ching"
+    },
+    "color=magenta": {
+      "model": "thai_alphabet_block:block/consonant_cho_ching"
+    },
+    "color=light_blue": {
+      "model": "thai_alphabet_block:block/consonant_cho_ching"
+    },
+    "color=yellow": {
+      "model": "thai_alphabet_block:block/consonant_cho_ching"
+    },
+    "color=lime": {
+      "model": "thai_alphabet_block:block/consonant_cho_ching"
+    },
+    "color=pink": {
+      "model": "thai_alphabet_block:block/consonant_cho_ching"
+    },
+    "color=gray": {
+      "model": "thai_alphabet_block:block/consonant_cho_ching"
+    },
+    "color=light_gray": {
+      "model": "thai_alphabet_block:block/consonant_cho_ching"
+    },
+    "color=cyan": {
+      "model": "thai_alphabet_block:block/consonant_cho_ching"
+    },
+    "color=purple": {
+      "model": "thai_alphabet_block:block/consonant_cho_ching"
+    },
+    "color=blue": {
+      "model": "thai_alphabet_block:block/consonant_cho_ching"
+    },
+    "color=brown": {
+      "model": "thai_alphabet_block:block/consonant_cho_ching"
+    },
+    "color=green": {
+      "model": "thai_alphabet_block:block/consonant_cho_ching"
+    },
+    "color=red": {
+      "model": "thai_alphabet_block:block/consonant_cho_ching"
+    },
+    "color=black": {
       "model": "thai_alphabet_block:block/consonant_cho_ching"
     }
   }

@@ -1,6 +1,9 @@
 package com.aitshiroku.thai_alphabet_block;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
@@ -15,11 +18,12 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 
 public final class ThaiAlphabetBlockFabric implements ModInitializer {
+
+    public static final List<Block> REGISTERED_BLOCKS = new ArrayList<>();
 
     private static final Map<String, Item> REGISTERED_ITEMS =
         new LinkedHashMap<>();
@@ -34,17 +38,18 @@ public final class ThaiAlphabetBlockFabric implements ModInitializer {
             );
             Block block =
                 def.type() == ThaiAlphabetDefinitions.CharacterType.CONSONANT
-                    ? new Block(
+                    ? new ThaiLetterBlock(
                           BlockBehaviour.Properties.of()
                               .mapColor(MapColor.COLOR_LIGHT_GRAY)
                               .strength(1.5f, 6.0f)
                       )
-                    : new SlabBlock(
+                    : new ThaiLetterSlabBlock(
                           BlockBehaviour.Properties.of()
                               .mapColor(MapColor.COLOR_PURPLE)
                               .strength(1.5f, 6.0f)
                       );
             Registry.register(BuiltInRegistries.BLOCK, id, block);
+            REGISTERED_BLOCKS.add(block);
 
             Item item = new BlockItem(block, new Item.Properties());
             Registry.register(BuiltInRegistries.ITEM, id, item);
@@ -78,5 +83,9 @@ public final class ThaiAlphabetBlockFabric implements ModInitializer {
             tabKey,
             thaiAlphabetTab
         );
+    }
+
+    public static List<Block> letterBlocksView() {
+        return Collections.unmodifiableList(REGISTERED_BLOCKS);
     }
 }

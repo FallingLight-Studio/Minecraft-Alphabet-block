@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "thai_alphabet_block:consonant_do_chada",
+          "functions": [
+            {
+              "function": "minecraft:copy_state",
+              "block": "thai_alphabet_block:consonant_do_chada",
+              "properties": [
+                "color"
+              ]
+            }
+          ]
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ]
+    }
+  ]
+}

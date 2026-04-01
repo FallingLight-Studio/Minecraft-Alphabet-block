@@ -1,6 +1,51 @@
 {
   "variants": {
-    "": {
+    "color=white": {
+      "model": "thai_alphabet_block:block/consonant_so_rusi"
+    },
+    "color=orange": {
+      "model": "thai_alphabet_block:block/consonant_so_rusi"
+    },
+    "color=magenta": {
+      "model": "thai_alphabet_block:block/consonant_so_rusi"
+    },
+    "color=light_blue": {
+      "model": "thai_alphabet_block:block/consonant_so_rusi"
+    },
+    "color=yellow": {
+      "model": "thai_alphabet_block:block/consonant_so_rusi"
+    },
+    "color=lime": {
+      "model": "thai_alphabet_block:block/consonant_so_rusi"
+    },
+    "color=pink": {
+      "model": "thai_alphabet_block:block/consonant_so_rusi"
+    },
+    "color=gray": {
+      "model": "thai_alphabet_block:block/consonant_so_rusi"
+    },
+    "color=light_gray": {
+      "model": "thai_alphabet_block:block/consonant_so_rusi"
+    },
+    "color=cyan": {
+      "model": "thai_alphabet_block:block/consonant_so_rusi"
+    },
+    "color=purple": {
+      "model": "thai_alphabet_block:block/consonant_so_rusi"
+    },
+    "color=blue": {
+      "model": "thai_alphabet_block:block/consonant_so_rusi"
+    },
+    "color=brown": {
+      "model": "thai_alphabet_block:block/consonant_so_rusi"
+    },
+    "color=green": {
+      "model": "thai_alphabet_block:block/consonant_so_rusi"
+    },
+    "color=red": {
+      "model": "thai_alphabet_block:block/consonant_so_rusi"
+    },
+    "color=black": {
       "model": "thai_alphabet_block:block/consonant_so_rusi"
     }
   }

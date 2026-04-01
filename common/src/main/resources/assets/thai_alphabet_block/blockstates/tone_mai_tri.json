@@ -1,12 +1,243 @@
 {
   "variants": {
-    "type=bottom": {
+    "color=white,type=bottom,waterlogged=false": {
       "model": "thai_alphabet_block:block/tone_mai_tri"
     },
-    "type=top": {
+    "color=white,type=bottom,waterlogged=true": {
+      "model": "thai_alphabet_block:block/tone_mai_tri"
+    },
+    "color=white,type=top,waterlogged=false": {
       "model": "thai_alphabet_block:block/tone_mai_tri_top"
     },
-    "type=double": {
+    "color=white,type=top,waterlogged=true": {
+      "model": "thai_alphabet_block:block/tone_mai_tri_top"
+    },
+    "color=white,type=double,waterlogged=false": {
+      "model": "thai_alphabet_block:block/tone_mai_tri_double"
+    },
+    "color=orange,type=bottom,waterlogged=false": {
+      "model": "thai_alphabet_block:block/tone_mai_tri"
+    },
+    "color=orange,type=bottom,waterlogged=true": {
+      "model": "thai_alphabet_block:block/tone_mai_tri"
+    },
+    "color=orange,type=top,waterlogged=false": {
+      "model": "thai_alphabet_block:block/tone_mai_tri_top"
+    },
+    "color=orange,type=top,waterlogged=true": {
+      "model": "thai_alphabet_block:block/tone_mai_tri_top"
+    },
+    "color=orange,type=double,waterlogged=false": {
+      "model": "thai_alphabet_block:block/tone_mai_tri_double"
+    },
+    "color=magenta,type=bottom,waterlogged=false": {
+      "model": "thai_alphabet_block:block/tone_mai_tri"
+    },
+    "color=magenta,type=bottom,waterlogged=true": {
+      "model": "thai_alphabet_block:block/tone_mai_tri"
+    },
+    "color=magenta,type=top,waterlogged=false": {
+      "model": "thai_alphabet_block:block/tone_mai_tri_top"
+    },
+    "color=magenta,type=top,waterlogged=true": {
+      "model": "thai_alphabet_block:block/tone_mai_tri_top"
+    },
+    "color=magenta,type=double,waterlogged=false": {
+      "model": "thai_alphabet_block:block/tone_mai_tri_double"
+    },
+    "color=light_blue,type=bottom,waterlogged=false": {
+      "model": "thai_alphabet_block:block/tone_mai_tri"
+    },
+    "color=light_blue,type=bottom,waterlogged=true": {
+      "model": "thai_alphabet_block:block/tone_mai_tri"
+    },
+    "color=light_blue,type=top,waterlogged=false": {
+      "model": "thai_alphabet_block:block/tone_mai_tri_top"
+    },
+    "color=light_blue,type=top,waterlogged=true": {
+      "model": "thai_alphabet_block:block/tone_mai_tri_top"
+    },
+    "color=light_blue,type=double,waterlogged=false": {
+      "model": "thai_alphabet_block:block/tone_mai_tri_double"
+    },
+    "color=yellow,type=bottom,waterlogged=false": {
+      "model": "thai_alphabet_block:block/tone_mai_tri"
+    },
+    "color=yellow,type=bottom,waterlogged=true": {
+      "model": "thai_alphabet_block:block/tone_mai_tri"
+    },
+    "color=yellow,type=top,waterlogged=false": {
+      "model": "thai_alphabet_block:block/tone_mai_tri_top"
+    },
+    "color=yellow,type=top,waterlogged=true": {
+      "model": "thai_alphabet_block:block/tone_mai_tri_top"
+    },
+    "color=yellow,type=double,waterlogged=false": {
+      "model": "thai_alphabet_block:block/tone_mai_tri_double"
+    },
+    "color=lime,type=bottom,waterlogged=false": {
+      "model": "thai_alphabet_block:block/tone_mai_tri"
+    },
+    "color=lime,type=bottom,waterlogged=true": {
+      "model": "thai_alphabet_block:block/tone_mai_tri"
+    },
+    "color=lime,type=top,waterlogged=false": {
+      "model": "thai_alphabet_block:block/tone_mai_tri_top"
+    },
+    "color=lime,type=top,waterlogged=true": {
+      "model": "thai_alphabet_block:block/tone_mai_tri_top"
+    },
+    "color=lime,type=double,waterlogged=false": {
+      "model": "thai_alphabet_block:block/tone_mai_tri_double"
+    },
+    "color=pink,type=bottom,waterlogged=false": {
+      "model": "thai_alphabet_block:block/tone_mai_tri"
+    },
+    "color=pink,type=bottom,waterlogged=true": {
+      "model": "thai_alphabet_block:block/tone_mai_tri"
+    },
+    "color=pink,type=top,waterlogged=false": {
+      "model": "thai_alphabet_block:block/tone_mai_tri_top"
+    },
+    "color=pink,type=top,waterlogged=true": {
+      "model": "thai_alphabet_block:block/tone_mai_tri_top"
+    },
+    "color=pink,type=double,waterlogged=false": {
+      "model": "thai_alphabet_block:block/tone_mai_tri_double"
+    },
+    "color=gray,type=bottom,waterlogged=false": {
+      "model": "thai_alphabet_block:block/tone_mai_tri"
+    },
+    "color=gray,type=bottom,waterlogged=true": {
+      "model": "thai_alphabet_block:block/tone_mai_tri"
+    },
+    "color=gray,type=top,waterlogged=false": {
+      "model": "thai_alphabet_block:block/tone_mai_tri_top"
+    },
+    "color=gray,type=top,waterlogged=true": {
+      "model": "thai_alphabet_block:block/tone_mai_tri_top"
+    },
+    "color=gray,type=double,waterlogged=false": {
+      "model": "thai_alphabet_block:block/tone_mai_tri_double"
+    },
+    "color=light_gray,type=bottom,waterlogged=false": {
+      "model": "thai_alphabet_block:block/tone_mai_tri"
+    },
+    "color=light_gray,type=bottom,waterlogged=true": {
+      "model": "thai_alphabet_block:block/tone_mai_tri"
+    },
+    "color=light_gray,type=top,waterlogged=false": {
+      "model": "thai_alphabet_block:block/tone_mai_tri_top"
+    },
+    "color=light_gray,type=top,waterlogged=true": {
+      "model": "thai_alphabet_block:block/tone_mai_tri_top"
+    },
+    "color=light_gray,type=double,waterlogged=false": {
+      "model": "thai_alphabet_block:block/tone_mai_tri_double"
+    },
+    "color=cyan,type=bottom,waterlogged=false": {
+      "model": "thai_alphabet_block:block/tone_mai_tri"
+    },
+    "color=cyan,type=bottom,waterlogged=true": {
+      "model": "thai_alphabet_block:block/tone_mai_tri"
+    },
+    "color=cyan,type=top,waterlogged=false": {
+      "model": "thai_alphabet_block:block/tone_mai_tri_top"
+    },
+    "color=cyan,type=top,waterlogged=true": {
+      "model": "thai_alphabet_block:block/tone_mai_tri_top"
+    },
+    "color=cyan,type=double,waterlogged=false": {
+      "model": "thai_alphabet_block:block/tone_mai_tri_double"
+    },
+    "color=purple,type=bottom,waterlogged=false": {
+      "model": "thai_alphabet_block:block/tone_mai_tri"
+    },
+    "color=purple,type=bottom,waterlogged=true": {
+      "model": "thai_alphabet_block:block/tone_mai_tri"
+    },
+    "color=purple,type=top,waterlogged=false": {
+      "model": "thai_alphabet_block:block/tone_mai_tri_top"
+    },
+    "color=purple,type=top,waterlogged=true": {
+      "model": "thai_alphabet_block:block/tone_mai_tri_top"
+    },
+    "color=purple,type=double,waterlogged=false": {
+      "model": "thai_alphabet_block:block/tone_mai_tri_double"
+    },
+    "color=blue,type=bottom,waterlogged=false": {
+      "model": "thai_alphabet_block:block/tone_mai_tri"
+    },
+    "color=blue,type=bottom,waterlogged=true": {
+      "model": "thai_alphabet_block:block/tone_mai_tri"
+    },
+    "color=blue,type=top,waterlogged=false": {
+      "model": "thai_alphabet_block:block/tone_mai_tri_top"
+    },
+    "color=blue,type=top,waterlogged=true": {
+      "model": "thai_alphabet_block:block/tone_mai_tri_top"
+    },
+    "color=blue,type=double,waterlogged=false": {
+      "model": "thai_alphabet_block:block/tone_mai_tri_double"
+    },
+    "color=brown,type=bottom,waterlogged=false": {
+      "model": "thai_alphabet_block:block/tone_mai_tri"
+    },
+    "color=brown,type=bottom,waterlogged=true": {
+      "model": "thai_alphabet_block:block/tone_mai_tri"
+    },
+    "color=brown,type=top,waterlogged=false": {
+      "model": "thai_alphabet_block:block/tone_mai_tri_top"
+    },
+    "color=brown,type=top,waterlogged=true": {
+      "model": "thai_alphabet_block:block/tone_mai_tri_top"
+    },
+    "color=brown,type=double,waterlogged=false": {
+      "model": "thai_alphabet_block:block/tone_mai_tri_double"
+    },
+    "color=green,type=bottom,waterlogged=false": {
+      "model": "thai_alphabet_block:block/tone_mai_tri"
+    },
+    "color=green,type=bottom,waterlogged=true": {
+      "model": "thai_alphabet_block:block/tone_mai_tri"
+    },
+    "color=green,type=top,waterlogged=false": {
+      "model": "thai_alphabet_block:block/tone_mai_tri_top"
+    },
+    "color=green,type=top,waterlogged=true": {
+      "model": "thai_alphabet_block:block/tone_mai_tri_top"
+    },
+    "color=green,type=double,waterlogged=false": {
+      "model": "thai_alphabet_block:block/tone_mai_tri_double"
+    },
+    "color=red,type=bottom,waterlogged=false": {
+      "model": "thai_alphabet_block:block/tone_mai_tri"
+    },
+    "color=red,type=bottom,waterlogged=true": {
+      "model": "thai_alphabet_block:block/tone_mai_tri"
+    },
+    "color=red,type=top,waterlogged=false": {
+      "model": "thai_alphabet_block:block/tone_mai_tri_top"
+    },
+    "color=red,type=top,waterlogged=true": {
+      "model": "thai_alphabet_block:block/tone_mai_tri_top"
+    },
+    "color=red,type=double,waterlogged=false": {
+      "model": "thai_alphabet_block:block/tone_mai_tri_double"
+    },
+    "color=black,type=bottom,waterlogged=false": {
+      "model": "thai_alphabet_block:block/tone_mai_tri"
+    },
+    "color=black,type=bottom,waterlogged=true": {
+      "model": "thai_alphabet_block:block/tone_mai_tri"
+    },
+    "color=black,type=top,waterlogged=false": {
+      "model": "thai_alphabet_block:block/tone_mai_tri_top"
+    },
+    "color=black,type=top,waterlogged=true": {
+      "model": "thai_alphabet_block:block/tone_mai_tri_top"
+    },
+    "color=black,type=double,waterlogged=false": {
       "model": "thai_alphabet_block:block/tone_mai_tri_double"
     }
   }

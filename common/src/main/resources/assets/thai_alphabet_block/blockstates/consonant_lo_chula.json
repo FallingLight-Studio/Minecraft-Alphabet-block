@@ -1,6 +1,51 @@
 {
   "variants": {
-    "": {
+    "color=white": {
+      "model": "thai_alphabet_block:block/consonant_lo_chula"
+    },
+    "color=orange": {
+      "model": "thai_alphabet_block:block/consonant_lo_chula"
+    },
+    "color=magenta": {
+      "model": "thai_alphabet_block:block/consonant_lo_chula"
+    },
+    "color=light_blue": {
+      "model": "thai_alphabet_block:block/consonant_lo_chula"
+    },
+    "color=yellow": {
+      "model": "thai_alphabet_block:block/consonant_lo_chula"
+    },
+    "color=lime": {
+      "model": "thai_alphabet_block:block/consonant_lo_chula"
+    },
+    "color=pink": {
+      "model": "thai_alphabet_block:block/consonant_lo_chula"
+    },
+    "color=gray": {
+      "model": "thai_alphabet_block:block/consonant_lo_chula"
+    },
+    "color=light_gray": {
+      "model": "thai_alphabet_block:block/consonant_lo_chula"
+    },
+    "color=cyan": {
+      "model": "thai_alphabet_block:block/consonant_lo_chula"
+    },
+    "color=purple": {
+      "model": "thai_alphabet_block:block/consonant_lo_chula"
+    },
+    "color=blue": {
+      "model": "thai_alphabet_block:block/consonant_lo_chula"
+    },
+    "color=brown": {
+      "model": "thai_alphabet_block:block/consonant_lo_chula"
+    },
+    "color=green": {
+      "model": "thai_alphabet_block:block/consonant_lo_chula"
+    },
+    "color=red": {
+      "model": "thai_alphabet_block:block/consonant_lo_chula"
+    },
+    "color=black": {
       "model": "thai_alphabet_block:block/consonant_lo_chula"
     }
   }

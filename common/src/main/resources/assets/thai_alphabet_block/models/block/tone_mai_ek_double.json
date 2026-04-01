@@ -1,6 +1,8 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "thai_alphabet_block:block/tinted_slab_double",
   "textures": {
-    "all": "thai_alphabet_block:block/tone_placeholder"
+    "bottom": "thai_alphabet_block:block/tone_placeholder",
+    "top": "thai_alphabet_block:block/tone_placeholder",
+    "side": "thai_alphabet_block:block/tone_placeholder"
   }
 }

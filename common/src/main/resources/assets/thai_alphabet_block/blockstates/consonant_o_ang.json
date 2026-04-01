@@ -1,6 +1,51 @@
 {
   "variants": {
-    "": {
+    "color=white": {
+      "model": "thai_alphabet_block:block/consonant_o_ang"
+    },
+    "color=orange": {
+      "model": "thai_alphabet_block:block/consonant_o_ang"
+    },
+    "color=magenta": {
+      "model": "thai_alphabet_block:block/consonant_o_ang"
+    },
+    "color=light_blue": {
+      "model": "thai_alphabet_block:block/consonant_o_ang"
+    },
+    "color=yellow": {
+      "model": "thai_alphabet_block:block/consonant_o_ang"
+    },
+    "color=lime": {
+      "model": "thai_alphabet_block:block/consonant_o_ang"
+    },
+    "color=pink": {
+      "model": "thai_alphabet_block:block/consonant_o_ang"
+    },
+    "color=gray": {
+      "model": "thai_alphabet_block:block/consonant_o_ang"
+    },
+    "color=light_gray": {
+      "model": "thai_alphabet_block:block/consonant_o_ang"
+    },
+    "color=cyan": {
+      "model": "thai_alphabet_block:block/consonant_o_ang"
+    },
+    "color=purple": {
+      "model": "thai_alphabet_block:block/consonant_o_ang"
+    },
+    "color=blue": {
+      "model": "thai_alphabet_block:block/consonant_o_ang"
+    },
+    "color=brown": {
+      "model": "thai_alphabet_block:block/consonant_o_ang"
+    },
+    "color=green": {
+      "model": "thai_alphabet_block:block/consonant_o_ang"
+    },
+    "color=red": {
+      "model": "thai_alphabet_block:block/consonant_o_ang"
+    },
+    "color=black": {
       "model": "thai_alphabet_block:block/consonant_o_ang"
     }
   }

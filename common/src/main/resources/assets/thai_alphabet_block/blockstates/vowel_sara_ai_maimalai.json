@@ -1,12 +1,243 @@
 {
   "variants": {
-    "type=bottom": {
+    "color=white,type=bottom,waterlogged=false": {
       "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai"
     },
-    "type=top": {
+    "color=white,type=bottom,waterlogged=true": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai"
+    },
+    "color=white,type=top,waterlogged=false": {
       "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai_top"
     },
-    "type=double": {
+    "color=white,type=top,waterlogged=true": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai_top"
+    },
+    "color=white,type=double,waterlogged=false": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai_double"
+    },
+    "color=orange,type=bottom,waterlogged=false": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai"
+    },
+    "color=orange,type=bottom,waterlogged=true": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai"
+    },
+    "color=orange,type=top,waterlogged=false": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai_top"
+    },
+    "color=orange,type=top,waterlogged=true": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai_top"
+    },
+    "color=orange,type=double,waterlogged=false": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai_double"
+    },
+    "color=magenta,type=bottom,waterlogged=false": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai"
+    },
+    "color=magenta,type=bottom,waterlogged=true": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai"
+    },
+    "color=magenta,type=top,waterlogged=false": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai_top"
+    },
+    "color=magenta,type=top,waterlogged=true": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai_top"
+    },
+    "color=magenta,type=double,waterlogged=false": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai_double"
+    },
+    "color=light_blue,type=bottom,waterlogged=false": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai"
+    },
+    "color=light_blue,type=bottom,waterlogged=true": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai"
+    },
+    "color=light_blue,type=top,waterlogged=false": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai_top"
+    },
+    "color=light_blue,type=top,waterlogged=true": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai_top"
+    },
+    "color=light_blue,type=double,waterlogged=false": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai_double"
+    },
+    "color=yellow,type=bottom,waterlogged=false": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai"
+    },
+    "color=yellow,type=bottom,waterlogged=true": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai"
+    },
+    "color=yellow,type=top,waterlogged=false": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai_top"
+    },
+    "color=yellow,type=top,waterlogged=true": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai_top"
+    },
+    "color=yellow,type=double,waterlogged=false": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai_double"
+    },
+    "color=lime,type=bottom,waterlogged=false": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai"
+    },
+    "color=lime,type=bottom,waterlogged=true": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai"
+    },
+    "color=lime,type=top,waterlogged=false": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai_top"
+    },
+    "color=lime,type=top,waterlogged=true": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai_top"
+    },
+    "color=lime,type=double,waterlogged=false": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai_double"
+    },
+    "color=pink,type=bottom,waterlogged=false": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai"
+    },
+    "color=pink,type=bottom,waterlogged=true": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai"
+    },
+    "color=pink,type=top,waterlogged=false": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai_top"
+    },
+    "color=pink,type=top,waterlogged=true": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai_top"
+    },
+    "color=pink,type=double,waterlogged=false": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai_double"
+    },
+    "color=gray,type=bottom,waterlogged=false": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai"
+    },
+    "color=gray,type=bottom,waterlogged=true": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai"
+    },
+    "color=gray,type=top,waterlogged=false": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai_top"
+    },
+    "color=gray,type=top,waterlogged=true": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai_top"
+    },
+    "color=gray,type=double,waterlogged=false": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai_double"
+    },
+    "color=light_gray,type=bottom,waterlogged=false": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai"
+    },
+    "color=light_gray,type=bottom,waterlogged=true": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai"
+    },
+    "color=light_gray,type=top,waterlogged=false": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai_top"
+    },
+    "color=light_gray,type=top,waterlogged=true": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai_top"
+    },
+    "color=light_gray,type=double,waterlogged=false": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai_double"
+    },
+    "color=cyan,type=bottom,waterlogged=false": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai"
+    },
+    "color=cyan,type=bottom,waterlogged=true": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai"
+    },
+    "color=cyan,type=top,waterlogged=false": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai_top"
+    },
+    "color=cyan,type=top,waterlogged=true": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai_top"
+    },
+    "color=cyan,type=double,waterlogged=false": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai_double"
+    },
+    "color=purple,type=bottom,waterlogged=false": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai"
+    },
+    "color=purple,type=bottom,waterlogged=true": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai"
+    },
+    "color=purple,type=top,waterlogged=false": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai_top"
+    },
+    "color=purple,type=top,waterlogged=true": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai_top"
+    },
+    "color=purple,type=double,waterlogged=false": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai_double"
+    },
+    "color=blue,type=bottom,waterlogged=false": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai"
+    },
+    "color=blue,type=bottom,waterlogged=true": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai"
+    },
+    "color=blue,type=top,waterlogged=false": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai_top"
+    },
+    "color=blue,type=top,waterlogged=true": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai_top"
+    },
+    "color=blue,type=double,waterlogged=false": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai_double"
+    },
+    "color=brown,type=bottom,waterlogged=false": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai"
+    },
+    "color=brown,type=bottom,waterlogged=true": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai"
+    },
+    "color=brown,type=top,waterlogged=false": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai_top"
+    },
+    "color=brown,type=top,waterlogged=true": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai_top"
+    },
+    "color=brown,type=double,waterlogged=false": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai_double"
+    },
+    "color=green,type=bottom,waterlogged=false": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai"
+    },
+    "color=green,type=bottom,waterlogged=true": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai"
+    },
+    "color=green,type=top,waterlogged=false": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai_top"
+    },
+    "color=green,type=top,waterlogged=true": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai_top"
+    },
+    "color=green,type=double,waterlogged=false": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai_double"
+    },
+    "color=red,type=bottom,waterlogged=false": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai"
+    },
+    "color=red,type=bottom,waterlogged=true": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai"
+    },
+    "color=red,type=top,waterlogged=false": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai_top"
+    },
+    "color=red,type=top,waterlogged=true": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai_top"
+    },
+    "color=red,type=double,waterlogged=false": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai_double"
+    },
+    "color=black,type=bottom,waterlogged=false": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai"
+    },
+    "color=black,type=bottom,waterlogged=true": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai"
+    },
+    "color=black,type=top,waterlogged=false": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai_top"
+    },
+    "color=black,type=top,waterlogged=true": {
+      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai_top"
+    },
+    "color=black,type=double,waterlogged=false": {
       "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai_double"
     }
   }

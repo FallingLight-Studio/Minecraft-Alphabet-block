@@ -1,6 +1,51 @@
 {
   "variants": {
-    "": {
+    "color=white": {
+      "model": "thai_alphabet_block:block/consonant_ho_hip"
+    },
+    "color=orange": {
+      "model": "thai_alphabet_block:block/consonant_ho_hip"
+    },
+    "color=magenta": {
+      "model": "thai_alphabet_block:block/consonant_ho_hip"
+    },
+    "color=light_blue": {
+      "model": "thai_alphabet_block:block/consonant_ho_hip"
+    },
+    "color=yellow": {
+      "model": "thai_alphabet_block:block/consonant_ho_hip"
+    },
+    "color=lime": {
+      "model": "thai_alphabet_block:block/consonant_ho_hip"
+    },
+    "color=pink": {
+      "model": "thai_alphabet_block:block/consonant_ho_hip"
+    },
+    "color=gray": {
+      "model": "thai_alphabet_block:block/consonant_ho_hip"
+    },
+    "color=light_gray": {
+      "model": "thai_alphabet_block:block/consonant_ho_hip"
+    },
+    "color=cyan": {
+      "model": "thai_alphabet_block:block/consonant_ho_hip"
+    },
+    "color=purple": {
+      "model": "thai_alphabet_block:block/consonant_ho_hip"
+    },
+    "color=blue": {
+      "model": "thai_alphabet_block:block/consonant_ho_hip"
+    },
+    "color=brown": {
+      "model": "thai_alphabet_block:block/consonant_ho_hip"
+    },
+    "color=green": {
+      "model": "thai_alphabet_block:block/consonant_ho_hip"
+    },
+    "color=red": {
+      "model": "thai_alphabet_block:block/consonant_ho_hip"
+    },
+    "color=black": {
       "model": "thai_alphabet_block:block/consonant_ho_hip"
     }
   }

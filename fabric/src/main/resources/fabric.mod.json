@@ -12,6 +12,9 @@
   "entrypoints": {
     "main": [
       "com.aitshiroku.thai_alphabet_block.ThaiAlphabetBlockFabric"
+    ],
+    "client": [
+      "com.aitshiroku.thai_alphabet_block.ThaiAlphabetFabricClient"
     ]
   },
   "depends": {

@@ -1,6 +1,51 @@
 {
   "variants": {
-    "": {
+    "color=white": {
+      "model": "thai_alphabet_block:block/consonant_no_nu"
+    },
+    "color=orange": {
+      "model": "thai_alphabet_block:block/consonant_no_nu"
+    },
+    "color=magenta": {
+      "model": "thai_alphabet_block:block/consonant_no_nu"
+    },
+    "color=light_blue": {
+      "model": "thai_alphabet_block:block/consonant_no_nu"
+    },
+    "color=yellow": {
+      "model": "thai_alphabet_block:block/consonant_no_nu"
+    },
+    "color=lime": {
+      "model": "thai_alphabet_block:block/consonant_no_nu"
+    },
+    "color=pink": {
+      "model": "thai_alphabet_block:block/consonant_no_nu"
+    },
+    "color=gray": {
+      "model": "thai_alphabet_block:block/consonant_no_nu"
+    },
+    "color=light_gray": {
+      "model": "thai_alphabet_block:block/consonant_no_nu"
+    },
+    "color=cyan": {
+      "model": "thai_alphabet_block:block/consonant_no_nu"
+    },
+    "color=purple": {
+      "model": "thai_alphabet_block:block/consonant_no_nu"
+    },
+    "color=blue": {
+      "model": "thai_alphabet_block:block/consonant_no_nu"
+    },
+    "color=brown": {
+      "model": "thai_alphabet_block:block/consonant_no_nu"
+    },
+    "color=green": {
+      "model": "thai_alphabet_block:block/consonant_no_nu"
+    },
+    "color=red": {
+      "model": "thai_alphabet_block:block/consonant_no_nu"
+    },
+    "color=black": {
       "model": "thai_alphabet_block:block/consonant_no_nu"
     }
   }
