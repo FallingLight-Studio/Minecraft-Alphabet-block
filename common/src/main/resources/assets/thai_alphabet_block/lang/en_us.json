@@ -1,5 +1,10 @@
 {
-  "itemGroup.thai_alphabet_block": "Thai Alphabet Block",
+  "block.thai_alphabet_block.composite_sara_i_mai_ek": "ิ่ (Sara I + Mai Ek)",
+  "block.thai_alphabet_block.composite_sara_ii_mai_chattawa": "ี๋ (Sara Ii + Mai Chattawa)",
+  "block.thai_alphabet_block.composite_sara_ii_mai_ek": "ี่ (Sara Ii + Mai Ek)",
+  "block.thai_alphabet_block.composite_sara_ii_mai_tho": "ี้ (Sara Ii + Mai Tho)",
+  "block.thai_alphabet_block.composite_sara_ii_mai_tri": "ี๊ (Sara Ii + Mai Tri)",
+  "block.thai_alphabet_block.composite_sara_ue_short_mai_ek": "ั่ (Mai Hanakat + Mai Ek)",
   "block.thai_alphabet_block.consonant_bo_baimai": "บ (Bo Baimai)",
   "block.thai_alphabet_block.consonant_cho_chan": "จ (Cho Chan)",
   "block.thai_alphabet_block.consonant_cho_chang": "ช (Cho Chang)",
@@ -69,5 +74,6 @@
   "block.thai_alphabet_block.vowel_sara_ue_short": "ั (Mai Hanakat)",
   "block.thai_alphabet_block.vowel_sara_uee": "ื (Sara Uee)",
   "block.thai_alphabet_block.vowel_sara_uu": "ู (Sara Uu)",
-  "thai_alphabet_block.tip.dye": "Right-click with dye to tint the block (default: white). Use textures with transparency; models use tint index 0."
+  "itemGroup.thai_alphabet_block": "Thai Alphabet Block",
+  "thai_alphabet_block.tip.dye": "Right-click with dye: background uses tint 0 (dye color); glyph uses tint 1 (white on dark dyes, black on light). Use *_bg.png (opaque base) and *_glyph.png (letter on transparency)."
 }

@@ -37,7 +37,7 @@ public final class ThaiAlphabetBlockFabric implements ModInitializer {
                 def.id()
             );
             Block block =
-                def.type() == ThaiAlphabetDefinitions.CharacterType.CONSONANT
+                def.shape() == ThaiAlphabetDefinitions.LetterBlockShape.FULL
                     ? new ThaiLetterBlock(
                           BlockBehaviour.Properties.of()
                               .mapColor(MapColor.COLOR_LIGHT_GRAY)

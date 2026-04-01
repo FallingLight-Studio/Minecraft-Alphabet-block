@@ -70,11 +70,11 @@ public class ThaiAlphabetBlock {
                     () -> {
                         BlockBehaviour.Properties props = BlockBehaviour.Properties.of()
                                 .mapColor(
-                                        def.type() == ThaiAlphabetDefinitions.CharacterType.CONSONANT
+                                        def.shape() == ThaiAlphabetDefinitions.LetterBlockShape.FULL
                                                 ? MapColor.COLOR_LIGHT_GRAY
                                                 : MapColor.COLOR_PURPLE)
                                 .strength(1.5f, 6.0f);
-                        if (def.type() == ThaiAlphabetDefinitions.CharacterType.CONSONANT) {
+                        if (def.shape() == ThaiAlphabetDefinitions.LetterBlockShape.FULL) {
                             return new ThaiLetterBlock(props);
                         }
                         return new ThaiLetterSlabBlock(props);

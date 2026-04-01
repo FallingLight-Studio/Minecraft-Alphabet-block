@@ -17,31 +17,42 @@ public final class ThaiAlphabetFabricClient implements ClientModInitializer {
             }
             ColorProviderRegistry.BLOCK.register(
                     (state, world, pos, tintIndex) -> {
-                        if (tintIndex != 0) {
+                        if (tintIndex != 0 && tintIndex != 1) {
                             return -1;
                         }
-                        if (state.hasProperty(ThaiLetterBlock.COLOR)) {
-                            return ThaiAlphabetColorUtil.argbFromDye(state.getValue(ThaiLetterBlock.COLOR));
+                        if (!state.hasProperty(ThaiLetterBlock.COLOR)) {
+                            return tintIndex == 0
+                                    ? ThaiAlphabetColorUtil.backgroundArgbFromDye(
+                                            net.minecraft.world.item.DyeColor.WHITE)
+                                    : ThaiAlphabetColorUtil.glyphArgbFromDye(
+                                            net.minecraft.world.item.DyeColor.WHITE);
                         }
-                        return ThaiAlphabetColorUtil.argbFromDye(
-                                net.minecraft.world.item.DyeColor.WHITE);
+                        net.minecraft.world.item.DyeColor dye = state.getValue(ThaiLetterBlock.COLOR);
+                        return tintIndex == 0
+                                ? ThaiAlphabetColorUtil.backgroundArgbFromDye(dye)
+                                : ThaiAlphabetColorUtil.glyphArgbFromDye(dye);
                     },
                     block);
             ColorProviderRegistry.ITEM.register(
                     (ItemStack stack, int tintIndex) -> {
-                        if (tintIndex != 0) {
+                        if (tintIndex != 0 && tintIndex != 1) {
                             return -1;
                         }
                         if (!(stack.getItem() instanceof BlockItem bi) || bi.getBlock() != block) {
-                            return ThaiAlphabetColorUtil.argbFromDye(
-                                    net.minecraft.world.item.DyeColor.WHITE);
+                            net.minecraft.world.item.DyeColor white =
+                                    net.minecraft.world.item.DyeColor.WHITE;
+                            return tintIndex == 0
+                                    ? ThaiAlphabetColorUtil.backgroundArgbFromDye(white)
+                                    : ThaiAlphabetColorUtil.glyphArgbFromDye(white);
                         }
                         BlockState state = ThaiAlphabetBlockStateUtil.stateFromItemStack(stack, block);
-                        if (state.hasProperty(ThaiLetterBlock.COLOR)) {
-                            return ThaiAlphabetColorUtil.argbFromDye(state.getValue(ThaiLetterBlock.COLOR));
-                        }
-                        return ThaiAlphabetColorUtil.argbFromDye(
-                                net.minecraft.world.item.DyeColor.WHITE);
+                        net.minecraft.world.item.DyeColor dye =
+                                state.hasProperty(ThaiLetterBlock.COLOR)
+                                        ? state.getValue(ThaiLetterBlock.COLOR)
+                                        : net.minecraft.world.item.DyeColor.WHITE;
+                        return tintIndex == 0
+                                ? ThaiAlphabetColorUtil.backgroundArgbFromDye(dye)
+                                : ThaiAlphabetColorUtil.glyphArgbFromDye(dye);
                     },
                     block.asItem());
         }
