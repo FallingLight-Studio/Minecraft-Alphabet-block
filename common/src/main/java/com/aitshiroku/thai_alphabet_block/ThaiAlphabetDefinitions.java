@@ -6,7 +6,8 @@ import java.util.List;
 public final class ThaiAlphabetDefinitions {
 
     /**
-     * FULL = normal cube; SLAB = half-height slab for marks drawn on the face above/below a consonant.
+     * FULL = normal cube; SLAB = half-height slab for marks drawn on the face
+     * above/below a consonant.
      */
     public enum LetterBlockShape {
         FULL,
@@ -29,7 +30,8 @@ public final class ThaiAlphabetDefinitions {
     }
 
     /**
-     * Slab: upper/inner vowels and tone marks that sit on the consonant line. Full block: leading vowels
+     * Slab: upper/inner vowels and tone marks that sit on the consonant line. Full
+     * block: leading vowels
      * (เแโไใ), same-plane marks (า ะ ำ), lower vowels (ุ ู), and similar.
      */
     public static LetterBlockShape shapeFor(String id, CharacterType type) {
@@ -45,7 +47,8 @@ public final class ThaiAlphabetDefinitions {
                     "vowel_sara_i",
                     "vowel_sara_ii",
                     "vowel_sara_ue",
-                    "vowel_sara_uee" -> LetterBlockShape.SLAB;
+                    "vowel_sara_uee" ->
+                LetterBlockShape.SLAB;
             default -> LetterBlockShape.FULL;
         };
     }
@@ -94,8 +97,7 @@ public final class ThaiAlphabetDefinitions {
             new CharacterDef("consonant_ho_hip", "ห", "Ho Hip", CharacterType.CONSONANT),
             new CharacterDef("consonant_lo_chula", "ฬ", "Lo Chula", CharacterType.CONSONANT),
             new CharacterDef("consonant_o_ang", "อ", "O Ang", CharacterType.CONSONANT),
-            new CharacterDef("consonant_ho_nokhuk", "ฮ", "Ho Nokhuk", CharacterType.CONSONANT)
-    );
+            new CharacterDef("consonant_ho_nokhuk", "ฮ", "Ho Nokhuk", CharacterType.CONSONANT));
 
     public static final List<CharacterDef> VOWELS = List.of(
             new CharacterDef("vowel_sara_a", "ะ", "Sara A", CharacterType.VOWEL),
@@ -116,8 +118,7 @@ public final class ThaiAlphabetDefinitions {
             new CharacterDef("vowel_sara_ue_short", "ั", "Mai Hanakat", CharacterType.VOWEL),
             new CharacterDef("vowel_phinthu", "ฺ", "Phinthu", CharacterType.VOWEL),
             new CharacterDef("vowel_nikhahit", "ํ", "Nikhahit", CharacterType.VOWEL),
-            new CharacterDef("vowel_mai_taikhu", "็", "Mai Taikhu", CharacterType.VOWEL)
-    );
+            new CharacterDef("vowel_mai_taikhu", "็", "Mai Taikhu", CharacterType.VOWEL));
 
     public static final List<CharacterDef> TONES = List.of(
             new CharacterDef("tone_mai_ek", "่", "Mai Ek", CharacterType.TONE),
@@ -125,30 +126,22 @@ public final class ThaiAlphabetDefinitions {
             new CharacterDef("tone_mai_tri", "๊", "Mai Tri", CharacterType.TONE),
             new CharacterDef("tone_mai_chattawa", "๋", "Mai Chattawa", CharacterType.TONE),
             new CharacterDef("tone_thanthakhat", "์", "Thanthakhat", CharacterType.TONE),
-            new CharacterDef("tone_yamakkan", "๎", "Yamakkan", CharacterType.TONE)
-    );
+            new CharacterDef("tone_yamakkan", "๎", "Yamakkan", CharacterType.TONE));
 
     /**
-     * Combined glyphs as one block (full cube). Add textures per id; useful for ี+tone, etc.
+     * Combined glyphs as one block (full cube). Add textures per id; useful for
+     * ี+tone, etc.
      */
-    public static final List<CharacterDef> COMPOSITES = List.of(
-            new CharacterDef("composite_sara_ii_mai_ek", "ี่", "Sara Ii + Mai Ek", CharacterType.COMPOSITE),
-            new CharacterDef("composite_sara_ii_mai_tho", "ี้", "Sara Ii + Mai Tho", CharacterType.COMPOSITE),
-            new CharacterDef("composite_sara_ii_mai_tri", "ี๊", "Sara Ii + Mai Tri", CharacterType.COMPOSITE),
-            new CharacterDef("composite_sara_ii_mai_chattawa", "ี๋", "Sara Ii + Mai Chattawa", CharacterType.COMPOSITE),
-            new CharacterDef("composite_sara_i_mai_ek", "ิ่", "Sara I + Mai Ek", CharacterType.COMPOSITE),
-            new CharacterDef("composite_sara_ue_short_mai_ek", "ั่", "Mai Hanakat + Mai Ek", CharacterType.COMPOSITE)
-    );
 
-    private ThaiAlphabetDefinitions() {}
+    private ThaiAlphabetDefinitions() {
+    }
 
     public static List<CharacterDef> all() {
         List<CharacterDef> allEntries = new ArrayList<>(
-                CONSONANTS.size() + VOWELS.size() + TONES.size() + COMPOSITES.size());
+                CONSONANTS.size() + VOWELS.size() + TONES.size());
         allEntries.addAll(CONSONANTS);
         allEntries.addAll(VOWELS);
         allEntries.addAll(TONES);
-        allEntries.addAll(COMPOSITES);
         return List.copyOf(allEntries);
     }
 }
