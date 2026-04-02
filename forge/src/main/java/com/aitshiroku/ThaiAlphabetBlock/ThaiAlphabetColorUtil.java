@@ -1,10 +1,11 @@
-package com.aitshiroku.thai_alphabet_block;
+package com.aitshiroku.ThaiAlphabetBlock;
 
 import net.minecraft.world.item.DyeColor;
 
 public final class ThaiAlphabetColorUtil {
 
-    private ThaiAlphabetColorUtil() {}
+    private ThaiAlphabetColorUtil() {
+    }
 
     /** Background layer (tintindex 0): dyed with the selected dye. */
     public static int backgroundArgbFromDye(DyeColor dye) {
@@ -16,7 +17,8 @@ public final class ThaiAlphabetColorUtil {
     }
 
     /**
-     * Glyph layer (tintindex 1): high contrast — white on dark dyes, black on light dyes (by luminance).
+     * Glyph layer (tintindex 1): high contrast — white on dark dyes, black on light
+     * dyes (by luminance).
      */
     public static int glyphArgbFromDye(DyeColor dye) {
         float[] c = dye.getTextureDiffuseColors();

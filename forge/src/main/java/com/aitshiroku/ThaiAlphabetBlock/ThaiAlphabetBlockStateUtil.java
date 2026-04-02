@@ -1,4 +1,4 @@
-package com.aitshiroku.thai_alphabet_block;
+package com.aitshiroku.ThaiAlphabetBlock;
 
 import java.util.Optional;
 import net.minecraft.nbt.CompoundTag;
@@ -9,9 +9,10 @@ import net.minecraft.world.level.block.state.properties.Property;
 
 public final class ThaiAlphabetBlockStateUtil {
 
-    private ThaiAlphabetBlockStateUtil() {}
+    private ThaiAlphabetBlockStateUtil() {
+    }
 
-    @SuppressWarnings({"unchecked", "rawtypes"})
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     public static BlockState stateFromItemStack(ItemStack stack, Block block) {
         BlockState state = block.defaultBlockState();
         CompoundTag root = stack.getTag();

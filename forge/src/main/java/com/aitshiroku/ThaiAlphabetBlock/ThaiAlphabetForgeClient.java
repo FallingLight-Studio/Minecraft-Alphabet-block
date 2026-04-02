@@ -1,4 +1,6 @@
-package com.aitshiroku.thai_alphabet_block;
+package com.aitshiroku.ThaiAlphabetBlock;
+
+import com.aitshiroku.thai_alphabet_block.ThaiAlphabetCommon;
 
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
@@ -13,7 +15,8 @@ import net.minecraftforge.registries.RegistryObject;
 @Mod.EventBusSubscriber(modid = ThaiAlphabetCommon.MOD_ID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.MOD)
 public final class ThaiAlphabetForgeClient {
 
-    private ThaiAlphabetForgeClient() {}
+    private ThaiAlphabetForgeClient() {
+    }
 
     @SubscribeEvent
     public static void registerBlockColors(RegisterColorHandlersEvent.Block event) {
@@ -43,6 +46,7 @@ public final class ThaiAlphabetForgeClient {
         }
     }
 
+    @SuppressWarnings("deprecation")
     @SubscribeEvent
     public static void registerItemColors(RegisterColorHandlersEvent.Item event) {
         for (RegistryObject<Block> ro : ThaiAlphabetBlock.BLOCKS.getEntries()) {
@@ -57,8 +61,8 @@ public final class ThaiAlphabetForgeClient {
                                     return -1;
                                 }
                                 BlockState state = blockStateFromStack(stack, block);
-                                net.minecraft.world.item.DyeColor dye =
-                                        state != null && state.hasProperty(ThaiLetterBlock.COLOR)
+                                net.minecraft.world.item.DyeColor dye = state != null
+                                        && state.hasProperty(ThaiLetterBlock.COLOR)
                                                 ? state.getValue(ThaiLetterBlock.COLOR)
                                                 : net.minecraft.world.item.DyeColor.WHITE;
                                 return tintIndex == 0
