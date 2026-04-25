@@ -39,17 +39,15 @@ public final class ThaiAlphabetFabricClient implements ClientModInitializer {
                             return -1;
                         }
                         if (!(stack.getItem() instanceof BlockItem bi) || bi.getBlock() != block) {
-                            net.minecraft.world.item.DyeColor white =
-                                    net.minecraft.world.item.DyeColor.WHITE;
+                            net.minecraft.world.item.DyeColor white = net.minecraft.world.item.DyeColor.WHITE;
                             return tintIndex == 0
                                     ? ThaiAlphabetColorUtil.backgroundArgbFromDye(white)
                                     : ThaiAlphabetColorUtil.glyphArgbFromDye(white);
                         }
                         BlockState state = ThaiAlphabetBlockStateUtil.stateFromItemStack(stack, block);
-                        net.minecraft.world.item.DyeColor dye =
-                                state.hasProperty(ThaiLetterBlock.COLOR)
-                                        ? state.getValue(ThaiLetterBlock.COLOR)
-                                        : net.minecraft.world.item.DyeColor.WHITE;
+                        net.minecraft.world.item.DyeColor dye = state.hasProperty(ThaiLetterBlock.COLOR)
+                                ? state.getValue(ThaiLetterBlock.COLOR)
+                                : net.minecraft.world.item.DyeColor.WHITE;
                         return tintIndex == 0
                                 ? ThaiAlphabetColorUtil.backgroundArgbFromDye(dye)
                                 : ThaiAlphabetColorUtil.glyphArgbFromDye(dye);

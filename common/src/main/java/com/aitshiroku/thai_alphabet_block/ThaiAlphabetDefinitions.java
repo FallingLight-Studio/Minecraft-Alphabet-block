@@ -40,6 +40,12 @@ public final class ThaiAlphabetDefinitions {
 
     public static final List<CharacterDef> CONSONANTS = List.of(
         new CharacterDef(
+            "empty_block",
+            "",
+            "Empty Block",
+            CharacterType.CONSONANT
+        ),
+        new CharacterDef(
             "consonant_ko_kai",
             "ก",
             "Ko Kai",
