@@ -1,0 +1,52 @@
+{
+  "variants": {
+    "color=white": {
+      "model": "thai_alphabet_block:block/consonant_mo_ma"
+    },
+    "color=orange": {
+      "model": "thai_alphabet_block:block/consonant_mo_ma"
+    },
+    "color=magenta": {
+      "model": "thai_alphabet_block:block/consonant_mo_ma"
+    },
+    "color=light_blue": {
+      "model": "thai_alphabet_block:block/consonant_mo_ma"
+    },
+    "color=yellow": {
+      "model": "thai_alphabet_block:block/consonant_mo_ma"
+    },
+    "color=lime": {
+      "model": "thai_alphabet_block:block/consonant_mo_ma"
+    },
+    "color=pink": {
+      "model": "thai_alphabet_block:block/consonant_mo_ma"
+    },
+    "color=gray": {
+      "model": "thai_alphabet_block:block/consonant_mo_ma"
+    },
+    "color=light_gray": {
+      "model": "thai_alphabet_block:block/consonant_mo_ma"
+    },
+    "color=cyan": {
+      "model": "thai_alphabet_block:block/consonant_mo_ma"
+    },
+    "color=purple": {
+      "model": "thai_alphabet_block:block/consonant_mo_ma"
+    },
+    "color=blue": {
+      "model": "thai_alphabet_block:block/consonant_mo_ma"
+    },
+    "color=brown": {
+      "model": "thai_alphabet_block:block/consonant_mo_ma"
+    },
+    "color=green": {
+      "model": "thai_alphabet_block:block/consonant_mo_ma"
+    },
+    "color=red": {
+      "model": "thai_alphabet_block:block/consonant_mo_ma"
+    },
+    "color=black": {
+      "model": "thai_alphabet_block:block/consonant_mo_ma"
+    }
+  }
+}

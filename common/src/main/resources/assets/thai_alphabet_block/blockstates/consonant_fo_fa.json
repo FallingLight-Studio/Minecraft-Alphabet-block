@@ -1,0 +1,52 @@
+{
+  "variants": {
+    "color=white": {
+      "model": "thai_alphabet_block:block/consonant_fo_fa"
+    },
+    "color=orange": {
+      "model": "thai_alphabet_block:block/consonant_fo_fa"
+    },
+    "color=magenta": {
+      "model": "thai_alphabet_block:block/consonant_fo_fa"
+    },
+    "color=light_blue": {
+      "model": "thai_alphabet_block:block/consonant_fo_fa"
+    },
+    "color=yellow": {
+      "model": "thai_alphabet_block:block/consonant_fo_fa"
+    },
+    "color=lime": {
+      "model": "thai_alphabet_block:block/consonant_fo_fa"
+    },
+    "color=pink": {
+      "model": "thai_alphabet_block:block/consonant_fo_fa"
+    },
+    "color=gray": {
+      "model": "thai_alphabet_block:block/consonant_fo_fa"
+    },
+    "color=light_gray": {
+      "model": "thai_alphabet_block:block/consonant_fo_fa"
+    },
+    "color=cyan": {
+      "model": "thai_alphabet_block:block/consonant_fo_fa"
+    },
+    "color=purple": {
+      "model": "thai_alphabet_block:block/consonant_fo_fa"
+    },
+    "color=blue": {
+      "model": "thai_alphabet_block:block/consonant_fo_fa"
+    },
+    "color=brown": {
+      "model": "thai_alphabet_block:block/consonant_fo_fa"
+    },
+    "color=green": {
+      "model": "thai_alphabet_block:block/consonant_fo_fa"
+    },
+    "color=red": {
+      "model": "thai_alphabet_block:block/consonant_fo_fa"
+    },
+    "color=black": {
+      "model": "thai_alphabet_block:block/consonant_fo_fa"
+    }
+  }
+}

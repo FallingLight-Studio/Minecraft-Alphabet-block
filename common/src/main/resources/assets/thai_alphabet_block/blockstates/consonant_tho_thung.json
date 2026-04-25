@@ -1,0 +1,52 @@
+{
+  "variants": {
+    "color=white": {
+      "model": "thai_alphabet_block:block/consonant_tho_thung"
+    },
+    "color=orange": {
+      "model": "thai_alphabet_block:block/consonant_tho_thung"
+    },
+    "color=magenta": {
+      "model": "thai_alphabet_block:block/consonant_tho_thung"
+    },
+    "color=light_blue": {
+      "model": "thai_alphabet_block:block/consonant_tho_thung"
+    },
+    "color=yellow": {
+      "model": "thai_alphabet_block:block/consonant_tho_thung"
+    },
+    "color=lime": {
+      "model": "thai_alphabet_block:block/consonant_tho_thung"
+    },
+    "color=pink": {
+      "model": "thai_alphabet_block:block/consonant_tho_thung"
+    },
+    "color=gray": {
+      "model": "thai_alphabet_block:block/consonant_tho_thung"
+    },
+    "color=light_gray": {
+      "model": "thai_alphabet_block:block/consonant_tho_thung"
+    },
+    "color=cyan": {
+      "model": "thai_alphabet_block:block/consonant_tho_thung"
+    },
+    "color=purple": {
+      "model": "thai_alphabet_block:block/consonant_tho_thung"
+    },
+    "color=blue": {
+      "model": "thai_alphabet_block:block/consonant_tho_thung"
+    },
+    "color=brown": {
+      "model": "thai_alphabet_block:block/consonant_tho_thung"
+    },
+    "color=green": {
+      "model": "thai_alphabet_block:block/consonant_tho_thung"
+    },
+    "color=red": {
+      "model": "thai_alphabet_block:block/consonant_tho_thung"
+    },
+    "color=black": {
+      "model": "thai_alphabet_block:block/consonant_tho_thung"
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "variants": {
+    "color=white": {
+      "model": "thai_alphabet_block:block/vowel_sara_e"
+    },
+    "color=orange": {
+      "model": "thai_alphabet_block:block/vowel_sara_e"
+    },
+    "color=magenta": {
+      "model": "thai_alphabet_block:block/vowel_sara_e"
+    },
+    "color=light_blue": {
+      "model": "thai_alphabet_block:block/vowel_sara_e"
+    },
+    "color=yellow": {
+      "model": "thai_alphabet_block:block/vowel_sara_e"
+    },
+    "color=lime": {
+      "model": "thai_alphabet_block:block/vowel_sara_e"
+    },
+    "color=pink": {
+      "model": "thai_alphabet_block:block/vowel_sara_e"
+    },
+    "color=gray": {
+      "model": "thai_alphabet_block:block/vowel_sara_e"
+    },
+    "color=light_gray": {
+      "model": "thai_alphabet_block:block/vowel_sara_e"
+    },
+    "color=cyan": {
+      "model": "thai_alphabet_block:block/vowel_sara_e"
+    },
+    "color=purple": {
+      "model": "thai_alphabet_block:block/vowel_sara_e"
+    },
+    "color=blue": {
+      "model": "thai_alphabet_block:block/vowel_sara_e"
+    },
+    "color=brown": {
+      "model": "thai_alphabet_block:block/vowel_sara_e"
+    },
+    "color=green": {
+      "model": "thai_alphabet_block:block/vowel_sara_e"
+    },
+    "color=red": {
+      "model": "thai_alphabet_block:block/vowel_sara_e"
+    },
+    "color=black": {
+      "model": "thai_alphabet_block:block/vowel_sara_e"
+    }
+  }
+}

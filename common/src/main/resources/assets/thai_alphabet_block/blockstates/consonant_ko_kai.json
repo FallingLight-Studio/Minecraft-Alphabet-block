@@ -1,0 +1,52 @@
+{
+  "variants": {
+    "color=white": {
+      "model": "thai_alphabet_block:block/consonant_ko_kai"
+    },
+    "color=orange": {
+      "model": "thai_alphabet_block:block/consonant_ko_kai"
+    },
+    "color=magenta": {
+      "model": "thai_alphabet_block:block/consonant_ko_kai"
+    },
+    "color=light_blue": {
+      "model": "thai_alphabet_block:block/consonant_ko_kai"
+    },
+    "color=yellow": {
+      "model": "thai_alphabet_block:block/consonant_ko_kai"
+    },
+    "color=lime": {
+      "model": "thai_alphabet_block:block/consonant_ko_kai"
+    },
+    "color=pink": {
+      "model": "thai_alphabet_block:block/consonant_ko_kai"
+    },
+    "color=gray": {
+      "model": "thai_alphabet_block:block/consonant_ko_kai"
+    },
+    "color=light_gray": {
+      "model": "thai_alphabet_block:block/consonant_ko_kai"
+    },
+    "color=cyan": {
+      "model": "thai_alphabet_block:block/consonant_ko_kai"
+    },
+    "color=purple": {
+      "model": "thai_alphabet_block:block/consonant_ko_kai"
+    },
+    "color=blue": {
+      "model": "thai_alphabet_block:block/consonant_ko_kai"
+    },
+    "color=brown": {
+      "model": "thai_alphabet_block:block/consonant_ko_kai"
+    },
+    "color=green": {
+      "model": "thai_alphabet_block:block/consonant_ko_kai"
+    },
+    "color=red": {
+      "model": "thai_alphabet_block:block/consonant_ko_kai"
+    },
+    "color=black": {
+      "model": "thai_alphabet_block:block/consonant_ko_kai"
+    }
+  }
+}

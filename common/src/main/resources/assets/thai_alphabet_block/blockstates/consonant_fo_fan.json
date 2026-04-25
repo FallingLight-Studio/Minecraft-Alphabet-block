@@ -1,0 +1,52 @@
+{
+  "variants": {
+    "color=white": {
+      "model": "thai_alphabet_block:block/consonant_fo_fan"
+    },
+    "color=orange": {
+      "model": "thai_alphabet_block:block/consonant_fo_fan"
+    },
+    "color=magenta": {
+      "model": "thai_alphabet_block:block/consonant_fo_fan"
+    },
+    "color=light_blue": {
+      "model": "thai_alphabet_block:block/consonant_fo_fan"
+    },
+    "color=yellow": {
+      "model": "thai_alphabet_block:block/consonant_fo_fan"
+    },
+    "color=lime": {
+      "model": "thai_alphabet_block:block/consonant_fo_fan"
+    },
+    "color=pink": {
+      "model": "thai_alphabet_block:block/consonant_fo_fan"
+    },
+    "color=gray": {
+      "model": "thai_alphabet_block:block/consonant_fo_fan"
+    },
+    "color=light_gray": {
+      "model": "thai_alphabet_block:block/consonant_fo_fan"
+    },
+    "color=cyan": {
+      "model": "thai_alphabet_block:block/consonant_fo_fan"
+    },
+    "color=purple": {
+      "model": "thai_alphabet_block:block/consonant_fo_fan"
+    },
+    "color=blue": {
+      "model": "thai_alphabet_block:block/consonant_fo_fan"
+    },
+    "color=brown": {
+      "model": "thai_alphabet_block:block/consonant_fo_fan"
+    },
+    "color=green": {
+      "model": "thai_alphabet_block:block/consonant_fo_fan"
+    },
+    "color=red": {
+      "model": "thai_alphabet_block:block/consonant_fo_fan"
+    },
+    "color=black": {
+      "model": "thai_alphabet_block:block/consonant_fo_fan"
+    }
+  }
+}

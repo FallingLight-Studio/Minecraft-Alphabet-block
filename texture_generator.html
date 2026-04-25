@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thai Alphabet Texture Generator for Minecraft</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <style>
+        .pixelated {
+            image-rendering: pixelated;
+        }
+        /* Custom scrollbar for preview */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1f2937; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4b5563; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6b7280; 
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white p-8 min-h-screen">
+    <div class="max-w-5xl mx-auto">
+        <h1 class="text-3xl font-bold mb-2 text-blue-400">Thai Alphabet Block Texture Generator</h1>
+        <p class="text-gray-400 mb-8">Create textures for all Thai consonants, vowels, and tone marks instantly for your Minecraft mod.</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+            <div class="md:col-span-5 bg-gray-800 p-6 rounded-xl border border-gray-700 shadow-xl">
+                <h2 class="text-xl font-semibold mb-6 border-b border-gray-700 pb-2">Configuration</h2>
+                
+                <div class="mb-5">
+                    <label class="block text-sm font-medium mb-2 text-gray-300">Base Texture (Optional)</label>
+                    <input type="file" id="baseTexture" accept="image/png" class="w-full bg-gray-700 p-2 rounded border border-gray-600 focus:border-blue-500 outline-none text-sm cursor-pointer mb-3">
+                    <label class="flex items-center gap-2 cursor-pointer">
+                        <input type="checkbox" id="transparentBg" class="w-4 h-4 rounded bg-gray-700 border-gray-600 focus:ring-blue-500">
+                        <span class="text-sm text-gray-300">Transparent Background (No wood base)</span>
+                    </label>
+                    <p class="text-xs text-gray-400 mt-2">Upload a 16x16 PNG to use as the background, or check the box for a transparent background. Otherwise, a procedural wood base is generated.</p>
+                </div>
+                
+                <div class="mb-5 grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium mb-2 text-gray-300">Text Color</label>
+                        <div class="flex items-center gap-2">
+                            <input type="color" id="textColor" value="#2d1a11" class="h-10 w-12 bg-gray-700 rounded cursor-pointer border border-gray-600">
+                            <span class="text-sm text-gray-400" id="colorHex">#2d1a11</span>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2 text-gray-300">Resolution</label>
+                        <select id="resolution" class="w-full bg-gray-700 p-2 rounded border border-gray-600 focus:border-blue-500 outline-none h-10">
+                            <option value="16" selected>16x16 (Standard)</option>
+                            <option value="32">32x32 (HD)</option>
+                            <option value="64">64x64 (Ultra HD)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="mb-5 grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium mb-2 text-gray-300">Font Family</label>
+                        <input type="text" id="fontFamily" value="sans-serif" class="w-full bg-gray-700 p-2 rounded border border-gray-600 focus:border-blue-500 outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2 text-gray-300">Font Size Offset</label>
+                        <input type="number" id="fontSizeOffset" value="0" step="0.5" class="w-full bg-gray-700 p-2 rounded border border-gray-600 focus:border-blue-500 outline-none">
+                    </div>
+                </div>
+
+                <div class="mb-6 grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium mb-2 text-gray-300">Offset X</label>
+                        <input type="number" id="offsetX" value="0" class="w-full bg-gray-700 p-2 rounded border border-gray-600 focus:border-blue-500 outline-none">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2 text-gray-300">Offset Y</label>
+                        <input type="number" id="offsetY" value="1" class="w-full bg-gray-700 p-2 rounded border border-gray-600 focus:border-blue-500 outline-none">
+                    </div>
+                </div>
+                
+                <div class="mt-8 flex flex-col gap-3">
+                    <button id="generateBtn" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-4 rounded-lg transition-colors flex items-center justify-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" clip-rule="evenodd" />
+                        </svg>
+                        Update Preview
+                    </button>
+                    <button id="downloadBtn" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 px-4 rounded-lg transition-colors hidden flex items-center justify-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                        Download All (.zip)
+                    </button>
+                </div>
+            </div>
+            
+            <div class="md:col-span-7 bg-gray-800 p-6 rounded-xl border border-gray-700 shadow-xl flex flex-col">
+                <div class="flex justify-between items-center mb-6 border-b border-gray-700 pb-2">
+                    <h2 class="text-xl font-semibold" id="previewTitle">Preview</h2>
+                    <span class="text-sm bg-gray-700 px-3 py-1 rounded-full text-gray-300">Hover to see filename</span>
+                </div>
+                <div id="previewContainer" class="grid grid-cols-6 sm:grid-cols-8 gap-3 max-h-[600px] overflow-y-auto p-2 flex-grow content-start">
+                    <!-- Previews will go here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const thaiAlphabets = [
+            // Consonants
+            { char: 'ก', name: 'gor_gai' }, { char: 'ข', name: 'khor_khai' }, { char: 'ฃ', name: 'khor_khuat' },
+            { char: 'ค', name: 'khor_khwai' }, { char: 'ฅ', name: 'khor_khon' }, { char: 'ฆ', name: 'khor_rakang' },
+            { char: 'ง', name: 'ngor_ngu' }, { char: 'จ', name: 'jor_jan' }, { char: 'ฉ', name: 'chor_ching' },
+            { char: 'ช', name: 'chor_chang' }, { char: 'ซ', name: 'sor_so' }, { char: 'ฌ', name: 'chor_choe' },
+            { char: 'ญ', name: 'yor_ying' }, { char: 'ฎ', name: 'dor_chada' }, { char: 'ฏ', name: 'tor_patak' },
+            { char: 'ฐ', name: 'thor_than' }, { char: 'ฑ', name: 'thor_nangmontho' }, { char: 'ฒ', name: 'thor_phuthao' },
+            { char: 'ณ', name: 'nor_nen' }, { char: 'ด', name: 'dor_dek' }, { char: 'ต', name: 'tor_tao' },
+            { char: 'ถ', name: 'thor_thung' }, { char: 'ท', name: 'thor_thahan' }, { char: 'ธ', name: 'thor_thong' },
+            { char: 'น', name: 'nor_nu' }, { char: 'บ', name: 'bor_baimai' }, { char: 'ป', name: 'por_pla' },
+            { char: 'ผ', name: 'phor_phung' }, { char: 'ฝ', name: 'for_fa' }, { char: 'พ', name: 'phor_phan' },
+            { char: 'ฟ', name: 'for_fan' }, { char: 'ภ', name: 'phor_samphao' }, { char: 'ม', name: 'mor_ma' },
+            { char: 'ย', name: 'yor_yak' }, { char: 'ร', name: 'ror_rua' }, { char: 'ล', name: 'lor_ling' },
+            { char: 'ว', name: 'wor_waen' }, { char: 'ศ', name: 'sor_sala' }, { char: 'ษ', name: 'sor_rusi' },
+            { char: 'ส', name: 'sor_sua' }, { char: 'ห', name: 'hor_hip' }, { char: 'ฬ', name: 'lor_chula' },
+            { char: 'อ', name: 'or_ang' }, { char: 'ฮ', name: 'hor_nok-huk' },
+            // Vowels
+            { char: 'ะ', name: 'sara_a' }, { char: 'า', name: 'sara_aa' }, 
+            { char: 'ิ', name: 'sara_i', xOffsetRatio: 0.11, yOffsetRatio: 0.25 }, { char: 'ี', name: 'sara_ii', xOffsetRatio: 0.11, yOffsetRatio: 0.25 }, 
+            { char: 'ึ', name: 'sara_ue', xOffsetRatio: 0.11, yOffsetRatio: 0.25 }, { char: 'ื', name: 'sara_uee', xOffsetRatio: 0.11, yOffsetRatio: 0.25 },
+            { char: 'ุ', name: 'sara_u', xOffsetRatio: 0.11, yOffsetRatio: -0.22 }, { char: 'ู', name: 'sara_uu', xOffsetRatio: 0.11, yOffsetRatio: -0.22 }, 
+            { char: 'เ', name: 'sara_e' }, { char: 'แ', name: 'sara_ae' }, 
+            { char: 'โ', name: 'sara_o' }, { char: 'ใ', name: 'sara_mai_muan' },
+            { char: 'ไ', name: 'sara_mai_malai' }, { char: 'ำ', name: 'sara_am', yOffsetRatio: 0.12 }, 
+            { char: 'ฤ', name: 'ru' }, { char: 'ฤๅ', name: 'ruu' }, 
+            { char: 'ฦ', name: 'lu' }, { char: 'ฦๅ', name: 'luu' },
+            { char: 'ั', name: 'mai_han_akat', xOffsetRatio: 0.11, yOffsetRatio: 0.25 }, 
+            { char: '็', name: 'mai_taikhu', xOffsetRatio: 0.11, yOffsetRatio: 0.25 }, 
+            { char: '์', name: 'karan', xOffsetRatio: 0.11, yOffsetRatio: 0.25 },
+            // Tone Marks
+            { char: '่', name: 'mai_ek', xOffsetRatio: 0.11, yOffsetRatio: 0.30 }, { char: '้', name: 'mai_tho', xOffsetRatio: 0.11, yOffsetRatio: 0.30 }, 
+            { char: '๊', name: 'mai_tri', xOffsetRatio: 0.11, yOffsetRatio: 0.30 }, { char: '๋', name: 'mai_chattawa', xOffsetRatio: 0.11, yOffsetRatio: 0.30 }
+        ];
+
+        let baseImg = null;
+        let generatedImages = [];
+
+        // UI Event Listeners
+        document.getElementById('textColor').addEventListener('input', (e) => {
+            document.getElementById('colorHex').innerText = e.target.value;
+        });
+
+        document.getElementById('baseTexture').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    baseImg = new Image();
+                    baseImg.onload = () => {
+                        generateTextures();
+                    };
+                    baseImg.src = event.target.result;
+                };
+                reader.readAsDataURL(file);
+            } else {
+                baseImg = null;
+                generateTextures();
+            }
+        });
+
+        document.getElementById('generateBtn').addEventListener('click', generateTextures);
+        document.getElementById('downloadBtn').addEventListener('click', downloadZip);
+
+        // Auto-generate when settings change
+        ['resolution', 'textColor', 'fontFamily', 'fontSizeOffset', 'offsetX', 'offsetY', 'transparentBg'].forEach(id => {
+            document.getElementById(id).addEventListener('change', generateTextures);
+        });
+
+        function drawBase(ctx, size) {
+            const isTransparent = document.getElementById('transparentBg').checked;
+            
+            if (isTransparent) {
+                ctx.clearRect(0, 0, size, size);
+                return;
+            }
+
+            if (baseImg) {
+                // Prevent blurring of uploaded pixel art base
+                ctx.imageSmoothingEnabled = false;
+                ctx.drawImage(baseImg, 0, 0, size, size);
+            } else {
+                // Procedural wood-like background for 16x16
+                ctx.fillStyle = "#6e5233"; // Outer border
+                ctx.fillRect(0, 0, size, size);
+                
+                ctx.fillStyle = "#8a6640"; // Inner
+                const b1 = Math.max(1, Math.floor(size / 16));
+                ctx.fillRect(b1, b1, size - b1*2, size - b1*2);
+                
+                ctx.fillStyle = "#a88154"; // Core
+                const b2 = Math.max(2, Math.floor(size / 8));
+                ctx.fillRect(b2, b2, size - b2*2, size - b2*2);
+                
+                ctx.fillStyle = "#bfa07a"; // Center
+                const b3 = Math.max(3, Math.floor(size * 3 / 16));
+                ctx.fillRect(b3, b3, size - b3*2, size - b3*2);
+            }
+        }
+
+        function generateTextures() {
+            const size = parseInt(document.getElementById('resolution').value);
+            const textColor = document.getElementById('textColor').value;
+            const fontFamily = document.getElementById('fontFamily').value || 'sans-serif';
+            const fontSizeOffset = parseFloat(document.getElementById('fontSizeOffset').value) || 0;
+            const offsetX = parseFloat(document.getElementById('offsetX').value) || 0;
+            const offsetY = parseFloat(document.getElementById('offsetY').value) || 0;
+            
+            const previewContainer = document.getElementById('previewContainer');
+            
+            document.getElementById('previewTitle').innerText = `Preview (${thaiAlphabets.length} Textures)`;
+            previewContainer.innerHTML = '';
+            generatedImages = [];
+
+            // Base font size calculations
+            const baseFontSize = size * 0.5 + fontSizeOffset;
+
+            thaiAlphabets.forEach(alphabet => {
+                const canvas = document.createElement('canvas');
+                canvas.width = size;
+                canvas.height = size;
+                const ctx = canvas.getContext('2d');
+                
+                // Disable smoothing to keep it pixelated
+                ctx.imageSmoothingEnabled = false;
+
+                // 1. Draw Background
+                drawBase(ctx, size);
+
+                // 2. Draw Text
+                ctx.fillStyle = textColor;
+                ctx.font = `bold ${baseFontSize}px ${fontFamily}`;
+                ctx.textAlign = "center";
+                ctx.textBaseline = "middle";
+                
+                // Add slight shadow for readability
+                ctx.shadowColor = "rgba(0,0,0,0.4)";
+                ctx.shadowBlur = 0;
+                ctx.shadowOffsetX = 1;
+                ctx.shadowOffsetY = 1;
+                
+                let finalX = (size / 2) + offsetX;
+                let finalY = (size / 2) + offsetY;
+                
+                // Adjust position for combining characters (they naturally shift left/up/down)
+                if (alphabet.xOffsetRatio) {
+                    finalX += size * alphabet.xOffsetRatio;
+                }
+                if (alphabet.yOffsetRatio) {
+                    finalY += size * alphabet.yOffsetRatio;
+                }
+                
+                ctx.fillText(alphabet.char, finalX, finalY);
+
+                // Create preview element
+                const wrapper = document.createElement('div');
+                wrapper.className = "flex flex-col items-center gap-1 group";
+                
+                const img = document.createElement('img');
+                img.src = canvas.toDataURL("image/png");
+                img.className = "w-full aspect-square pixelated rounded shadow-md border border-gray-600 bg-gray-900 group-hover:border-blue-500 transition-colors cursor-pointer";
+                img.title = `block_${alphabet.name}.png`;
+                
+                const label = document.createElement('span');
+                label.className = "text-[10px] text-gray-400 group-hover:text-blue-400 truncate w-full text-center";
+                label.innerText = alphabet.char;
+
+                wrapper.appendChild(img);
+                wrapper.appendChild(label);
+                previewContainer.appendChild(wrapper);
+
+                // Save for ZIP
+                generatedImages.push({
+                    name: `block_${alphabet.name}.png`,
+                    data: img.src.split(',')[1]
+                });
+            });
+
+            document.getElementById('downloadBtn').classList.remove('hidden');
+        }
+
+        function downloadZip() {
+            const btn = document.getElementById('downloadBtn');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = `<svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg> Generating...`;
+            
+            const zip = new JSZip();
+            const folder = zip.folder("thai_alphabet_textures");
+            
+            generatedImages.forEach(img => {
+                folder.file(img.name, img.data, {base64: true});
+            });
+
+            zip.generateAsync({type:"blob"}).then(function(content) {
+                const link = document.createElement('a');
+                link.href = URL.createObjectURL(content);
+                link.download = "thai_alphabet_textures.zip";
+                link.click();
+                
+                setTimeout(() => { btn.innerHTML = originalText; }, 1000);
+            });
+        }
+        
+        // Initial generation
+        window.onload = generateTextures;
+    </script>
+</body>
+</html>

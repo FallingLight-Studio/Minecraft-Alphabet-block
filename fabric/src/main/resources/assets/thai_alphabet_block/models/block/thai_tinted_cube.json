@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:block/block",
+  "textures": {
+    "particle": "#background"
+  },
+  "elements": [
+    {
+      "comment": "Background layer – tintindex 0 (dye color)",
+      "from": [0, 0, 0],
+      "to": [16, 16, 16],
+      "faces": {
+        "down":  {"texture": "#background", "tintindex": 0, "cullface": "down"},
+        "up":    {"texture": "#background", "tintindex": 0, "cullface": "up"},
+        "north": {"texture": "#background", "tintindex": 0, "cullface": "north"},
+        "south": {"texture": "#background", "tintindex": 0, "cullface": "south"},
+        "west":  {"texture": "#background", "tintindex": 0, "cullface": "west"},
+        "east":  {"texture": "#background", "tintindex": 0, "cullface": "east"}
+      }
+    },
+    {
+      "comment": "Glyph overlay – tintindex 1 (contrasting color)",
+      "from": [-0.01, -0.01, -0.01],
+      "to": [16.01, 16.01, 16.01],
+      "faces": {
+        "down":  {"texture": "#glyph", "tintindex": 1, "cullface": "down"},
+        "up":    {"texture": "#glyph", "tintindex": 1, "cullface": "up"},
+        "north": {"texture": "#glyph", "tintindex": 1, "cullface": "north"},
+        "south": {"texture": "#glyph", "tintindex": 1, "cullface": "south"},
+        "west":  {"texture": "#glyph", "tintindex": 1, "cullface": "west"},
+        "east":  {"texture": "#glyph", "tintindex": 1, "cullface": "east"}
+      }
+    }
+  ]
+}

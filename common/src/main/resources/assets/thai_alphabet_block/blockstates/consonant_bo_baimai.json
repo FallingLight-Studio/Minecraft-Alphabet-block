@@ -1,0 +1,52 @@
+{
+  "variants": {
+    "color=white": {
+      "model": "thai_alphabet_block:block/consonant_bo_baimai"
+    },
+    "color=orange": {
+      "model": "thai_alphabet_block:block/consonant_bo_baimai"
+    },
+    "color=magenta": {
+      "model": "thai_alphabet_block:block/consonant_bo_baimai"
+    },
+    "color=light_blue": {
+      "model": "thai_alphabet_block:block/consonant_bo_baimai"
+    },
+    "color=yellow": {
+      "model": "thai_alphabet_block:block/consonant_bo_baimai"
+    },
+    "color=lime": {
+      "model": "thai_alphabet_block:block/consonant_bo_baimai"
+    },
+    "color=pink": {
+      "model": "thai_alphabet_block:block/consonant_bo_baimai"
+    },
+    "color=gray": {
+      "model": "thai_alphabet_block:block/consonant_bo_baimai"
+    },
+    "color=light_gray": {
+      "model": "thai_alphabet_block:block/consonant_bo_baimai"
+    },
+    "color=cyan": {
+      "model": "thai_alphabet_block:block/consonant_bo_baimai"
+    },
+    "color=purple": {
+      "model": "thai_alphabet_block:block/consonant_bo_baimai"
+    },
+    "color=blue": {
+      "model": "thai_alphabet_block:block/consonant_bo_baimai"
+    },
+    "color=brown": {
+      "model": "thai_alphabet_block:block/consonant_bo_baimai"
+    },
+    "color=green": {
+      "model": "thai_alphabet_block:block/consonant_bo_baimai"
+    },
+    "color=red": {
+      "model": "thai_alphabet_block:block/consonant_bo_baimai"
+    },
+    "color=black": {
+      "model": "thai_alphabet_block:block/consonant_bo_baimai"
+    }
+  }
+}
