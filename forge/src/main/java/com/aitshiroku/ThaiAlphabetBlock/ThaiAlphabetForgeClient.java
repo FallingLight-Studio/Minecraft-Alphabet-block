@@ -11,11 +11,24 @@ import net.minecraftforge.client.event.RegisterColorHandlersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.RegistryObject;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
 @Mod.EventBusSubscriber(modid = ThaiAlphabetCommon.MOD_ID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.MOD)
 public final class ThaiAlphabetForgeClient {
 
     private ThaiAlphabetForgeClient() {
+    }
+
+    @SuppressWarnings("removal")
+    @SubscribeEvent
+    public static void onClientSetup(FMLClientSetupEvent event) {
+        event.enqueueWork(() -> {
+            for (RegistryObject<Block> ro : ThaiAlphabetBlock.BLOCKS.getEntries()) {
+                ItemBlockRenderTypes.setRenderLayer(ro.get(), RenderType.cutout());
+            }
+        });
     }
 
     @SubscribeEvent

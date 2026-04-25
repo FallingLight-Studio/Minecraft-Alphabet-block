@@ -6,8 +6,6 @@
 
 A Minecraft mod that adds beautiful Thai alphabet blocks to the game! Perfect for building signs, decorating schools, or creating Thai-themed maps. This mod is built for **both Forge and Fabric** on Minecraft 1.20.1.
 
-[🇹🇭 อ่านภาษาไทย (Read in Thai)](#-ภาษาไทย)
-
 ---
 
 ## ✨ Features
@@ -19,6 +17,7 @@ A Minecraft mod that adds beautiful Thai alphabet blocks to the game! Perfect fo
 - **Multi-Loader Support**: Works seamlessly on both Fabric and Forge (1.20.1).
 
 ## 🎨 How to Dye Blocks
+
 1. Place any Thai Alphabet Block.
 2. Hold any of the 16 Minecraft Dyes in your hand.
 3. **Right-Click** the block! The background will instantly change to the dye's color.
@@ -26,7 +25,7 @@ A Minecraft mod that adds beautiful Thai alphabet blocks to the game! Perfect fo
 ## 📥 Installation
 
 1. Make sure you have installed [Fabric Loader](https://fabricmc.net/) or [Minecraft Forge](https://files.minecraftforge.net/) for `1.20.1`.
-2. *(For Fabric)* Install the [Fabric API](https://modrinth.com/mod/fabric-api).
+2. _(For Fabric)_ Install the [Fabric API](https://modrinth.com/mod/fabric-api).
 3. Download the mod `.jar` file from Modrinth or the GitHub Releases page.
 4. Place the `.jar` file in your `.minecraft/mods` folder.
 5. Launch the game and enjoy!
@@ -46,6 +45,7 @@ A Minecraft mod that adds beautiful Thai alphabet blocks to the game! Perfect fo
 - **รองรับ Multi-Loader**: สามารถเล่นได้ทั้งบน Fabric และ Forge (1.20.1)
 
 ## 🎨 วิธีย้อมสีบล็อก
+
 1. วางบล็อกตัวอักษรไทยที่ต้องการ
 2. ถือสีย้อม (Dye) สีใดก็ได้ในเกมไว้ในมือ
 3. **คลิกขวา** ที่ตัวบล็อก! สีพื้นหลังของบล็อกจะเปลี่ยนเป็นสีนั้นทันที
@@ -53,7 +53,7 @@ A Minecraft mod that adds beautiful Thai alphabet blocks to the game! Perfect fo
 ## 📥 วิธีติดตั้ง
 
 1. ติดตั้ง [Fabric Loader](https://fabricmc.net/) หรือ [Minecraft Forge](https://files.minecraftforge.net/) สำหรับเวอร์ชัน `1.20.1`
-2. *(สำหรับสาย Fabric)* ต้องลงม็อด [Fabric API](https://modrinth.com/mod/fabric-api) ด้วย
+2. _(สำหรับสาย Fabric)_ ต้องลงม็อด [Fabric API](https://modrinth.com/mod/fabric-api) ด้วย
 3. ดาวน์โหลดไฟล์ `.jar` ของม็อดจาก Modrinth หรือ GitHub Releases
 4. นำไฟล์ `.jar` ไปใส่ในโฟลเดอร์ `mods` ของเกม
 5. เข้าเกมแล้วสนุกได้เลย!
@@ -61,4 +61,5 @@ A Minecraft mod that adds beautiful Thai alphabet blocks to the game! Perfect fo
 ---
 
 ### 📝 License
+
 This project is licensed under the Apache 2.0 License.

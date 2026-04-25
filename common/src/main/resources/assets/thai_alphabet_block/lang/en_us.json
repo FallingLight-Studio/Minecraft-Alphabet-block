@@ -1,10 +1,4 @@
 {
-  "block.thai_alphabet_block.composite_sara_i_mai_ek": "ิ่ (Sara I + Mai Ek)",
-  "block.thai_alphabet_block.composite_sara_ii_mai_chattawa": "ี๋ (Sara Ii + Mai Chattawa)",
-  "block.thai_alphabet_block.composite_sara_ii_mai_ek": "ี่ (Sara Ii + Mai Ek)",
-  "block.thai_alphabet_block.composite_sara_ii_mai_tho": "ี้ (Sara Ii + Mai Tho)",
-  "block.thai_alphabet_block.composite_sara_ii_mai_tri": "ี๊ (Sara Ii + Mai Tri)",
-  "block.thai_alphabet_block.composite_sara_ue_short_mai_ek": "ั่ (Mai Hanakat + Mai Ek)",
   "block.thai_alphabet_block.consonant_bo_baimai": "บ (Bo Baimai)",
   "block.thai_alphabet_block.consonant_cho_chan": "จ (Cho Chan)",
   "block.thai_alphabet_block.consonant_cho_chang": "ช (Cho Chang)",
@@ -49,6 +43,7 @@
   "block.thai_alphabet_block.consonant_wo_waen": "ว (Wo Waen)",
   "block.thai_alphabet_block.consonant_yo_yak": "ย (Yo Yak)",
   "block.thai_alphabet_block.consonant_yo_ying": "ญ (Yo Ying)",
+  "block.thai_alphabet_block.empty_block": "Empty Block",
   "block.thai_alphabet_block.tone_mai_chattawa": "๋ (Mai Chattawa)",
   "block.thai_alphabet_block.tone_mai_ek": "่ (Mai Ek)",
   "block.thai_alphabet_block.tone_mai_tho": "้ (Mai Tho)",
