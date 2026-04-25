@@ -336,22 +336,9 @@ public final class ThaiAlphabetDefinitions {
             CharacterType.VOWEL
         ),
         new CharacterDef(
-            "vowel_lakkhangyao",
-            "ๅ",
-            "Lakkhangyao",
-            CharacterType.VOWEL
-        ),
-        new CharacterDef(
             "vowel_sara_ue_short",
             "ั",
             "Mai Hanakat",
-            CharacterType.VOWEL
-        ),
-        new CharacterDef("vowel_phinthu", "ฺ", "Phinthu", CharacterType.VOWEL),
-        new CharacterDef(
-            "vowel_nikhahit",
-            "ํ",
-            "Nikhahit",
             CharacterType.VOWEL
         ),
         new CharacterDef(
@@ -377,8 +364,7 @@ public final class ThaiAlphabetDefinitions {
             "์",
             "Thanthakhat",
             CharacterType.TONE
-        ),
-        new CharacterDef("tone_yamakkan", "๎", "Yamakkan", CharacterType.TONE)
+        )
     );
 
     private ThaiAlphabetDefinitions() {}

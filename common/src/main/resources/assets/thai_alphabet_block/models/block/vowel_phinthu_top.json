@@ -1,8 +1,0 @@
-{
-  "parent": "thai_alphabet_block:block/tinted_slab_top",
-  "textures": {
-    "bottom": "thai_alphabet_block:block/vowel_placeholder",
-    "top": "thai_alphabet_block:block/vowel_placeholder",
-    "side": "thai_alphabet_block:block/vowel_placeholder"
-  }
-}

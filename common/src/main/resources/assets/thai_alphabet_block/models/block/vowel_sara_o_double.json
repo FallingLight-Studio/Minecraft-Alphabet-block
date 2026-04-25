@@ -1,8 +1,7 @@
 {
-  "parent": "thai_alphabet_block:block/tinted_slab_double",
+  "parent": "thai_alphabet_block:block/thai_tinted_cube",
   "textures": {
-    "bottom": "thai_alphabet_block:block/vowel_placeholder",
-    "top": "thai_alphabet_block:block/vowel_placeholder",
-    "side": "thai_alphabet_block:block/vowel_placeholder"
+    "background": "thai_alphabet_block:block/white_base",
+    "glyph": "thai_alphabet_block:block/vowel_sara_o"
   }
 }
