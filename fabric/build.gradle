@@ -53,6 +53,9 @@ dependencies {
 }
 
 processResources {
+    from project(":common").sourceSets.main.resources
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+
     var replaceProperties = [
             minecraft_version: minecraft_version,
             minecraft_version_range: minecraft_version_range,
@@ -86,6 +89,9 @@ java {
 }
 
 jar {
+    from project(":common").sourceSets.main.output
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+
     from("LICENSE") {
         rename { "${it}_${mod_id}"}
     }

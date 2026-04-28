@@ -6,6 +6,8 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
+import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.minecraft.client.renderer.RenderType;
 
 public final class ThaiAlphabetFabricClient implements ClientModInitializer {
 
@@ -15,6 +17,7 @@ public final class ThaiAlphabetFabricClient implements ClientModInitializer {
             if (!(block instanceof ThaiLetterBlock) && !(block instanceof ThaiLetterSlabBlock)) {
                 continue;
             }
+            BlockRenderLayerMap.INSTANCE.putBlock(block, RenderType.cutout());
             ColorProviderRegistry.BLOCK.register(
                     (state, world, pos, tintIndex) -> {
                         if (tintIndex != 0 && tintIndex != 1) {
