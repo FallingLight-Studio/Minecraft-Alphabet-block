@@ -1,10 +1,14 @@
-package com.aitshiroku.thai_alphabet_block;
+package com.aitshiroku.ThaiAlphabetBlock;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+
+import com.aitshiroku.thai_alphabet_block.ThaiAlphabetCommon;
+import com.aitshiroku.thai_alphabet_block.ThaiAlphabetDefinitions;
+
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.core.Registry;

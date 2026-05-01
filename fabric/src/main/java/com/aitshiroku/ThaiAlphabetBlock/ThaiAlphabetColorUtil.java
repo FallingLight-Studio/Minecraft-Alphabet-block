@@ -1,4 +1,4 @@
-package com.aitshiroku.thai_alphabet_block;
+package com.aitshiroku.ThaiAlphabetBlock;
 
 import net.minecraft.world.item.DyeColor;
 

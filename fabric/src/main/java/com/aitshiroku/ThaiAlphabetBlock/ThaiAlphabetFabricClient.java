@@ -1,4 +1,4 @@
-package com.aitshiroku.thai_alphabet_block;
+package com.aitshiroku.ThaiAlphabetBlock;
 
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;

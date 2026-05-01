@@ -1,4 +1,4 @@
-package com.aitshiroku.thai_alphabet_block.neoforge;
+package com.aitshiroku.ThaiAlphabetBlock.neoforge;
 
 import com.aitshiroku.thai_alphabet_block.ThaiAlphabetCommon;
 
