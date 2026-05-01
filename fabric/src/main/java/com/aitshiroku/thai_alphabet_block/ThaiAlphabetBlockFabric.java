@@ -32,10 +32,12 @@ public final class ThaiAlphabetBlockFabric implements ModInitializer {
     public void onInitialize() {
         // Register all blocks and items
         for (ThaiAlphabetDefinitions.CharacterDef def : ThaiAlphabetDefinitions.all()) {
-            ResourceLocation id = new ResourceLocation(
+            // In 1.21.1, ResourceLocation constructor is private; use factory method
+            ResourceLocation id = ResourceLocation.fromNamespaceAndPath(
                 ThaiAlphabetCommon.MOD_ID,
                 def.id()
             );
+
             Block block =
                 def.shape() == ThaiAlphabetDefinitions.LetterBlockShape.FULL
                     ? new ThaiLetterBlock(
@@ -59,7 +61,7 @@ public final class ThaiAlphabetBlockFabric implements ModInitializer {
         // Create tab ResourceKey
         ResourceKey<CreativeModeTab> tabKey = ResourceKey.create(
             Registries.CREATIVE_MODE_TAB,
-            new ResourceLocation(ThaiAlphabetCommon.MOD_ID, "thai_alphabet_tab")
+            ResourceLocation.fromNamespaceAndPath(ThaiAlphabetCommon.MOD_ID, "thai_alphabet_tab")
         );
 
         // Register custom creative tab

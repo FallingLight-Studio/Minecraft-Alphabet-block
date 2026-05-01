@@ -1,4 +1,4 @@
-package com.aitshiroku.thai_alphabet_block;
+package com.aitshiroku.thai_alphabet_block.neoforge;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;

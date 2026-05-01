@@ -1,35 +1,28 @@
 package com.aitshiroku.ThaiAlphabetBlock;
 
-import java.util.Optional;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.component.BlockItemStateProperties;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.properties.Property;
 
 public final class ThaiAlphabetBlockStateUtil {
 
     private ThaiAlphabetBlockStateUtil() {
     }
 
-    @SuppressWarnings({ "unchecked", "rawtypes" })
+    /**
+     * Extracts a BlockState from an ItemStack using the new 1.21.1 Data Component system.
+     * In 1.21+, BlockStateTag NBT was replaced by DataComponents.BLOCK_STATE component.
+     */
     public static BlockState stateFromItemStack(ItemStack stack, Block block) {
         BlockState state = block.defaultBlockState();
-        CompoundTag root = stack.getTag();
-        if (root == null || !root.contains("BlockStateTag", 10)) {
+        // In 1.21.1, use the BLOCK_STATE data component instead of NBT BlockStateTag
+        BlockItemStateProperties stateProps = stack.get(
+                net.minecraft.core.component.DataComponents.BLOCK_STATE);
+        if (stateProps == null) {
             return state;
         }
-        CompoundTag stateTag = root.getCompound("BlockStateTag");
-        for (Property property : state.getProperties()) {
-            if (!stateTag.contains(property.getName())) {
-                continue;
-            }
-            String value = stateTag.getString(property.getName());
-            Optional optional = property.getValue(value);
-            if (optional.isPresent()) {
-                state = state.setValue(property, (Comparable) optional.get());
-            }
-        }
-        return state;
+        // Apply all properties from the component
+        return stateProps.apply(state);
     }
 }

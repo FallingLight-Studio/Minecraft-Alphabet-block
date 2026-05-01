@@ -1,0 +1,52 @@
+{
+  "variants": {
+    "color=white": {
+      "model": "thai_alphabet_block:block/empty_block"
+    },
+    "color=orange": {
+      "model": "thai_alphabet_block:block/empty_block"
+    },
+    "color=magenta": {
+      "model": "thai_alphabet_block:block/empty_block"
+    },
+    "color=light_blue": {
+      "model": "thai_alphabet_block:block/empty_block"
+    },
+    "color=yellow": {
+      "model": "thai_alphabet_block:block/empty_block"
+    },
+    "color=lime": {
+      "model": "thai_alphabet_block:block/empty_block"
+    },
+    "color=pink": {
+      "model": "thai_alphabet_block:block/empty_block"
+    },
+    "color=gray": {
+      "model": "thai_alphabet_block:block/empty_block"
+    },
+    "color=light_gray": {
+      "model": "thai_alphabet_block:block/empty_block"
+    },
+    "color=cyan": {
+      "model": "thai_alphabet_block:block/empty_block"
+    },
+    "color=purple": {
+      "model": "thai_alphabet_block:block/empty_block"
+    },
+    "color=blue": {
+      "model": "thai_alphabet_block:block/empty_block"
+    },
+    "color=brown": {
+      "model": "thai_alphabet_block:block/empty_block"
+    },
+    "color=green": {
+      "model": "thai_alphabet_block:block/empty_block"
+    },
+    "color=red": {
+      "model": "thai_alphabet_block:block/empty_block"
+    },
+    "color=black": {
+      "model": "thai_alphabet_block:block/empty_block"
+    }
+  }
+}

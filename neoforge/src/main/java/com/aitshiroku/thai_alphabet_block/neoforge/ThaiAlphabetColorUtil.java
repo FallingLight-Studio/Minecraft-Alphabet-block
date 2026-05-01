@@ -1,10 +1,11 @@
-package com.aitshiroku.thai_alphabet_block;
+package com.aitshiroku.thai_alphabet_block.neoforge;
 
 import net.minecraft.world.item.DyeColor;
 
 public final class ThaiAlphabetColorUtil {
 
-    private ThaiAlphabetColorUtil() {}
+    private ThaiAlphabetColorUtil() {
+    }
 
     /**
      * Background layer (tintindex 0): the grayscale base texture is multiplied
@@ -25,10 +26,16 @@ public final class ThaiAlphabetColorUtil {
         return packed & 0x00FFFFFF;
     }
 
+    /**
+     * Glyph layer (tintindex 1): always pass-through (white multiplier).
+     * The glyph textures are pre-colored dark brown and should stay unchanged
+     * regardless of the selected dye.
+     */
     public static int glyphArgbFromDye(DyeColor dye) {
         return 0xFFFFFF;
     }
 
+    /** @deprecated use {@link #backgroundArgbFromDye(DyeColor)} */
     @Deprecated
     public static int argbFromDye(DyeColor dye) {
         return backgroundArgbFromDye(dye);

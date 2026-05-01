@@ -35,4 +35,4 @@ rootProject.name = 'thai-alphabet-block'
 include 'common'
 include 'forge'
 include 'fabric'
-// include 'neoforge' // TODO: Add NeoForge support later
+include 'neoforge'

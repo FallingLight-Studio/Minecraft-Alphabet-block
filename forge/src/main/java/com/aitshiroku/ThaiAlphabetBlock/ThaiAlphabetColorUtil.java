@@ -20,11 +20,10 @@ public final class ThaiAlphabetColorUtil {
             // so an un-dyed block looks warm and natural.
             return 0xD3B187;  // (211, 177, 135)
         }
-        float[] c = dye.getTextureDiffuseColors();
-        int r = (int) (c[0] * 255.0F) & 255;
-        int g = (int) (c[1] * 255.0F) & 255;
-        int b = (int) (c[2] * 255.0F) & 255;
-        return (r << 16) | (g << 8) | b;
+        // In 1.21.1, getTextureDiffuseColor() returns a packed int (ARGB)
+        int packed = dye.getTextureDiffuseColor();
+        // Strip alpha channel, keep only RGB
+        return packed & 0x00FFFFFF;
     }
 
     /**
