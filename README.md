@@ -1,10 +1,11 @@
 # 🇹🇭 Thai Alphabet Block
 
-[![Minecraft 1.20.1](https://img.shields.io/badge/Minecraft-1.20.1-brightgreen.svg)](#)
-[![Fabric](https://img.shields.io/badge/Fabric-Supported-orange.svg)](#)
-[![Forge](https://img.shields.io/badge/Forge-Supported-red.svg)](#)
+[![Minecraft 1.20.1](https://img.shields.io/badge/Minecraft-1.21.1-brightgreen.svg)](#)
+[![Fabric](https://img.shields.io/badge/Fabric-Supported-green.svg)](#)
+[![Forge](https://img.shields.io/badge/Forge-Supported-green.svg)](#)
+[![NeoForge](https://img.shields.io/badge/NeoForge-Supported-green.svg)](#)
 
-A Minecraft mod that adds beautiful Thai alphabet blocks to the game! Perfect for building signs, decorating schools, or creating Thai-themed maps. This mod is built for **both Forge and Fabric** on Minecraft 1.20.1.
+A Minecraft mod that adds beautiful Thai alphabet blocks to the game! Perfect for building signs, decorating schools, guess word content or creating Thai-themed maps. This mod is built for **both Forge and Fabric** on Minecraft 1.20.1.
 
 ---
 
