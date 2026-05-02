@@ -1,6 +1,5 @@
 plugins {
     id 'java-library'
-    id 'eclipse'
     id 'idea'
     id 'maven-publish'
     id 'net.neoforged.moddev' version '2.0.80'
@@ -61,6 +60,7 @@ neoForge {
 
 sourceSets.main.resources {
     srcDir 'src/generated/resources'
+    srcDir rootProject.project(':common').file('src/main/resources')
 }
 
 repositories {
@@ -69,6 +69,10 @@ repositories {
 dependencies {
     implementation project(':common')
     additionalRuntimeClasspath project(':common')
+}
+
+tasks.named('processResources', ProcessResources).configure {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }
 
 // Process templates for neoforge.mods.toml

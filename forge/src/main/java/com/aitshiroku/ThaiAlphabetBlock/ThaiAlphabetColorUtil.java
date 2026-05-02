@@ -18,12 +18,12 @@ public final class ThaiAlphabetColorUtil {
         if (dye == DyeColor.WHITE) {
             // Original wood tone: matches the texture_generator.html palette
             // so an un-dyed block looks warm and natural.
-            return 0xD3B187;  // (211, 177, 135)
+            return 0xFFD3B187;  // (211, 177, 135)
         }
         // In 1.21.1, getTextureDiffuseColor() returns a packed int (ARGB)
         int packed = dye.getTextureDiffuseColor();
         // Strip alpha channel, keep only RGB
-        return packed & 0x00FFFFFF;
+        return 0xFF000000 | (packed & 0x00FFFFFF);
     }
 
     /**
@@ -32,7 +32,7 @@ public final class ThaiAlphabetColorUtil {
      * regardless of the selected dye.
      */
     public static int glyphArgbFromDye(DyeColor dye) {
-        return 0xFFFFFF;
+        return 0xFFFFFFFF;
     }
 
     /** @deprecated use {@link #backgroundArgbFromDye(DyeColor)} */

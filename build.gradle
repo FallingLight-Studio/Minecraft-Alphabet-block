@@ -9,6 +9,44 @@ buildscript {
 
 plugins {
     id 'java'
+    id 'idea'
+}
+
+idea {
+    module {
+        downloadSources = true
+        downloadJavadoc = true
+    }
+}
+
+tasks.register('buildMod') {
+    group = 'minecraft'
+    description = 'Build common plus Fabric, Forge, and NeoForge jars'
+    dependsOn ':common:build', ':fabric:build', ':forge:build', ':neoforge:build'
+}
+
+tasks.register('testMod') {
+    group = 'minecraft'
+    description = 'Run unit tests for all modules'
+    dependsOn ':common:test', ':fabric:test', ':forge:test', ':neoforge:test'
+}
+
+tasks.register('runFabricClient') {
+    group = 'minecraft'
+    description = 'Run the Fabric development client'
+    dependsOn ':fabric:runClient'
+}
+
+tasks.register('runForgeClient') {
+    group = 'minecraft'
+    description = 'Run the Forge development client'
+    dependsOn ':forge:runClient'
+}
+
+tasks.register('runNeoForgeClient') {
+    group = 'minecraft'
+    description = 'Run the NeoForge development client'
+    dependsOn ':neoforge:runClient'
 }
 
 allprojects {

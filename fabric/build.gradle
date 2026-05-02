@@ -9,6 +9,7 @@ buildscript {
 
 plugins {
     id 'fabric-loom' version "${loom_version}"
+    id 'idea'
     id 'maven-publish'
 }
 
@@ -22,10 +23,18 @@ base {
 loom {
 
     runs {
-        // This adds a new gradle task that runs the datagen API: "gradlew runDatagen"
+        client {
+            client()
+            configName = 'Fabric Client'
+        }
+        server {
+            server()
+            configName = 'Fabric Dedicated Server'
+        }
+        // Gradle task: runDatagen
         datagen {
             inherit server
-            name "Minecraft Data Gen"
+            configName = 'Fabric Data Generation'
             vmArg "-Dfabric-api.datagen"
             vmArg "-Dfabric-api.datagen.output-dir=${file("src/generated/resources")}"
             vmArg "-Dfabric-api.datagen.modid=${mod_id}"
@@ -33,6 +42,10 @@ loom {
 
             runDir "build/datagen"
         }
+    }
+
+    runConfigs.configureEach {
+        ideConfigGenerated = true
     }
 }
 
@@ -86,6 +99,13 @@ tasks.withType(AbstractCompile).configureEach {
 
 java {
     withSourcesJar()
+}
+
+idea {
+    module {
+        downloadSources = true
+        downloadJavadoc = true
+    }
 }
 
 jar {
