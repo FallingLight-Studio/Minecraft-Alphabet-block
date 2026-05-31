@@ -28,12 +28,14 @@ public final class ThaiAlphabetFabricClient implements ClientModInitializer {
                             DyeColor dye = state.hasProperty(ThaiLetterBlock.COLOR)
                                     ? state.getValue(ThaiLetterBlock.COLOR)
                                     : DyeColor.WHITE;
-                            return ThaiAlphabetColorUtil.backgroundArgbFromDye(dye);
+                            boolean dyed = state.hasProperty(ThaiAlphabetColorProperties.COLOR_DYED) && state.getValue(ThaiAlphabetColorProperties.COLOR_DYED);
+                            return ThaiAlphabetColorUtil.backgroundArgbFromDye(dye, dyed);
                         } else {
                             DyeColor glyphDye = state.hasProperty(ThaiLetterBlock.GLYPH_COLOR)
                                     ? state.getValue(ThaiLetterBlock.GLYPH_COLOR)
                                     : DyeColor.WHITE;
-                            return ThaiAlphabetColorUtil.glyphArgbFromDye(glyphDye);
+                            boolean dyed = state.hasProperty(ThaiAlphabetColorProperties.GLYPH_DYED) && state.getValue(ThaiAlphabetColorProperties.GLYPH_DYED);
+                            return ThaiAlphabetColorUtil.glyphArgbFromDye(glyphDye, dyed);
                         }
                     },
                     block);
@@ -45,20 +47,22 @@ public final class ThaiAlphabetFabricClient implements ClientModInitializer {
                         if (!(stack.getItem() instanceof BlockItem bi) || bi.getBlock() != block) {
                             DyeColor white = DyeColor.WHITE;
                             return tintIndex == 0
-                                    ? ThaiAlphabetColorUtil.backgroundArgbFromDye(white)
-                                    : ThaiAlphabetColorUtil.glyphArgbFromDye(white);
+                                    ? ThaiAlphabetColorUtil.backgroundArgbFromDye(white, false)
+                                    : ThaiAlphabetColorUtil.glyphArgbFromDye(white, false);
                         }
                         BlockState state = ThaiAlphabetBlockStateUtil.stateFromItemStack(stack, block);
                         if (tintIndex == 0) {
                             DyeColor dye = state.hasProperty(ThaiLetterBlock.COLOR)
                                     ? state.getValue(ThaiLetterBlock.COLOR)
                                     : DyeColor.WHITE;
-                            return ThaiAlphabetColorUtil.backgroundArgbFromDye(dye);
+                            boolean dyed = state.hasProperty(ThaiAlphabetColorProperties.COLOR_DYED) && state.getValue(ThaiAlphabetColorProperties.COLOR_DYED);
+                            return ThaiAlphabetColorUtil.backgroundArgbFromDye(dye, dyed);
                         } else {
                             DyeColor glyphDye = state.hasProperty(ThaiLetterBlock.GLYPH_COLOR)
                                     ? state.getValue(ThaiLetterBlock.GLYPH_COLOR)
                                     : DyeColor.WHITE;
-                            return ThaiAlphabetColorUtil.glyphArgbFromDye(glyphDye);
+                            boolean dyed = state.hasProperty(ThaiAlphabetColorProperties.GLYPH_DYED) && state.getValue(ThaiAlphabetColorProperties.GLYPH_DYED);
+                            return ThaiAlphabetColorUtil.glyphArgbFromDye(glyphDye, dyed);
                         }
                     },
                     block.asItem());

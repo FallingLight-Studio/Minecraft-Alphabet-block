@@ -49,7 +49,7 @@ public final class ThaiAlphabetGlyphDyeHandler {
         DyeColor newColor = dyeItem.getDyeColor();
 
         // Same color already applied — consume the interaction but do nothing
-        if (state.getValue(ThaiAlphabetColorProperties.GLYPH_COLOR) == newColor) {
+        if (state.getValue(ThaiAlphabetColorProperties.GLYPH_DYED) && state.getValue(ThaiAlphabetColorProperties.GLYPH_COLOR) == newColor) {
             event.setCanceled(true);
             event.setCancellationResult(InteractionResult.CONSUME);
             return;
@@ -57,7 +57,7 @@ public final class ThaiAlphabetGlyphDyeHandler {
 
         // Apply glyph color change on the server side
         if (!level.isClientSide) {
-            level.setBlock(pos, state.setValue(ThaiAlphabetColorProperties.GLYPH_COLOR, newColor), 3);
+            level.setBlock(pos, state.setValue(ThaiAlphabetColorProperties.GLYPH_COLOR, newColor).setValue(ThaiAlphabetColorProperties.GLYPH_DYED, Boolean.TRUE), 3);
             if (!player.getAbilities().instabuild) {
                 stack.shrink(1);
             }

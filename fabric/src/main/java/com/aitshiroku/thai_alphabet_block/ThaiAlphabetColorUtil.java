@@ -7,7 +7,11 @@ public final class ThaiAlphabetColorUtil {
     private ThaiAlphabetColorUtil() {}
 
     public static int backgroundArgbFromDye(DyeColor dye) {
-        if (dye == DyeColor.WHITE) {
+        return backgroundArgbFromDye(dye, false);
+    }
+
+    public static int backgroundArgbFromDye(DyeColor dye, boolean dyed) {
+        if (!dyed && dye == DyeColor.WHITE) {
             return 0xD3B187;
         }
         float[] c = dye.getTextureDiffuseColors();
@@ -18,7 +22,11 @@ public final class ThaiAlphabetColorUtil {
     }
 
     public static int glyphArgbFromDye(DyeColor dye) {
-        if (dye == DyeColor.WHITE) {
+        return glyphArgbFromDye(dye, false);
+    }
+
+    public static int glyphArgbFromDye(DyeColor dye, boolean dyed) {
+        if (!dyed && dye == DyeColor.WHITE) {
             return 0x2D1A11;
         }
         float[] c = dye.getTextureDiffuseColors();
@@ -30,6 +38,6 @@ public final class ThaiAlphabetColorUtil {
 
     @Deprecated
     public static int argbFromDye(DyeColor dye) {
-        return backgroundArgbFromDye(dye);
+        return backgroundArgbFromDye(dye, false);
     }
 }

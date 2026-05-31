@@ -14,6 +14,7 @@ import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.properties.SlabType;
 import net.minecraft.world.phys.BlockHitResult;
@@ -22,6 +23,8 @@ public class ThaiLetterSlabBlock extends SlabBlock {
 
     public static final EnumProperty<DyeColor> COLOR = ThaiAlphabetColorProperties.COLOR;
     public static final EnumProperty<DyeColor> GLYPH_COLOR = ThaiAlphabetColorProperties.GLYPH_COLOR;
+    public static final BooleanProperty COLOR_DYED = ThaiAlphabetColorProperties.COLOR_DYED;
+    public static final BooleanProperty GLYPH_DYED = ThaiAlphabetColorProperties.GLYPH_DYED;
 
     public ThaiLetterSlabBlock(Properties properties) {
         super(properties);
@@ -30,13 +33,15 @@ public class ThaiLetterSlabBlock extends SlabBlock {
                         .setValue(TYPE, SlabType.BOTTOM)
                         .setValue(WATERLOGGED, Boolean.FALSE)
                         .setValue(COLOR, DyeColor.WHITE)
-                        .setValue(GLYPH_COLOR, DyeColor.WHITE));
+                        .setValue(GLYPH_COLOR, DyeColor.WHITE)
+                        .setValue(COLOR_DYED, Boolean.FALSE)
+                        .setValue(GLYPH_DYED, Boolean.FALSE));
     }
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         super.createBlockStateDefinition(builder);
-        builder.add(COLOR, GLYPH_COLOR);
+        builder.add(COLOR, GLYPH_COLOR, COLOR_DYED, GLYPH_DYED);
     }
 
     @Override
@@ -50,11 +55,11 @@ public class ThaiLetterSlabBlock extends SlabBlock {
         ItemStack stack = player.getItemInHand(hand);
         if (stack.getItem() instanceof DyeItem dyeItem) {
             DyeColor newColor = dyeItem.getDyeColor();
-            if (state.getValue(COLOR) == newColor) {
+            if (state.getValue(COLOR_DYED) && state.getValue(COLOR) == newColor) {
                 return InteractionResult.CONSUME;
             }
             if (!level.isClientSide) {
-                level.setBlock(pos, state.setValue(COLOR, newColor), 3);
+                level.setBlock(pos, state.setValue(COLOR, newColor).setValue(COLOR_DYED, Boolean.TRUE), 3);
                 if (!player.getAbilities().instabuild) {
                     stack.shrink(1);
                 }

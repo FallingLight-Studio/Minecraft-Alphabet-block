@@ -117,12 +117,12 @@ public final class ThaiAlphabetBlockFabric implements ModInitializer {
 
             DyeColor newColor = dyeItem.getDyeColor();
 
-            if (state.getValue(ThaiAlphabetColorProperties.GLYPH_COLOR) == newColor) {
+            if (state.getValue(ThaiAlphabetColorProperties.GLYPH_DYED) && state.getValue(ThaiAlphabetColorProperties.GLYPH_COLOR) == newColor) {
                 return InteractionResult.CONSUME;
             }
 
             if (!world.isClientSide) {
-                world.setBlock(pos, state.setValue(ThaiAlphabetColorProperties.GLYPH_COLOR, newColor), 3);
+                world.setBlock(pos, state.setValue(ThaiAlphabetColorProperties.GLYPH_COLOR, newColor).setValue(ThaiAlphabetColorProperties.GLYPH_DYED, Boolean.TRUE), 3);
                 if (!player.getAbilities().instabuild) {
                     stack.shrink(1);
                 }
