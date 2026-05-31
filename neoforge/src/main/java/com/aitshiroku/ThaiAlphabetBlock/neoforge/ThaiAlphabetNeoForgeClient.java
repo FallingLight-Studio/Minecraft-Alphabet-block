@@ -21,6 +21,7 @@ public final class ThaiAlphabetNeoForgeClient {
     private ThaiAlphabetNeoForgeClient() {
     }
 
+    @SuppressWarnings("deprecation")
     @SubscribeEvent
     public static void onClientSetup(FMLClientSetupEvent event) {
         event.enqueueWork(() -> {
