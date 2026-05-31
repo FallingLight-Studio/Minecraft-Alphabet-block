@@ -19,15 +19,18 @@ import net.minecraft.world.phys.BlockHitResult;
 public class ThaiLetterBlock extends Block {
 
     public static final EnumProperty<DyeColor> COLOR = ThaiAlphabetColorProperties.COLOR;
+    public static final EnumProperty<DyeColor> GLYPH_COLOR = ThaiAlphabetColorProperties.GLYPH_COLOR;
 
     public ThaiLetterBlock(Properties properties) {
         super(properties);
-        this.registerDefaultState(this.stateDefinition.any().setValue(COLOR, DyeColor.WHITE));
+        this.registerDefaultState(this.stateDefinition.any()
+                .setValue(COLOR, DyeColor.WHITE)
+                .setValue(GLYPH_COLOR, DyeColor.WHITE));
     }
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(COLOR);
+        builder.add(COLOR, GLYPH_COLOR);
     }
 
     @Override

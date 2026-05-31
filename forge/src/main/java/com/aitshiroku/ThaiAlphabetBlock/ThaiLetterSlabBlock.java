@@ -10,8 +10,8 @@ import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.DyeItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SlabBlock;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
@@ -21,6 +21,7 @@ import net.minecraft.world.phys.BlockHitResult;
 public class ThaiLetterSlabBlock extends SlabBlock {
 
     public static final EnumProperty<DyeColor> COLOR = ThaiAlphabetColorProperties.COLOR;
+    public static final EnumProperty<DyeColor> GLYPH_COLOR = ThaiAlphabetColorProperties.GLYPH_COLOR;
 
     public ThaiLetterSlabBlock(Properties properties) {
         super(properties);
@@ -28,13 +29,14 @@ public class ThaiLetterSlabBlock extends SlabBlock {
                 this.defaultBlockState()
                         .setValue(TYPE, SlabType.BOTTOM)
                         .setValue(WATERLOGGED, Boolean.FALSE)
-                        .setValue(COLOR, DyeColor.WHITE));
+                        .setValue(COLOR, DyeColor.WHITE)
+                        .setValue(GLYPH_COLOR, DyeColor.WHITE));
     }
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         super.createBlockStateDefinition(builder);
-        builder.add(COLOR);
+        builder.add(COLOR, GLYPH_COLOR);
     }
 
     @Override

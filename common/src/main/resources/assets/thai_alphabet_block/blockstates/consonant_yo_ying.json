@@ -1,52 +1,9 @@
 {
-  "variants": {
-    "color=white": {
-      "model": "thai_alphabet_block:block/consonant_yo_ying"
-    },
-    "color=orange": {
-      "model": "thai_alphabet_block:block/consonant_yo_ying"
-    },
-    "color=magenta": {
-      "model": "thai_alphabet_block:block/consonant_yo_ying"
-    },
-    "color=light_blue": {
-      "model": "thai_alphabet_block:block/consonant_yo_ying"
-    },
-    "color=yellow": {
-      "model": "thai_alphabet_block:block/consonant_yo_ying"
-    },
-    "color=lime": {
-      "model": "thai_alphabet_block:block/consonant_yo_ying"
-    },
-    "color=pink": {
-      "model": "thai_alphabet_block:block/consonant_yo_ying"
-    },
-    "color=gray": {
-      "model": "thai_alphabet_block:block/consonant_yo_ying"
-    },
-    "color=light_gray": {
-      "model": "thai_alphabet_block:block/consonant_yo_ying"
-    },
-    "color=cyan": {
-      "model": "thai_alphabet_block:block/consonant_yo_ying"
-    },
-    "color=purple": {
-      "model": "thai_alphabet_block:block/consonant_yo_ying"
-    },
-    "color=blue": {
-      "model": "thai_alphabet_block:block/consonant_yo_ying"
-    },
-    "color=brown": {
-      "model": "thai_alphabet_block:block/consonant_yo_ying"
-    },
-    "color=green": {
-      "model": "thai_alphabet_block:block/consonant_yo_ying"
-    },
-    "color=red": {
-      "model": "thai_alphabet_block:block/consonant_yo_ying"
-    },
-    "color=black": {
-      "model": "thai_alphabet_block:block/consonant_yo_ying"
+  "multipart": [
+    {
+      "apply": {
+        "model": "thai_alphabet_block:block/consonant_yo_ying"
+      }
     }
-  }
+  ]
 }

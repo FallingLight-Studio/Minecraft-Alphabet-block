@@ -8,9 +8,7 @@ public final class ThaiAlphabetColorUtil {
 
     public static int backgroundArgbFromDye(DyeColor dye) {
         if (dye == DyeColor.WHITE) {
-            // Original wood tone: matches the texture_generator.html palette
-            // so an un-dyed block looks warm and natural.
-            return 0xD3B187;  // (211, 177, 135)
+            return 0xD3B187;
         }
         float[] c = dye.getTextureDiffuseColors();
         int r = (int) (c[0] * 255.0F) & 255;
@@ -20,7 +18,14 @@ public final class ThaiAlphabetColorUtil {
     }
 
     public static int glyphArgbFromDye(DyeColor dye) {
-        return 0xFFFFFF;
+        if (dye == DyeColor.WHITE) {
+            return 0x2D1A11;
+        }
+        float[] c = dye.getTextureDiffuseColors();
+        int r = (int) (c[0] * 255.0F) & 255;
+        int g = (int) (c[1] * 255.0F) & 255;
+        int b = (int) (c[2] * 255.0F) & 255;
+        return (r << 16) | (g << 8) | b;
     }
 
     @Deprecated

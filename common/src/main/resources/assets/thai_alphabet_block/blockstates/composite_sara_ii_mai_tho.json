@@ -1,52 +1,9 @@
 {
-  "variants": {
-    "color=white": {
-      "model": "thai_alphabet_block:block/composite_sara_ii_mai_tho"
-    },
-    "color=orange": {
-      "model": "thai_alphabet_block:block/composite_sara_ii_mai_tho"
-    },
-    "color=magenta": {
-      "model": "thai_alphabet_block:block/composite_sara_ii_mai_tho"
-    },
-    "color=light_blue": {
-      "model": "thai_alphabet_block:block/composite_sara_ii_mai_tho"
-    },
-    "color=yellow": {
-      "model": "thai_alphabet_block:block/composite_sara_ii_mai_tho"
-    },
-    "color=lime": {
-      "model": "thai_alphabet_block:block/composite_sara_ii_mai_tho"
-    },
-    "color=pink": {
-      "model": "thai_alphabet_block:block/composite_sara_ii_mai_tho"
-    },
-    "color=gray": {
-      "model": "thai_alphabet_block:block/composite_sara_ii_mai_tho"
-    },
-    "color=light_gray": {
-      "model": "thai_alphabet_block:block/composite_sara_ii_mai_tho"
-    },
-    "color=cyan": {
-      "model": "thai_alphabet_block:block/composite_sara_ii_mai_tho"
-    },
-    "color=purple": {
-      "model": "thai_alphabet_block:block/composite_sara_ii_mai_tho"
-    },
-    "color=blue": {
-      "model": "thai_alphabet_block:block/composite_sara_ii_mai_tho"
-    },
-    "color=brown": {
-      "model": "thai_alphabet_block:block/composite_sara_ii_mai_tho"
-    },
-    "color=green": {
-      "model": "thai_alphabet_block:block/composite_sara_ii_mai_tho"
-    },
-    "color=red": {
-      "model": "thai_alphabet_block:block/composite_sara_ii_mai_tho"
-    },
-    "color=black": {
-      "model": "thai_alphabet_block:block/composite_sara_ii_mai_tho"
+  "multipart": [
+    {
+      "apply": {
+        "model": "thai_alphabet_block:block/composite_sara_ii_mai_tho"
+      }
     }
-  }
+  ]
 }

@@ -7,6 +7,14 @@ import java.util.List;
 import java.util.Map;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
+import net.fabricmc.fabric.api.event.player.UseBlockCallback;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.item.DyeItem;
+import net.minecraft.world.item.DyeColor;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -83,6 +91,46 @@ public final class ThaiAlphabetBlockFabric implements ModInitializer {
             tabKey,
             thaiAlphabetTab
         );
+        UseBlockCallback.EVENT.register((player, world, hand, hitResult) -> {
+            if (!player.isShiftKeyDown()) {
+                return InteractionResult.PASS;
+            }
+
+            ItemStack stack = player.getItemInHand(hand);
+            if (!(stack.getItem() instanceof DyeItem dyeItem)) {
+                return InteractionResult.PASS;
+            }
+
+            BlockPos pos = hitResult.getBlockPos();
+            BlockState state = world.getBlockState(pos);
+
+            if (!(state.getBlock() instanceof ThaiLetterBlock)
+                    && !(state.getBlock() instanceof ThaiLetterSlabBlock)) {
+                return InteractionResult.PASS;
+            }
+            if (BuiltInRegistries.BLOCK.getKey(state.getBlock()).getPath().equals("empty_block")) {
+                return InteractionResult.PASS;
+            }
+            if (!state.hasProperty(ThaiAlphabetColorProperties.GLYPH_COLOR)) {
+                return InteractionResult.PASS;
+            }
+
+            DyeColor newColor = dyeItem.getDyeColor();
+
+            if (state.getValue(ThaiAlphabetColorProperties.GLYPH_COLOR) == newColor) {
+                return InteractionResult.CONSUME;
+            }
+
+            if (!world.isClientSide) {
+                world.setBlock(pos, state.setValue(ThaiAlphabetColorProperties.GLYPH_COLOR, newColor), 3);
+                if (!player.getAbilities().instabuild) {
+                    stack.shrink(1);
+                }
+                world.playSound(null, pos, SoundEvents.DYE_USE, SoundSource.BLOCKS, 1.0F, 0.8F);
+            }
+
+            return InteractionResult.sidedSuccess(world.isClientSide);
+        });
     }
 
     public static List<Block> letterBlocksView() {

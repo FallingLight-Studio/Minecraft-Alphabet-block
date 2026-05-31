@@ -1,52 +1,9 @@
 {
-  "variants": {
-    "color=white": {
-      "model": "thai_alphabet_block:block/consonant_tho_nangmontho"
-    },
-    "color=orange": {
-      "model": "thai_alphabet_block:block/consonant_tho_nangmontho"
-    },
-    "color=magenta": {
-      "model": "thai_alphabet_block:block/consonant_tho_nangmontho"
-    },
-    "color=light_blue": {
-      "model": "thai_alphabet_block:block/consonant_tho_nangmontho"
-    },
-    "color=yellow": {
-      "model": "thai_alphabet_block:block/consonant_tho_nangmontho"
-    },
-    "color=lime": {
-      "model": "thai_alphabet_block:block/consonant_tho_nangmontho"
-    },
-    "color=pink": {
-      "model": "thai_alphabet_block:block/consonant_tho_nangmontho"
-    },
-    "color=gray": {
-      "model": "thai_alphabet_block:block/consonant_tho_nangmontho"
-    },
-    "color=light_gray": {
-      "model": "thai_alphabet_block:block/consonant_tho_nangmontho"
-    },
-    "color=cyan": {
-      "model": "thai_alphabet_block:block/consonant_tho_nangmontho"
-    },
-    "color=purple": {
-      "model": "thai_alphabet_block:block/consonant_tho_nangmontho"
-    },
-    "color=blue": {
-      "model": "thai_alphabet_block:block/consonant_tho_nangmontho"
-    },
-    "color=brown": {
-      "model": "thai_alphabet_block:block/consonant_tho_nangmontho"
-    },
-    "color=green": {
-      "model": "thai_alphabet_block:block/consonant_tho_nangmontho"
-    },
-    "color=red": {
-      "model": "thai_alphabet_block:block/consonant_tho_nangmontho"
-    },
-    "color=black": {
-      "model": "thai_alphabet_block:block/consonant_tho_nangmontho"
+  "multipart": [
+    {
+      "apply": {
+        "model": "thai_alphabet_block:block/consonant_tho_nangmontho"
+      }
     }
-  }
+  ]
 }

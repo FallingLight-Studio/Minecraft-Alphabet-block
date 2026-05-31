@@ -1,52 +1,9 @@
 {
-  "variants": {
-    "color=white": {
-      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai"
-    },
-    "color=orange": {
-      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai"
-    },
-    "color=magenta": {
-      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai"
-    },
-    "color=light_blue": {
-      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai"
-    },
-    "color=yellow": {
-      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai"
-    },
-    "color=lime": {
-      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai"
-    },
-    "color=pink": {
-      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai"
-    },
-    "color=gray": {
-      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai"
-    },
-    "color=light_gray": {
-      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai"
-    },
-    "color=cyan": {
-      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai"
-    },
-    "color=purple": {
-      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai"
-    },
-    "color=blue": {
-      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai"
-    },
-    "color=brown": {
-      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai"
-    },
-    "color=green": {
-      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai"
-    },
-    "color=red": {
-      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai"
-    },
-    "color=black": {
-      "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai"
+  "multipart": [
+    {
+      "apply": {
+        "model": "thai_alphabet_block:block/vowel_sara_ai_maimalai"
+      }
     }
-  }
+  ]
 }

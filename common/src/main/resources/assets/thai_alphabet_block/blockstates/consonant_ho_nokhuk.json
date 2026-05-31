@@ -1,52 +1,9 @@
 {
-  "variants": {
-    "color=white": {
-      "model": "thai_alphabet_block:block/consonant_ho_nokhuk"
-    },
-    "color=orange": {
-      "model": "thai_alphabet_block:block/consonant_ho_nokhuk"
-    },
-    "color=magenta": {
-      "model": "thai_alphabet_block:block/consonant_ho_nokhuk"
-    },
-    "color=light_blue": {
-      "model": "thai_alphabet_block:block/consonant_ho_nokhuk"
-    },
-    "color=yellow": {
-      "model": "thai_alphabet_block:block/consonant_ho_nokhuk"
-    },
-    "color=lime": {
-      "model": "thai_alphabet_block:block/consonant_ho_nokhuk"
-    },
-    "color=pink": {
-      "model": "thai_alphabet_block:block/consonant_ho_nokhuk"
-    },
-    "color=gray": {
-      "model": "thai_alphabet_block:block/consonant_ho_nokhuk"
-    },
-    "color=light_gray": {
-      "model": "thai_alphabet_block:block/consonant_ho_nokhuk"
-    },
-    "color=cyan": {
-      "model": "thai_alphabet_block:block/consonant_ho_nokhuk"
-    },
-    "color=purple": {
-      "model": "thai_alphabet_block:block/consonant_ho_nokhuk"
-    },
-    "color=blue": {
-      "model": "thai_alphabet_block:block/consonant_ho_nokhuk"
-    },
-    "color=brown": {
-      "model": "thai_alphabet_block:block/consonant_ho_nokhuk"
-    },
-    "color=green": {
-      "model": "thai_alphabet_block:block/consonant_ho_nokhuk"
-    },
-    "color=red": {
-      "model": "thai_alphabet_block:block/consonant_ho_nokhuk"
-    },
-    "color=black": {
-      "model": "thai_alphabet_block:block/consonant_ho_nokhuk"
+  "multipart": [
+    {
+      "apply": {
+        "model": "thai_alphabet_block:block/consonant_ho_nokhuk"
+      }
     }
-  }
+  ]
 }

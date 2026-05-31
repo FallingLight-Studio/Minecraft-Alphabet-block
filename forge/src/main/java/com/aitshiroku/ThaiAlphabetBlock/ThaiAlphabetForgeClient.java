@@ -14,6 +14,7 @@ import net.minecraftforge.registries.RegistryObject;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import net.minecraft.world.item.DyeColor;
 
 @Mod.EventBusSubscriber(modid = ThaiAlphabetCommon.MOD_ID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.MOD)
 public final class ThaiAlphabetForgeClient {
@@ -43,17 +44,17 @@ public final class ThaiAlphabetForgeClient {
                         if (tintIndex != 0 && tintIndex != 1) {
                             return -1;
                         }
-                        if (!state.hasProperty(ThaiLetterBlock.COLOR)) {
-                            return tintIndex == 0
-                                    ? ThaiAlphabetColorUtil.backgroundArgbFromDye(
-                                            net.minecraft.world.item.DyeColor.WHITE)
-                                    : ThaiAlphabetColorUtil.glyphArgbFromDye(
-                                            net.minecraft.world.item.DyeColor.WHITE);
+                        if (tintIndex == 0) {
+                            DyeColor dye = state.hasProperty(ThaiLetterBlock.COLOR)
+                                    ? state.getValue(ThaiLetterBlock.COLOR)
+                                    : DyeColor.WHITE;
+                            return ThaiAlphabetColorUtil.backgroundArgbFromDye(dye);
+                        } else {
+                            DyeColor glyphDye = state.hasProperty(ThaiLetterBlock.GLYPH_COLOR)
+                                    ? state.getValue(ThaiLetterBlock.GLYPH_COLOR)
+                                    : DyeColor.WHITE;
+                            return ThaiAlphabetColorUtil.glyphArgbFromDye(glyphDye);
                         }
-                        net.minecraft.world.item.DyeColor dye = state.getValue(ThaiLetterBlock.COLOR);
-                        return tintIndex == 0
-                                ? ThaiAlphabetColorUtil.backgroundArgbFromDye(dye)
-                                : ThaiAlphabetColorUtil.glyphArgbFromDye(dye);
                     },
                     block);
         }
@@ -74,13 +75,17 @@ public final class ThaiAlphabetForgeClient {
                                     return -1;
                                 }
                                 BlockState state = blockStateFromStack(stack, block);
-                                net.minecraft.world.item.DyeColor dye = state != null
-                                        && state.hasProperty(ThaiLetterBlock.COLOR)
-                                                ? state.getValue(ThaiLetterBlock.COLOR)
-                                                : net.minecraft.world.item.DyeColor.WHITE;
-                                return tintIndex == 0
-                                        ? ThaiAlphabetColorUtil.backgroundArgbFromDye(dye)
-                                        : ThaiAlphabetColorUtil.glyphArgbFromDye(dye);
+                                if (tintIndex == 0) {
+                                    DyeColor dye = state != null && state.hasProperty(ThaiLetterBlock.COLOR)
+                                            ? state.getValue(ThaiLetterBlock.COLOR)
+                                            : DyeColor.WHITE;
+                                    return ThaiAlphabetColorUtil.backgroundArgbFromDye(dye);
+                                } else {
+                                    DyeColor glyphDye = state != null && state.hasProperty(ThaiLetterBlock.GLYPH_COLOR)
+                                            ? state.getValue(ThaiLetterBlock.GLYPH_COLOR)
+                                            : DyeColor.WHITE;
+                                    return ThaiAlphabetColorUtil.glyphArgbFromDye(glyphDye);
+                                }
                             },
                             block.asItem());
         }

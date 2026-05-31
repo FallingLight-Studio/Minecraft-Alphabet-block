@@ -1,52 +1,9 @@
 {
-  "variants": {
-    "color=white": {
-      "model": "thai_alphabet_block:block/vowel_sara_am"
-    },
-    "color=orange": {
-      "model": "thai_alphabet_block:block/vowel_sara_am"
-    },
-    "color=magenta": {
-      "model": "thai_alphabet_block:block/vowel_sara_am"
-    },
-    "color=light_blue": {
-      "model": "thai_alphabet_block:block/vowel_sara_am"
-    },
-    "color=yellow": {
-      "model": "thai_alphabet_block:block/vowel_sara_am"
-    },
-    "color=lime": {
-      "model": "thai_alphabet_block:block/vowel_sara_am"
-    },
-    "color=pink": {
-      "model": "thai_alphabet_block:block/vowel_sara_am"
-    },
-    "color=gray": {
-      "model": "thai_alphabet_block:block/vowel_sara_am"
-    },
-    "color=light_gray": {
-      "model": "thai_alphabet_block:block/vowel_sara_am"
-    },
-    "color=cyan": {
-      "model": "thai_alphabet_block:block/vowel_sara_am"
-    },
-    "color=purple": {
-      "model": "thai_alphabet_block:block/vowel_sara_am"
-    },
-    "color=blue": {
-      "model": "thai_alphabet_block:block/vowel_sara_am"
-    },
-    "color=brown": {
-      "model": "thai_alphabet_block:block/vowel_sara_am"
-    },
-    "color=green": {
-      "model": "thai_alphabet_block:block/vowel_sara_am"
-    },
-    "color=red": {
-      "model": "thai_alphabet_block:block/vowel_sara_am"
-    },
-    "color=black": {
-      "model": "thai_alphabet_block:block/vowel_sara_am"
+  "multipart": [
+    {
+      "apply": {
+        "model": "thai_alphabet_block:block/vowel_sara_am"
+      }
     }
-  }
+  ]
 }
