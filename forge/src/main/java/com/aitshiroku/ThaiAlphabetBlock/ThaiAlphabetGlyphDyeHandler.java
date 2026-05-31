@@ -1,0 +1,72 @@
+package com.aitshiroku.ThaiAlphabetBlock;
+
+import com.aitshiroku.thai_alphabet_block.ThaiAlphabetCommon;
+
+import net.minecraft.core.BlockPos;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.item.DyeItem;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraftforge.event.entity.player.PlayerInteractEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
+
+/**
+ * Handles Shift + Right-click with Dye to change the glyph (letter) color.
+ *
+ * This MUST be handled via a Forge event because vanilla Minecraft skips
+ * {@code Block.useItemOn()} when the player is sneaking while holding an item.
+ * {@code PlayerInteractEvent.RightClickBlock} fires BEFORE that sneak-bypass
+ * check, so we can intercept the interaction here.
+ */
+@Mod.EventBusSubscriber(modid = ThaiAlphabetCommon.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
+public final class ThaiAlphabetGlyphDyeHandler {
+
+    private ThaiAlphabetGlyphDyeHandler() {
+    }
+
+    @SubscribeEvent
+    public static void onRightClickBlock(PlayerInteractEvent.RightClickBlock event) {
+        Player player = event.getEntity();
+        if (!player.isShiftKeyDown()) return;
+
+        ItemStack stack = event.getItemStack();
+        if (!(stack.getItem() instanceof DyeItem dyeItem)) return;
+
+        Level level = player.level();
+        BlockPos pos = event.getPos();
+        BlockState state = level.getBlockState(pos);
+
+        if (!(state.getBlock() instanceof ThaiLetterBlock)
+                && !(state.getBlock() instanceof ThaiLetterSlabBlock)) {
+            return;
+        }
+        if (!state.hasProperty(ThaiAlphabetColorProperties.GLYPH_COLOR)) return;
+
+        DyeColor newColor = dyeItem.getDyeColor();
+
+        // Same color already applied — consume the interaction but do nothing
+        if (state.getValue(ThaiAlphabetColorProperties.GLYPH_COLOR) == newColor) {
+            event.setCanceled(true);
+            event.setCancellationResult(InteractionResult.CONSUME);
+            return;
+        }
+
+        // Apply glyph color change on the server side
+        if (!level.isClientSide) {
+            level.setBlock(pos, state.setValue(ThaiAlphabetColorProperties.GLYPH_COLOR, newColor), 3);
+            if (!player.getAbilities().instabuild) {
+                stack.shrink(1);
+            }
+            level.playSound(null, pos, SoundEvents.DYE_USE, SoundSource.BLOCKS, 1.0F, 0.8F);
+        }
+
+        event.setCanceled(true);
+        event.setCancellationResult(InteractionResult.sidedSuccess(level.isClientSide));
+    }
+}

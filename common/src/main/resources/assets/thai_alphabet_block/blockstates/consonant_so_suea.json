@@ -1,52 +1,9 @@
 {
-  "variants": {
-    "color=white": {
-      "model": "thai_alphabet_block:block/consonant_so_suea"
-    },
-    "color=orange": {
-      "model": "thai_alphabet_block:block/consonant_so_suea"
-    },
-    "color=magenta": {
-      "model": "thai_alphabet_block:block/consonant_so_suea"
-    },
-    "color=light_blue": {
-      "model": "thai_alphabet_block:block/consonant_so_suea"
-    },
-    "color=yellow": {
-      "model": "thai_alphabet_block:block/consonant_so_suea"
-    },
-    "color=lime": {
-      "model": "thai_alphabet_block:block/consonant_so_suea"
-    },
-    "color=pink": {
-      "model": "thai_alphabet_block:block/consonant_so_suea"
-    },
-    "color=gray": {
-      "model": "thai_alphabet_block:block/consonant_so_suea"
-    },
-    "color=light_gray": {
-      "model": "thai_alphabet_block:block/consonant_so_suea"
-    },
-    "color=cyan": {
-      "model": "thai_alphabet_block:block/consonant_so_suea"
-    },
-    "color=purple": {
-      "model": "thai_alphabet_block:block/consonant_so_suea"
-    },
-    "color=blue": {
-      "model": "thai_alphabet_block:block/consonant_so_suea"
-    },
-    "color=brown": {
-      "model": "thai_alphabet_block:block/consonant_so_suea"
-    },
-    "color=green": {
-      "model": "thai_alphabet_block:block/consonant_so_suea"
-    },
-    "color=red": {
-      "model": "thai_alphabet_block:block/consonant_so_suea"
-    },
-    "color=black": {
-      "model": "thai_alphabet_block:block/consonant_so_suea"
+  "multipart": [
+    {
+      "apply": {
+        "model": "thai_alphabet_block:block/consonant_so_suea"
+      }
     }
-  }
+  ]
 }

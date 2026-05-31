@@ -1,52 +1,9 @@
 {
-  "variants": {
-    "color=white": {
-      "model": "thai_alphabet_block:block/consonant_pho_phan"
-    },
-    "color=orange": {
-      "model": "thai_alphabet_block:block/consonant_pho_phan"
-    },
-    "color=magenta": {
-      "model": "thai_alphabet_block:block/consonant_pho_phan"
-    },
-    "color=light_blue": {
-      "model": "thai_alphabet_block:block/consonant_pho_phan"
-    },
-    "color=yellow": {
-      "model": "thai_alphabet_block:block/consonant_pho_phan"
-    },
-    "color=lime": {
-      "model": "thai_alphabet_block:block/consonant_pho_phan"
-    },
-    "color=pink": {
-      "model": "thai_alphabet_block:block/consonant_pho_phan"
-    },
-    "color=gray": {
-      "model": "thai_alphabet_block:block/consonant_pho_phan"
-    },
-    "color=light_gray": {
-      "model": "thai_alphabet_block:block/consonant_pho_phan"
-    },
-    "color=cyan": {
-      "model": "thai_alphabet_block:block/consonant_pho_phan"
-    },
-    "color=purple": {
-      "model": "thai_alphabet_block:block/consonant_pho_phan"
-    },
-    "color=blue": {
-      "model": "thai_alphabet_block:block/consonant_pho_phan"
-    },
-    "color=brown": {
-      "model": "thai_alphabet_block:block/consonant_pho_phan"
-    },
-    "color=green": {
-      "model": "thai_alphabet_block:block/consonant_pho_phan"
-    },
-    "color=red": {
-      "model": "thai_alphabet_block:block/consonant_pho_phan"
-    },
-    "color=black": {
-      "model": "thai_alphabet_block:block/consonant_pho_phan"
+  "multipart": [
+    {
+      "apply": {
+        "model": "thai_alphabet_block:block/consonant_pho_phan"
+      }
     }
-  }
+  ]
 }

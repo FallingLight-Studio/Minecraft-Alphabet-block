@@ -1,52 +1,9 @@
 {
-  "variants": {
-    "color=white": {
-      "model": "thai_alphabet_block:block/consonant_po_pla"
-    },
-    "color=orange": {
-      "model": "thai_alphabet_block:block/consonant_po_pla"
-    },
-    "color=magenta": {
-      "model": "thai_alphabet_block:block/consonant_po_pla"
-    },
-    "color=light_blue": {
-      "model": "thai_alphabet_block:block/consonant_po_pla"
-    },
-    "color=yellow": {
-      "model": "thai_alphabet_block:block/consonant_po_pla"
-    },
-    "color=lime": {
-      "model": "thai_alphabet_block:block/consonant_po_pla"
-    },
-    "color=pink": {
-      "model": "thai_alphabet_block:block/consonant_po_pla"
-    },
-    "color=gray": {
-      "model": "thai_alphabet_block:block/consonant_po_pla"
-    },
-    "color=light_gray": {
-      "model": "thai_alphabet_block:block/consonant_po_pla"
-    },
-    "color=cyan": {
-      "model": "thai_alphabet_block:block/consonant_po_pla"
-    },
-    "color=purple": {
-      "model": "thai_alphabet_block:block/consonant_po_pla"
-    },
-    "color=blue": {
-      "model": "thai_alphabet_block:block/consonant_po_pla"
-    },
-    "color=brown": {
-      "model": "thai_alphabet_block:block/consonant_po_pla"
-    },
-    "color=green": {
-      "model": "thai_alphabet_block:block/consonant_po_pla"
-    },
-    "color=red": {
-      "model": "thai_alphabet_block:block/consonant_po_pla"
-    },
-    "color=black": {
-      "model": "thai_alphabet_block:block/consonant_po_pla"
+  "multipart": [
+    {
+      "apply": {
+        "model": "thai_alphabet_block:block/consonant_po_pla"
+      }
     }
-  }
+  ]
 }

@@ -19,15 +19,18 @@ import net.minecraft.world.phys.BlockHitResult;
 public class ThaiLetterBlock extends Block {
 
     public static final EnumProperty<DyeColor> COLOR = ThaiAlphabetColorProperties.COLOR;
+    public static final EnumProperty<DyeColor> GLYPH_COLOR = ThaiAlphabetColorProperties.GLYPH_COLOR;
 
     public ThaiLetterBlock(Properties properties) {
         super(properties);
-        this.registerDefaultState(this.stateDefinition.any().setValue(COLOR, DyeColor.WHITE));
+        this.registerDefaultState(this.stateDefinition.any()
+                .setValue(COLOR, DyeColor.WHITE)
+                .setValue(GLYPH_COLOR, DyeColor.WHITE));
     }
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(COLOR);
+        builder.add(COLOR, GLYPH_COLOR);
     }
 
     @Override
@@ -40,6 +43,8 @@ public class ThaiLetterBlock extends Block {
             InteractionHand hand,
             BlockHitResult hit) {
         if (stack.getItem() instanceof DyeItem dyeItem) {
+            // NOTE: Shift + Right-click (glyph color) is handled by the UseBlockCallback
+            // event in ThaiAlphabetBlockFabric, because vanilla skips useItemOn() when sneaking.
             DyeColor newColor = dyeItem.getDyeColor();
             if (state.getValue(COLOR) == newColor) {
                 return ItemInteractionResult.CONSUME;

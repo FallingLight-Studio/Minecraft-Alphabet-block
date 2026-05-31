@@ -21,6 +21,7 @@ import net.minecraft.world.phys.BlockHitResult;
 public class ThaiLetterSlabBlock extends SlabBlock {
 
     public static final EnumProperty<DyeColor> COLOR = ThaiAlphabetColorProperties.COLOR;
+    public static final EnumProperty<DyeColor> GLYPH_COLOR = ThaiAlphabetColorProperties.GLYPH_COLOR;
 
     public ThaiLetterSlabBlock(Properties properties) {
         super(properties);
@@ -28,13 +29,14 @@ public class ThaiLetterSlabBlock extends SlabBlock {
                 this.defaultBlockState()
                         .setValue(TYPE, SlabType.BOTTOM)
                         .setValue(WATERLOGGED, Boolean.FALSE)
-                        .setValue(COLOR, DyeColor.WHITE));
+                        .setValue(COLOR, DyeColor.WHITE)
+                        .setValue(GLYPH_COLOR, DyeColor.WHITE));
     }
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         super.createBlockStateDefinition(builder);
-        builder.add(COLOR);
+        builder.add(COLOR, GLYPH_COLOR);
     }
 
     @Override
@@ -47,6 +49,8 @@ public class ThaiLetterSlabBlock extends SlabBlock {
             InteractionHand hand,
             BlockHitResult hit) {
         if (stack.getItem() instanceof DyeItem dyeItem) {
+            // NOTE: Shift + Right-click (glyph color) is handled by
+            // ThaiAlphabetGlyphDyeHandler, because vanilla skips useItemOn() when sneaking.
             DyeColor newColor = dyeItem.getDyeColor();
             if (state.getValue(COLOR) == newColor) {
                 return ItemInteractionResult.CONSUME;

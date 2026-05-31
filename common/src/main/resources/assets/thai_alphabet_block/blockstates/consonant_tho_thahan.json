@@ -1,52 +1,9 @@
 {
-  "variants": {
-    "color=white": {
-      "model": "thai_alphabet_block:block/consonant_tho_thahan"
-    },
-    "color=orange": {
-      "model": "thai_alphabet_block:block/consonant_tho_thahan"
-    },
-    "color=magenta": {
-      "model": "thai_alphabet_block:block/consonant_tho_thahan"
-    },
-    "color=light_blue": {
-      "model": "thai_alphabet_block:block/consonant_tho_thahan"
-    },
-    "color=yellow": {
-      "model": "thai_alphabet_block:block/consonant_tho_thahan"
-    },
-    "color=lime": {
-      "model": "thai_alphabet_block:block/consonant_tho_thahan"
-    },
-    "color=pink": {
-      "model": "thai_alphabet_block:block/consonant_tho_thahan"
-    },
-    "color=gray": {
-      "model": "thai_alphabet_block:block/consonant_tho_thahan"
-    },
-    "color=light_gray": {
-      "model": "thai_alphabet_block:block/consonant_tho_thahan"
-    },
-    "color=cyan": {
-      "model": "thai_alphabet_block:block/consonant_tho_thahan"
-    },
-    "color=purple": {
-      "model": "thai_alphabet_block:block/consonant_tho_thahan"
-    },
-    "color=blue": {
-      "model": "thai_alphabet_block:block/consonant_tho_thahan"
-    },
-    "color=brown": {
-      "model": "thai_alphabet_block:block/consonant_tho_thahan"
-    },
-    "color=green": {
-      "model": "thai_alphabet_block:block/consonant_tho_thahan"
-    },
-    "color=red": {
-      "model": "thai_alphabet_block:block/consonant_tho_thahan"
-    },
-    "color=black": {
-      "model": "thai_alphabet_block:block/consonant_tho_thahan"
+  "multipart": [
+    {
+      "apply": {
+        "model": "thai_alphabet_block:block/consonant_tho_thahan"
+      }
     }
-  }
+  ]
 }

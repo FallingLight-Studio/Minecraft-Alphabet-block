@@ -1,52 +1,9 @@
 {
-  "variants": {
-    "color=white": {
-      "model": "thai_alphabet_block:block/tone_mai_ek"
-    },
-    "color=orange": {
-      "model": "thai_alphabet_block:block/tone_mai_ek"
-    },
-    "color=magenta": {
-      "model": "thai_alphabet_block:block/tone_mai_ek"
-    },
-    "color=light_blue": {
-      "model": "thai_alphabet_block:block/tone_mai_ek"
-    },
-    "color=yellow": {
-      "model": "thai_alphabet_block:block/tone_mai_ek"
-    },
-    "color=lime": {
-      "model": "thai_alphabet_block:block/tone_mai_ek"
-    },
-    "color=pink": {
-      "model": "thai_alphabet_block:block/tone_mai_ek"
-    },
-    "color=gray": {
-      "model": "thai_alphabet_block:block/tone_mai_ek"
-    },
-    "color=light_gray": {
-      "model": "thai_alphabet_block:block/tone_mai_ek"
-    },
-    "color=cyan": {
-      "model": "thai_alphabet_block:block/tone_mai_ek"
-    },
-    "color=purple": {
-      "model": "thai_alphabet_block:block/tone_mai_ek"
-    },
-    "color=blue": {
-      "model": "thai_alphabet_block:block/tone_mai_ek"
-    },
-    "color=brown": {
-      "model": "thai_alphabet_block:block/tone_mai_ek"
-    },
-    "color=green": {
-      "model": "thai_alphabet_block:block/tone_mai_ek"
-    },
-    "color=red": {
-      "model": "thai_alphabet_block:block/tone_mai_ek"
-    },
-    "color=black": {
-      "model": "thai_alphabet_block:block/tone_mai_ek"
+  "multipart": [
+    {
+      "apply": {
+        "model": "thai_alphabet_block:block/tone_mai_ek"
+      }
     }
-  }
+  ]
 }

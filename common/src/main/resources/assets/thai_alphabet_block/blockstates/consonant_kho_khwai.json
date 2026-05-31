@@ -1,52 +1,9 @@
 {
-  "variants": {
-    "color=white": {
-      "model": "thai_alphabet_block:block/consonant_kho_khwai"
-    },
-    "color=orange": {
-      "model": "thai_alphabet_block:block/consonant_kho_khwai"
-    },
-    "color=magenta": {
-      "model": "thai_alphabet_block:block/consonant_kho_khwai"
-    },
-    "color=light_blue": {
-      "model": "thai_alphabet_block:block/consonant_kho_khwai"
-    },
-    "color=yellow": {
-      "model": "thai_alphabet_block:block/consonant_kho_khwai"
-    },
-    "color=lime": {
-      "model": "thai_alphabet_block:block/consonant_kho_khwai"
-    },
-    "color=pink": {
-      "model": "thai_alphabet_block:block/consonant_kho_khwai"
-    },
-    "color=gray": {
-      "model": "thai_alphabet_block:block/consonant_kho_khwai"
-    },
-    "color=light_gray": {
-      "model": "thai_alphabet_block:block/consonant_kho_khwai"
-    },
-    "color=cyan": {
-      "model": "thai_alphabet_block:block/consonant_kho_khwai"
-    },
-    "color=purple": {
-      "model": "thai_alphabet_block:block/consonant_kho_khwai"
-    },
-    "color=blue": {
-      "model": "thai_alphabet_block:block/consonant_kho_khwai"
-    },
-    "color=brown": {
-      "model": "thai_alphabet_block:block/consonant_kho_khwai"
-    },
-    "color=green": {
-      "model": "thai_alphabet_block:block/consonant_kho_khwai"
-    },
-    "color=red": {
-      "model": "thai_alphabet_block:block/consonant_kho_khwai"
-    },
-    "color=black": {
-      "model": "thai_alphabet_block:block/consonant_kho_khwai"
+  "multipart": [
+    {
+      "apply": {
+        "model": "thai_alphabet_block:block/consonant_kho_khwai"
+      }
     }
-  }
+  ]
 }

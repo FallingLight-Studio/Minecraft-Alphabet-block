@@ -3,6 +3,7 @@ package com.aitshiroku.ThaiAlphabetBlock.neoforge;
 import com.aitshiroku.thai_alphabet_block.ThaiAlphabetCommon;
 
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
@@ -41,17 +42,19 @@ public final class ThaiAlphabetNeoForgeClient {
                         if (tintIndex != 0 && tintIndex != 1) {
                             return -1;
                         }
-                        if (!state.hasProperty(ThaiLetterBlock.COLOR)) {
-                            return tintIndex == 0
-                                    ? ThaiAlphabetColorUtil.backgroundArgbFromDye(
-                                            net.minecraft.world.item.DyeColor.WHITE)
-                                    : ThaiAlphabetColorUtil.glyphArgbFromDye(
-                                            net.minecraft.world.item.DyeColor.WHITE);
+                        if (tintIndex == 0) {
+                            // Background color
+                            DyeColor dye = state.hasProperty(ThaiLetterBlock.COLOR)
+                                    ? state.getValue(ThaiLetterBlock.COLOR)
+                                    : DyeColor.WHITE;
+                            return ThaiAlphabetColorUtil.backgroundArgbFromDye(dye);
+                        } else {
+                            // Glyph color
+                            DyeColor glyphDye = state.hasProperty(ThaiLetterBlock.GLYPH_COLOR)
+                                    ? state.getValue(ThaiLetterBlock.GLYPH_COLOR)
+                                    : DyeColor.WHITE;
+                            return ThaiAlphabetColorUtil.glyphArgbFromDye(glyphDye);
                         }
-                        net.minecraft.world.item.DyeColor dye = state.getValue(ThaiLetterBlock.COLOR);
-                        return tintIndex == 0
-                                ? ThaiAlphabetColorUtil.backgroundArgbFromDye(dye)
-                                : ThaiAlphabetColorUtil.glyphArgbFromDye(dye);
                     },
                     block);
         }
@@ -70,13 +73,22 @@ public final class ThaiAlphabetNeoForgeClient {
                             return -1;
                         }
                         BlockState state = blockStateFromStack(stack, block);
-                        net.minecraft.world.item.DyeColor dye = state != null
-                                && state.hasProperty(ThaiLetterBlock.COLOR)
-                                        ? state.getValue(ThaiLetterBlock.COLOR)
-                                        : net.minecraft.world.item.DyeColor.WHITE;
-                        return tintIndex == 0
-                                ? ThaiAlphabetColorUtil.backgroundArgbFromDye(dye)
-                                : ThaiAlphabetColorUtil.glyphArgbFromDye(dye);
+
+                        if (tintIndex == 0) {
+                            // Background color
+                            DyeColor dye = state != null
+                                    && state.hasProperty(ThaiLetterBlock.COLOR)
+                                            ? state.getValue(ThaiLetterBlock.COLOR)
+                                            : DyeColor.WHITE;
+                            return ThaiAlphabetColorUtil.backgroundArgbFromDye(dye);
+                        } else {
+                            // Glyph color
+                            DyeColor glyphDye = state != null
+                                    && state.hasProperty(ThaiLetterBlock.GLYPH_COLOR)
+                                            ? state.getValue(ThaiLetterBlock.GLYPH_COLOR)
+                                            : DyeColor.WHITE;
+                            return ThaiAlphabetColorUtil.glyphArgbFromDye(glyphDye);
+                        }
                     },
                     block.asItem());
         }

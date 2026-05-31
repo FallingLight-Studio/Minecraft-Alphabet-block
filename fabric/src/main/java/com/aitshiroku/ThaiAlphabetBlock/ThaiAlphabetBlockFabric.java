@@ -10,19 +10,27 @@ import com.aitshiroku.thai_alphabet_block.ThaiAlphabetCommon;
 import com.aitshiroku.thai_alphabet_block.ThaiAlphabetDefinitions;
 
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.event.player.UseBlockCallback;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.item.DyeItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.MapColor;
 
 public final class ThaiAlphabetBlockFabric implements ModInitializer {
@@ -89,6 +97,50 @@ public final class ThaiAlphabetBlockFabric implements ModInitializer {
             tabKey,
             thaiAlphabetTab
         );
+
+        // Register Shift + Right-click with Dye → glyph color change.
+        // This MUST be handled via an event because vanilla Minecraft skips
+        // Block.useItemOn() when the player is sneaking while holding an item.
+        // UseBlockCallback fires BEFORE that sneak-bypass check.
+        UseBlockCallback.EVENT.register((player, world, hand, hitResult) -> {
+            if (!player.isShiftKeyDown()) {
+                return InteractionResult.PASS;
+            }
+
+            ItemStack stack = player.getItemInHand(hand);
+            if (!(stack.getItem() instanceof DyeItem dyeItem)) {
+                return InteractionResult.PASS;
+            }
+
+            BlockPos pos = hitResult.getBlockPos();
+            BlockState state = world.getBlockState(pos);
+
+            if (!(state.getBlock() instanceof ThaiLetterBlock)
+                    && !(state.getBlock() instanceof ThaiLetterSlabBlock)) {
+                return InteractionResult.PASS;
+            }
+            if (!state.hasProperty(ThaiAlphabetColorProperties.GLYPH_COLOR)) {
+                return InteractionResult.PASS;
+            }
+
+            DyeColor newColor = dyeItem.getDyeColor();
+
+            // Same color already applied — consume the interaction but do nothing
+            if (state.getValue(ThaiAlphabetColorProperties.GLYPH_COLOR) == newColor) {
+                return InteractionResult.CONSUME;
+            }
+
+            // Apply glyph color change on the server side
+            if (!world.isClientSide) {
+                world.setBlock(pos, state.setValue(ThaiAlphabetColorProperties.GLYPH_COLOR, newColor), 3);
+                if (!player.getAbilities().instabuild) {
+                    stack.shrink(1);
+                }
+                world.playSound(null, pos, SoundEvents.DYE_USE, SoundSource.BLOCKS, 1.0F, 0.8F);
+            }
+
+            return InteractionResult.sidedSuccess(world.isClientSide);
+        });
     }
 
     public static List<Block> letterBlocksView() {

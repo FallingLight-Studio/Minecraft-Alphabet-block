@@ -1,52 +1,9 @@
 {
-  "variants": {
-    "color=white": {
-      "model": "thai_alphabet_block:block/consonant_lo_ling"
-    },
-    "color=orange": {
-      "model": "thai_alphabet_block:block/consonant_lo_ling"
-    },
-    "color=magenta": {
-      "model": "thai_alphabet_block:block/consonant_lo_ling"
-    },
-    "color=light_blue": {
-      "model": "thai_alphabet_block:block/consonant_lo_ling"
-    },
-    "color=yellow": {
-      "model": "thai_alphabet_block:block/consonant_lo_ling"
-    },
-    "color=lime": {
-      "model": "thai_alphabet_block:block/consonant_lo_ling"
-    },
-    "color=pink": {
-      "model": "thai_alphabet_block:block/consonant_lo_ling"
-    },
-    "color=gray": {
-      "model": "thai_alphabet_block:block/consonant_lo_ling"
-    },
-    "color=light_gray": {
-      "model": "thai_alphabet_block:block/consonant_lo_ling"
-    },
-    "color=cyan": {
-      "model": "thai_alphabet_block:block/consonant_lo_ling"
-    },
-    "color=purple": {
-      "model": "thai_alphabet_block:block/consonant_lo_ling"
-    },
-    "color=blue": {
-      "model": "thai_alphabet_block:block/consonant_lo_ling"
-    },
-    "color=brown": {
-      "model": "thai_alphabet_block:block/consonant_lo_ling"
-    },
-    "color=green": {
-      "model": "thai_alphabet_block:block/consonant_lo_ling"
-    },
-    "color=red": {
-      "model": "thai_alphabet_block:block/consonant_lo_ling"
-    },
-    "color=black": {
-      "model": "thai_alphabet_block:block/consonant_lo_ling"
+  "multipart": [
+    {
+      "apply": {
+        "model": "thai_alphabet_block:block/consonant_lo_ling"
+      }
     }
-  }
+  ]
 }

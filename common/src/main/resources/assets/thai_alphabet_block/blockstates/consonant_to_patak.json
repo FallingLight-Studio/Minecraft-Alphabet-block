@@ -1,52 +1,9 @@
 {
-  "variants": {
-    "color=white": {
-      "model": "thai_alphabet_block:block/consonant_to_patak"
-    },
-    "color=orange": {
-      "model": "thai_alphabet_block:block/consonant_to_patak"
-    },
-    "color=magenta": {
-      "model": "thai_alphabet_block:block/consonant_to_patak"
-    },
-    "color=light_blue": {
-      "model": "thai_alphabet_block:block/consonant_to_patak"
-    },
-    "color=yellow": {
-      "model": "thai_alphabet_block:block/consonant_to_patak"
-    },
-    "color=lime": {
-      "model": "thai_alphabet_block:block/consonant_to_patak"
-    },
-    "color=pink": {
-      "model": "thai_alphabet_block:block/consonant_to_patak"
-    },
-    "color=gray": {
-      "model": "thai_alphabet_block:block/consonant_to_patak"
-    },
-    "color=light_gray": {
-      "model": "thai_alphabet_block:block/consonant_to_patak"
-    },
-    "color=cyan": {
-      "model": "thai_alphabet_block:block/consonant_to_patak"
-    },
-    "color=purple": {
-      "model": "thai_alphabet_block:block/consonant_to_patak"
-    },
-    "color=blue": {
-      "model": "thai_alphabet_block:block/consonant_to_patak"
-    },
-    "color=brown": {
-      "model": "thai_alphabet_block:block/consonant_to_patak"
-    },
-    "color=green": {
-      "model": "thai_alphabet_block:block/consonant_to_patak"
-    },
-    "color=red": {
-      "model": "thai_alphabet_block:block/consonant_to_patak"
-    },
-    "color=black": {
-      "model": "thai_alphabet_block:block/consonant_to_patak"
+  "multipart": [
+    {
+      "apply": {
+        "model": "thai_alphabet_block:block/consonant_to_patak"
+      }
     }
-  }
+  ]
 }

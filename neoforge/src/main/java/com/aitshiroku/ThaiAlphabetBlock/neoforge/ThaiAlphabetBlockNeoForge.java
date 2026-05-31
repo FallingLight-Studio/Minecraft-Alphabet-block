@@ -18,6 +18,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
+import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -62,6 +63,9 @@ public class ThaiAlphabetBlockNeoForge {
         BLOCKS.register(modEventBus);
         ITEMS.register(modEventBus);
         CREATIVE_MODE_TABS.register(modEventBus);
+
+        // Register glyph dye handler on the game event bus (not the mod bus)
+        NeoForge.EVENT_BUS.register(ThaiAlphabetGlyphDyeHandler.class);
     }
 
     private static void registerCharacterBlocks(

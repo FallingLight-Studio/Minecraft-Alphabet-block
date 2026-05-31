@@ -27,12 +27,18 @@ public final class ThaiAlphabetColorUtil {
     }
 
     /**
-     * Glyph layer (tintindex 1): always pass-through (white multiplier).
-     * The glyph textures are pre-colored dark brown and should stay unchanged
-     * regardless of the selected dye.
+     * Glyph layer (tintindex 1): applies selected dye color to the glyph.
+     * Glyph textures are white-on-alpha, so the tint color IS the visible color.
+     * WHITE dye returns the original dark brown to preserve the classic look.
      */
     public static int glyphArgbFromDye(DyeColor dye) {
-        return 0xFFFFFFFF;
+        if (dye == DyeColor.WHITE) {
+            // Original dark brown glyph color from the pre-tinting textures
+            return 0xFF2D1A11;  // (45, 26, 17)
+        }
+        // Apply dye color to glyph layer
+        int packed = dye.getTextureDiffuseColor();
+        return 0xFF000000 | (packed & 0x00FFFFFF);
     }
 
     /** @deprecated use {@link #backgroundArgbFromDye(DyeColor)} */
