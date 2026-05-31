@@ -10,19 +10,33 @@ public final class ThaiAlphabetColorUtil {
      * Background layer (tintindex 0): the grayscale base texture is multiplied
      * by this color, producing a wood-panel pattern in the dye's shade.
      *
-     * WHITE dye returns the original warm-brown wood color rather than neutral
+     * NONE returns the original warm-brown wood color rather than neutral
      * gray, so an un-dyed block looks like natural wood.
+     * WHITE dye returns neutral white so the block background looks white.
      */
-    public static int backgroundArgbFromDye(DyeColor dye) {
-        if (dye == DyeColor.WHITE) {
+    public static int backgroundArgbFromColor(ThaiAlphabetColorProperties.ThaiBlockColor color) {
+        if (color == ThaiAlphabetColorProperties.ThaiBlockColor.NONE) {
             // Original wood tone: matches the texture_generator.html palette
             // so an un-dyed block looks warm and natural.
             return 0xFFD3B187;  // (211, 177, 135)
+        }
+        if (color == ThaiAlphabetColorProperties.ThaiBlockColor.WHITE) {
+            // White dye matches true white (allows player to make background white)
+            return 0xFFFFFFFF;
+        }
+        DyeColor dye = color.toDyeColor();
+        if (dye == null) {
+            return 0xFFFFFFFF;
         }
         // In 1.21.1, getTextureDiffuseColor() returns a packed int (ARGB)
         int packed = dye.getTextureDiffuseColor();
         // Strip alpha channel, keep only RGB
         return 0xFF000000 | (packed & 0x00FFFFFF);
+    }
+
+    @Deprecated
+    public static int backgroundArgbFromDye(DyeColor dye) {
+        return backgroundArgbFromColor(ThaiAlphabetColorProperties.ThaiBlockColor.fromDyeColor(dye));
     }
 
     /**
