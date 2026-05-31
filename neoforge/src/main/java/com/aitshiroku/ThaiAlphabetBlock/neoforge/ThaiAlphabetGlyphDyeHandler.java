@@ -47,6 +47,9 @@ public final class ThaiAlphabetGlyphDyeHandler {
                 && !(state.getBlock() instanceof ThaiLetterSlabBlock)) {
             return;
         }
+        if (net.minecraft.core.registries.BuiltInRegistries.BLOCK.getKey(state.getBlock()).getPath().equals("empty_block")) {
+            return;
+        }
         if (!state.hasProperty(ThaiAlphabetColorProperties.GLYPH_COLOR)) return;
 
         DyeColor newColor = dyeItem.getDyeColor();

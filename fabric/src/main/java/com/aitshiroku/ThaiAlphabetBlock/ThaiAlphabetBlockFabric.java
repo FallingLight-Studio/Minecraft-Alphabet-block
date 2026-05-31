@@ -119,6 +119,9 @@ public final class ThaiAlphabetBlockFabric implements ModInitializer {
                     && !(state.getBlock() instanceof ThaiLetterSlabBlock)) {
                 return InteractionResult.PASS;
             }
+            if (BuiltInRegistries.BLOCK.getKey(state.getBlock()).getPath().equals("empty_block")) {
+                return InteractionResult.PASS;
+            }
             if (!state.hasProperty(ThaiAlphabetColorProperties.GLYPH_COLOR)) {
                 return InteractionResult.PASS;
             }

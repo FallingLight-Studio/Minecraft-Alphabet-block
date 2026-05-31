@@ -25,7 +25,7 @@ public class ThaiLetterBlock extends Block {
         super(properties);
         this.registerDefaultState(this.stateDefinition.any()
                 .setValue(COLOR, DyeColor.WHITE)
-                .setValue(GLYPH_COLOR, DyeColor.WHITE));
+                .setValue(GLYPH_COLOR, DyeColor.BLACK));
     }
 
     @Override

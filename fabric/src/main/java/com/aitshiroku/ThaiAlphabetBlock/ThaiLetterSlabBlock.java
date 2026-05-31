@@ -27,10 +27,10 @@ public class ThaiLetterSlabBlock extends SlabBlock {
         super(properties);
         this.registerDefaultState(
                 this.defaultBlockState()
-                        .setValue(TYPE, SlabType.BOTTOM)
-                        .setValue(WATERLOGGED, Boolean.FALSE)
-                        .setValue(COLOR, DyeColor.WHITE)
-                        .setValue(GLYPH_COLOR, DyeColor.WHITE));
+                         .setValue(TYPE, SlabType.BOTTOM)
+                         .setValue(WATERLOGGED, Boolean.FALSE)
+                         .setValue(COLOR, DyeColor.WHITE)
+                         .setValue(GLYPH_COLOR, DyeColor.BLACK));
     }
 
     @Override

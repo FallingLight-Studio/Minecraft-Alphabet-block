@@ -30,7 +30,7 @@ public class ThaiLetterSlabBlock extends SlabBlock {
                         .setValue(TYPE, SlabType.BOTTOM)
                         .setValue(WATERLOGGED, Boolean.FALSE)
                         .setValue(COLOR, DyeColor.WHITE)
-                        .setValue(GLYPH_COLOR, DyeColor.WHITE));
+                        .setValue(GLYPH_COLOR, DyeColor.BLACK));
     }
 
     @Override

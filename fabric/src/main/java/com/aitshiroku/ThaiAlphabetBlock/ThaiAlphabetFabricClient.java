@@ -34,7 +34,7 @@ public final class ThaiAlphabetFabricClient implements ClientModInitializer {
                             // Glyph color
                             DyeColor glyphDye = state.hasProperty(ThaiLetterBlock.GLYPH_COLOR)
                                     ? state.getValue(ThaiLetterBlock.GLYPH_COLOR)
-                                    : DyeColor.WHITE;
+                                    : DyeColor.BLACK;
                             return ThaiAlphabetColorUtil.glyphArgbFromDye(glyphDye);
                         }
                     },
@@ -45,10 +45,9 @@ public final class ThaiAlphabetFabricClient implements ClientModInitializer {
                             return -1;
                         }
                         if (!(stack.getItem() instanceof BlockItem bi) || bi.getBlock() != block) {
-                            DyeColor white = DyeColor.WHITE;
                             return tintIndex == 0
-                                    ? ThaiAlphabetColorUtil.backgroundArgbFromDye(white)
-                                    : ThaiAlphabetColorUtil.glyphArgbFromDye(white);
+                                    ? ThaiAlphabetColorUtil.backgroundArgbFromDye(DyeColor.WHITE)
+                                    : ThaiAlphabetColorUtil.glyphArgbFromDye(DyeColor.BLACK);
                         }
                         BlockState state = ThaiAlphabetBlockStateUtil.stateFromItemStack(stack, block);
 
@@ -62,7 +61,7 @@ public final class ThaiAlphabetFabricClient implements ClientModInitializer {
                             // Glyph color
                             DyeColor glyphDye = state.hasProperty(ThaiLetterBlock.GLYPH_COLOR)
                                     ? state.getValue(ThaiLetterBlock.GLYPH_COLOR)
-                                    : DyeColor.WHITE;
+                                    : DyeColor.BLACK;
                             return ThaiAlphabetColorUtil.glyphArgbFromDye(glyphDye);
                         }
                     },

@@ -53,7 +53,7 @@ public final class ThaiAlphabetForgeClient {
                             // Glyph color
                             DyeColor glyphDye = state.hasProperty(ThaiLetterBlock.GLYPH_COLOR)
                                     ? state.getValue(ThaiLetterBlock.GLYPH_COLOR)
-                                    : DyeColor.WHITE;
+                                    : DyeColor.BLACK;
                             return ThaiAlphabetColorUtil.glyphArgbFromDye(glyphDye);
                         }
                     },
@@ -89,7 +89,7 @@ public final class ThaiAlphabetForgeClient {
                                     DyeColor glyphDye = state != null
                                             && state.hasProperty(ThaiLetterBlock.GLYPH_COLOR)
                                                     ? state.getValue(ThaiLetterBlock.GLYPH_COLOR)
-                                                    : DyeColor.WHITE;
+                                                    : DyeColor.BLACK;
                                     return ThaiAlphabetColorUtil.glyphArgbFromDye(glyphDye);
                                 }
                             },

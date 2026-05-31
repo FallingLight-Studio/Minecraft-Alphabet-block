@@ -32,8 +32,12 @@ public final class ThaiAlphabetColorUtil {
      */
     public static int glyphArgbFromDye(DyeColor dye) {
         if (dye == DyeColor.WHITE) {
-            // Original dark brown glyph color from the pre-tinting textures
-            return 0xFF2D1A11;  // (45, 26, 17)
+            // White Dye matches true white (allows player to make text white)
+            return 0xFFFFFFFF;
+        }
+        if (dye == DyeColor.BROWN) {
+            // Brighter warm brown for brown dye (Red: 122, Green: 75, Blue: 40)
+            return 0xFF7A4B28;
         }
         // Apply dye color to glyph layer
         int packed = dye.getTextureDiffuseColor();
