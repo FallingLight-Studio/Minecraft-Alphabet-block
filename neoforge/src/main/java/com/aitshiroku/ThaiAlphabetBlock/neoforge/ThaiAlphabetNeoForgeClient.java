@@ -60,48 +60,4 @@ public final class ThaiAlphabetNeoForgeClient {
                     block);
         }
     }
-
-    @SubscribeEvent
-    public static void registerItemColors(RegisterColorHandlersEvent.Item event) {
-        for (net.neoforged.neoforge.registries.DeferredHolder<Block, ? extends Block> ro : ThaiAlphabetBlockNeoForge.BLOCKS.getEntries()) {
-            Block block = ro.get();
-            if (!(block instanceof ThaiLetterBlock) && !(block instanceof ThaiLetterSlabBlock)) {
-                continue;
-            }
-            event.register(
-                    (ItemStack stack, int tintIndex) -> {
-                        if (tintIndex != 0 && tintIndex != 1) {
-                            return -1;
-                        }
-                        BlockState state = blockStateFromStack(stack, block);
-
-                        if (tintIndex == 0) {
-                            // Background color
-                            ThaiAlphabetColorProperties.ThaiBlockColor color = state != null
-                                    && state.hasProperty(ThaiLetterBlock.COLOR)
-                                            ? state.getValue(ThaiLetterBlock.COLOR)
-                                            : ThaiAlphabetColorProperties.ThaiBlockColor.NONE;
-                            return ThaiAlphabetColorUtil.backgroundArgbFromColor(color);
-                        } else {
-                            // Glyph color
-                            DyeColor glyphDye = state != null
-                                    && state.hasProperty(ThaiLetterBlock.GLYPH_COLOR)
-                                            ? state.getValue(ThaiLetterBlock.GLYPH_COLOR)
-                                            : DyeColor.BLACK;
-                            return ThaiAlphabetColorUtil.glyphArgbFromDye(glyphDye);
-                        }
-                    },
-                    block.asItem());
-        }
-    }
-
-    private static BlockState blockStateFromStack(ItemStack stack, Block block) {
-        if (stack.isEmpty() || !(stack.getItem() instanceof BlockItem bi)) {
-            return null;
-        }
-        if (bi.getBlock() != block) {
-            return null;
-        }
-        return ThaiAlphabetBlockStateUtil.stateFromItemStack(stack, block);
-    }
 }

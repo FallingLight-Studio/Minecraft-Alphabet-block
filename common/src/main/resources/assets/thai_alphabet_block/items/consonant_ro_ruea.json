@@ -1,0 +1,14 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "thai_alphabet_block:block/consonant_ro_ruea",
+    "tints": [
+      {
+        "type": "thai_alphabet_block:background_tint"
+      },
+      {
+        "type": "thai_alphabet_block:glyph_tint"
+      }
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "thai_alphabet_block:block/tone_mai_chattawa",
+    "tints": [
+      {
+        "type": "thai_alphabet_block:background_tint"
+      },
+      {
+        "type": "thai_alphabet_block:glyph_tint"
+      }
+    ]
+  }
+}

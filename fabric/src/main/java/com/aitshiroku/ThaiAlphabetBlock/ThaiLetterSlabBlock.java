@@ -4,7 +4,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.ItemInteractionResult;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.DyeItem;
@@ -40,7 +40,7 @@ public class ThaiLetterSlabBlock extends SlabBlock {
     }
 
     @Override
-    protected ItemInteractionResult useItemOn(
+    protected InteractionResult useItemOn(
             ItemStack stack,
             BlockState state,
             Level level,
@@ -54,7 +54,7 @@ public class ThaiLetterSlabBlock extends SlabBlock {
             DyeColor dyeColor = dyeItem.getDyeColor();
             ThaiAlphabetColorProperties.ThaiBlockColor newColor = ThaiAlphabetColorProperties.ThaiBlockColor.fromDyeColor(dyeColor);
             if (state.getValue(COLOR) == newColor) {
-                return ItemInteractionResult.CONSUME;
+                return InteractionResult.CONSUME;
             }
             if (!level.isClientSide) {
                 level.setBlock(pos, state.setValue(COLOR, newColor), 3);
@@ -63,8 +63,8 @@ public class ThaiLetterSlabBlock extends SlabBlock {
                 }
                 level.playSound(null, pos, SoundEvents.DYE_USE, SoundSource.BLOCKS, 1.0F, 1.0F);
             }
-            return ItemInteractionResult.sidedSuccess(level.isClientSide);
+            return level.isClientSide ? InteractionResult.SUCCESS : InteractionResult.CONSUME;
         }
-        return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+        return InteractionResult.PASS;
     }
 }

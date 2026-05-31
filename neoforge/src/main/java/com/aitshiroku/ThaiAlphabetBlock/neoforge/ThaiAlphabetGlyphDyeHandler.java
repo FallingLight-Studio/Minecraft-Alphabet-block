@@ -71,6 +71,6 @@ public final class ThaiAlphabetGlyphDyeHandler {
         }
 
         event.setCanceled(true);
-        event.setCancellationResult(InteractionResult.sidedSuccess(level.isClientSide));
+        event.setCancellationResult(level.isClientSide ? InteractionResult.SUCCESS : InteractionResult.CONSUME);
     }
 }

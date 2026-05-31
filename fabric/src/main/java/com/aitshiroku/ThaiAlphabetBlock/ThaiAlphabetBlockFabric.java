@@ -142,7 +142,7 @@ public final class ThaiAlphabetBlockFabric implements ModInitializer {
                 world.playSound(null, pos, SoundEvents.DYE_USE, SoundSource.BLOCKS, 1.0F, 0.8F);
             }
 
-            return InteractionResult.sidedSuccess(world.isClientSide);
+            return world.isClientSide ? InteractionResult.SUCCESS : InteractionResult.CONSUME;
         });
     }
 

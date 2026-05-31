@@ -39,33 +39,6 @@ public final class ThaiAlphabetFabricClient implements ClientModInitializer {
                         }
                     },
                     block);
-            ColorProviderRegistry.ITEM.register(
-                    (ItemStack stack, int tintIndex) -> {
-                        if (tintIndex != 0 && tintIndex != 1) {
-                            return -1;
-                        }
-                        if (!(stack.getItem() instanceof BlockItem bi) || bi.getBlock() != block) {
-                            return tintIndex == 0
-                                    ? ThaiAlphabetColorUtil.backgroundArgbFromColor(ThaiAlphabetColorProperties.ThaiBlockColor.NONE)
-                                    : ThaiAlphabetColorUtil.glyphArgbFromDye(DyeColor.BLACK);
-                        }
-                        BlockState state = ThaiAlphabetBlockStateUtil.stateFromItemStack(stack, block);
-
-                        if (tintIndex == 0) {
-                            // Background color
-                            ThaiAlphabetColorProperties.ThaiBlockColor color = state.hasProperty(ThaiLetterBlock.COLOR)
-                                    ? state.getValue(ThaiLetterBlock.COLOR)
-                                    : ThaiAlphabetColorProperties.ThaiBlockColor.NONE;
-                            return ThaiAlphabetColorUtil.backgroundArgbFromColor(color);
-                        } else {
-                            // Glyph color
-                            DyeColor glyphDye = state.hasProperty(ThaiLetterBlock.GLYPH_COLOR)
-                                    ? state.getValue(ThaiLetterBlock.GLYPH_COLOR)
-                                    : DyeColor.BLACK;
-                            return ThaiAlphabetColorUtil.glyphArgbFromDye(glyphDye);
-                        }
-                    },
-                    block.asItem());
         }
     }
 }
