@@ -18,13 +18,13 @@ import net.minecraft.world.phys.BlockHitResult;
 
 public class ThaiLetterBlock extends Block {
 
-    public static final EnumProperty<DyeColor> COLOR = ThaiAlphabetColorProperties.COLOR;
+    public static final EnumProperty<ThaiAlphabetColorProperties.ThaiBlockColor> COLOR = ThaiAlphabetColorProperties.COLOR;
     public static final EnumProperty<DyeColor> GLYPH_COLOR = ThaiAlphabetColorProperties.GLYPH_COLOR;
 
     public ThaiLetterBlock(Properties properties) {
         super(properties);
         this.registerDefaultState(this.stateDefinition.any()
-                .setValue(COLOR, DyeColor.WHITE)
+                .setValue(COLOR, ThaiAlphabetColorProperties.ThaiBlockColor.NONE)
                 .setValue(GLYPH_COLOR, DyeColor.BLACK));
     }
 
@@ -45,7 +45,8 @@ public class ThaiLetterBlock extends Block {
         if (stack.getItem() instanceof DyeItem dyeItem) {
             // NOTE: Shift + Right-click (glyph color) is handled by the UseBlockCallback
             // event in ThaiAlphabetBlockFabric, because vanilla skips useItemOn() when sneaking.
-            DyeColor newColor = dyeItem.getDyeColor();
+            DyeColor dyeColor = dyeItem.getDyeColor();
+            ThaiAlphabetColorProperties.ThaiBlockColor newColor = ThaiAlphabetColorProperties.ThaiBlockColor.fromDyeColor(dyeColor);
             if (state.getValue(COLOR) == newColor) {
                 return ItemInteractionResult.CONSUME;
             }
