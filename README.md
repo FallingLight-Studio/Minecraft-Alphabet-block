@@ -4,8 +4,8 @@ A Minecraft mod that adds beautiful Thai alphabet blocks to the game! Perfect fo
 
 [![Minecraft Versions](https://img.shields.io/badge/Minecraft-1.20.1%20%7C%201.21.1%20%7C%201.21.4%20%7C%201.21.11-blue.svg)](#)
 [![Fabric](https://img.shields.io/badge/Fabric-Supported-brightgreen.svg)](#)
-[![Forge](https://img.shields.io/badge/Forge-Supported-orange.svg)](#)
-[![NeoForge](https://img.shields.io/badge/NeoForge-Supported-red.svg)](#)
+[![Forge](https://img.shields.io/badge/Forge-Supported-green.svg)](#)
+[![NeoForge](https://img.shields.io/badge/NeoForge-Supported-green.svg)](#)
 [![License](https://img.shields.io/badge/License-Apache%202.0-yellow.svg)](https://opensource.org/licenses/Apache-2.0)
 
 ---
