@@ -1,13 +1,10 @@
 package com.aitshiroku.ThaiAlphabetBlock.neoforge;
 
-import com.aitshiroku.thai_alphabet_block.ThaiAlphabetCommon;
-
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
-import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 import net.minecraft.resources.Identifier;
@@ -28,7 +25,8 @@ public final class ThaiAlphabetNeoForgeClient {
         event.enqueueWork(() -> {
             for (net.neoforged.neoforge.registries.DeferredHolder<Block, ? extends Block> ro : ThaiAlphabetBlockNeoForge.BLOCKS
                     .getEntries()) {
-                net.minecraft.client.renderer.ItemBlockRenderTypes.setRenderLayer(ro.get(), net.minecraft.client.renderer.chunk.ChunkSectionLayer.CUTOUT);
+                net.minecraft.client.renderer.ItemBlockRenderTypes.setRenderLayer(ro.get(),
+                        net.minecraft.client.renderer.chunk.ChunkSectionLayer.CUTOUT);
             }
         });
     }
