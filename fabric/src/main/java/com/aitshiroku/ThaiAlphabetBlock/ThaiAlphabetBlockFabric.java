@@ -44,29 +44,33 @@ public final class ThaiAlphabetBlockFabric implements ModInitializer {
     public void onInitialize() {
         // Register all blocks and items
         for (ThaiAlphabetDefinitions.CharacterDef def : ThaiAlphabetDefinitions.all()) {
-            // In 1.21.1, ResourceLocation constructor is private; use factory method
             ResourceLocation id = ResourceLocation.fromNamespaceAndPath(
                 ThaiAlphabetCommon.MOD_ID,
                 def.id()
             );
 
+            ResourceKey<Block> blockKey = ResourceKey.create(Registries.BLOCK, id);
+            ResourceKey<Item> itemKey = ResourceKey.create(Registries.ITEM, id);
+
             Block block =
                 def.shape() == ThaiAlphabetDefinitions.LetterBlockShape.FULL
                     ? new ThaiLetterBlock(
                           BlockBehaviour.Properties.of()
+                              .setId(blockKey)
                               .mapColor(MapColor.COLOR_LIGHT_GRAY)
                               .strength(1.5f, 6.0f)
                       )
                     : new ThaiLetterSlabBlock(
                           BlockBehaviour.Properties.of()
+                              .setId(blockKey)
                               .mapColor(MapColor.COLOR_PURPLE)
                               .strength(1.5f, 6.0f)
                       );
-            Registry.register(BuiltInRegistries.BLOCK, id, block);
+            Registry.register(BuiltInRegistries.BLOCK, blockKey, block);
             REGISTERED_BLOCKS.add(block);
 
-            Item item = new BlockItem(block, new Item.Properties());
-            Registry.register(BuiltInRegistries.ITEM, id, item);
+            Item item = new BlockItem(block, new Item.Properties().setId(itemKey));
+            Registry.register(BuiltInRegistries.ITEM, itemKey, item);
             REGISTERED_ITEMS.put(def.id(), item);
         }
 
