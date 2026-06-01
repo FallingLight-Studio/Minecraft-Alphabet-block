@@ -56,14 +56,14 @@ public class ThaiLetterSlabBlock extends SlabBlock {
             if (state.getValue(COLOR) == newColor) {
                 return InteractionResult.CONSUME;
             }
-            if (!level.isClientSide) {
+            if (!level.isClientSide()) {
                 level.setBlock(pos, state.setValue(COLOR, newColor), 3);
                 if (!player.getAbilities().instabuild) {
                     stack.shrink(1);
                 }
                 level.playSound(null, pos, SoundEvents.DYE_USE, SoundSource.BLOCKS, 1.0F, 1.0F);
             }
-            return level.isClientSide ? InteractionResult.SUCCESS : InteractionResult.CONSUME;
+            return level.isClientSide() ? InteractionResult.SUCCESS : InteractionResult.CONSUME;
         }
         return InteractionResult.PASS;
     }

@@ -13,7 +13,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.eventbus.api.listener.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 /**
@@ -31,12 +31,12 @@ public final class ThaiAlphabetGlyphDyeHandler {
     }
 
     @SubscribeEvent
-    public static void onRightClickBlock(PlayerInteractEvent.RightClickBlock event) {
+    public static boolean onRightClickBlock(PlayerInteractEvent.RightClickBlock event) {
         Player player = event.getEntity();
-        if (!player.isShiftKeyDown()) return;
+        if (!player.isShiftKeyDown()) return false;
 
         ItemStack stack = event.getItemStack();
-        if (!(stack.getItem() instanceof DyeItem dyeItem)) return;
+        if (!(stack.getItem() instanceof DyeItem dyeItem)) return false;
 
         Level level = player.level();
         BlockPos pos = event.getPos();
@@ -44,24 +44,23 @@ public final class ThaiAlphabetGlyphDyeHandler {
 
         if (!(state.getBlock() instanceof ThaiLetterBlock)
                 && !(state.getBlock() instanceof ThaiLetterSlabBlock)) {
-            return;
+            return false;
         }
         if (net.minecraft.core.registries.BuiltInRegistries.BLOCK.getKey(state.getBlock()).getPath().equals("empty_block")) {
-            return;
+            return false;
         }
-        if (!state.hasProperty(ThaiAlphabetColorProperties.GLYPH_COLOR)) return;
+        if (!state.hasProperty(ThaiAlphabetColorProperties.GLYPH_COLOR)) return false;
 
         DyeColor newColor = dyeItem.getDyeColor();
 
         // Same color already applied — consume the interaction but do nothing
         if (state.getValue(ThaiAlphabetColorProperties.GLYPH_COLOR) == newColor) {
-            event.setCanceled(true);
             event.setCancellationResult(InteractionResult.CONSUME);
-            return;
+            return true;
         }
 
         // Apply glyph color change on the server side
-        if (!level.isClientSide) {
+        if (!level.isClientSide()) {
             level.setBlock(pos, state.setValue(ThaiAlphabetColorProperties.GLYPH_COLOR, newColor), 3);
             if (!player.getAbilities().instabuild) {
                 stack.shrink(1);
@@ -69,7 +68,7 @@ public final class ThaiAlphabetGlyphDyeHandler {
             level.playSound(null, pos, SoundEvents.DYE_USE, SoundSource.BLOCKS, 1.0F, 0.8F);
         }
 
-        event.setCanceled(true);
-        event.setCancellationResult(level.isClientSide ? InteractionResult.SUCCESS : InteractionResult.CONSUME);
+        event.setCancellationResult(level.isClientSide() ? InteractionResult.SUCCESS : InteractionResult.CONSUME);
+        return true;
     }
 }

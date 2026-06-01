@@ -2,7 +2,7 @@ plugins {
     id 'java-library'
     id 'idea'
     id 'maven-publish'
-    id 'net.neoforged.moddev' version '2.0.80'
+    id 'net.neoforged.moddev' version '2.0.141'
 }
 
 version = mod_version
@@ -68,7 +68,6 @@ repositories {
 
 dependencies {
     implementation project(':common')
-    additionalRuntimeClasspath project(':common')
 }
 
 tasks.named('processResources', ProcessResources).configure {

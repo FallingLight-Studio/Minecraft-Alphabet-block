@@ -62,7 +62,7 @@ public final class ThaiAlphabetGlyphDyeHandler {
         }
 
         // Apply glyph color change on the server side
-        if (!level.isClientSide) {
+        if (!level.isClientSide()) {
             level.setBlock(pos, state.setValue(ThaiAlphabetColorProperties.GLYPH_COLOR, newColor), 3);
             if (!player.getAbilities().instabuild) {
                 stack.shrink(1);
@@ -71,6 +71,6 @@ public final class ThaiAlphabetGlyphDyeHandler {
         }
 
         event.setCanceled(true);
-        event.setCancellationResult(level.isClientSide ? InteractionResult.SUCCESS : InteractionResult.CONSUME);
+        event.setCancellationResult(level.isClientSide() ? InteractionResult.SUCCESS : InteractionResult.CONSUME);
     }
 }

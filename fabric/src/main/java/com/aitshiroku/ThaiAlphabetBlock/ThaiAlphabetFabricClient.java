@@ -7,12 +7,12 @@ import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
-import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
-import net.minecraft.client.renderer.RenderType;
+import net.fabricmc.fabric.api.client.rendering.v1.BlockRenderLayerMap;
+import net.minecraft.client.renderer.chunk.ChunkSectionLayer;
 import net.minecraft.client.color.item.ItemTintSources;
 import net.minecraft.client.color.item.ItemTintSource;
 import com.mojang.serialization.MapCodec;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 
 public final class ThaiAlphabetFabricClient implements ClientModInitializer {
 
@@ -20,7 +20,7 @@ public final class ThaiAlphabetFabricClient implements ClientModInitializer {
     public void onInitializeClient() {
         // Register custom item tint sources
         ItemTintSources.ID_MAPPER.put(
-            ResourceLocation.fromNamespaceAndPath("thai_alphabet_block", "background_tint"),
+            Identifier.fromNamespaceAndPath("thai_alphabet_block", "background_tint"),
             MapCodec.unit(new ItemTintSource() {
                 @Override
                 public int calculate(ItemStack stack, net.minecraft.client.multiplayer.ClientLevel level, net.minecraft.world.entity.LivingEntity entity) {
@@ -43,7 +43,7 @@ public final class ThaiAlphabetFabricClient implements ClientModInitializer {
         );
 
         ItemTintSources.ID_MAPPER.put(
-            ResourceLocation.fromNamespaceAndPath("thai_alphabet_block", "glyph_tint"),
+            Identifier.fromNamespaceAndPath("thai_alphabet_block", "glyph_tint"),
             MapCodec.unit(new ItemTintSource() {
                 @Override
                 public int calculate(ItemStack stack, net.minecraft.client.multiplayer.ClientLevel level, net.minecraft.world.entity.LivingEntity entity) {
@@ -69,7 +69,7 @@ public final class ThaiAlphabetFabricClient implements ClientModInitializer {
             if (!(block instanceof ThaiLetterBlock) && !(block instanceof ThaiLetterSlabBlock)) {
                 continue;
             }
-            BlockRenderLayerMap.INSTANCE.putBlock(block, RenderType.cutout());
+            BlockRenderLayerMap.putBlock(block, ChunkSectionLayer.CUTOUT);
             ColorProviderRegistry.BLOCK.register(
                     (state, world, pos, tintIndex) -> {
                         if (tintIndex != 0 && tintIndex != 1) {

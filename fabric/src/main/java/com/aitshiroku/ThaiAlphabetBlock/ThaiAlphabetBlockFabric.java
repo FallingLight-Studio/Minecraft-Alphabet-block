@@ -18,7 +18,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
@@ -44,7 +44,7 @@ public final class ThaiAlphabetBlockFabric implements ModInitializer {
     public void onInitialize() {
         // Register all blocks and items
         for (ThaiAlphabetDefinitions.CharacterDef def : ThaiAlphabetDefinitions.all()) {
-            ResourceLocation id = ResourceLocation.fromNamespaceAndPath(
+            Identifier id = Identifier.fromNamespaceAndPath(
                 ThaiAlphabetCommon.MOD_ID,
                 def.id()
             );
@@ -77,7 +77,7 @@ public final class ThaiAlphabetBlockFabric implements ModInitializer {
         // Create tab ResourceKey
         ResourceKey<CreativeModeTab> tabKey = ResourceKey.create(
             Registries.CREATIVE_MODE_TAB,
-            ResourceLocation.fromNamespaceAndPath(ThaiAlphabetCommon.MOD_ID, "thai_alphabet_tab")
+            Identifier.fromNamespaceAndPath(ThaiAlphabetCommon.MOD_ID, "thai_alphabet_tab")
         );
 
         // Register custom creative tab
@@ -138,7 +138,7 @@ public final class ThaiAlphabetBlockFabric implements ModInitializer {
             }
 
             // Apply glyph color change on the server side
-            if (!world.isClientSide) {
+            if (!world.isClientSide()) {
                 world.setBlock(pos, state.setValue(ThaiAlphabetColorProperties.GLYPH_COLOR, newColor), 3);
                 if (!player.getAbilities().instabuild) {
                     stack.shrink(1);
@@ -146,7 +146,7 @@ public final class ThaiAlphabetBlockFabric implements ModInitializer {
                 world.playSound(null, pos, SoundEvents.DYE_USE, SoundSource.BLOCKS, 1.0F, 0.8F);
             }
 
-            return world.isClientSide ? InteractionResult.SUCCESS : InteractionResult.CONSUME;
+            return world.isClientSide() ? InteractionResult.SUCCESS : InteractionResult.CONSUME;
         });
     }
 

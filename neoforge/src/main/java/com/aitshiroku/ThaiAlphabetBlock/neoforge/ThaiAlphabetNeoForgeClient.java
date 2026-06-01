@@ -11,32 +11,20 @@ import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
-import net.minecraft.client.renderer.RenderType;
-import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import com.mojang.serialization.MapCodec;
 
-@EventBusSubscriber(modid = ThaiAlphabetCommon.MOD_ID, value = Dist.CLIENT, bus = EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber(modid = ThaiAlphabetCommon.MOD_ID, value = Dist.CLIENT)
 public final class ThaiAlphabetNeoForgeClient {
 
     private ThaiAlphabetNeoForgeClient() {
     }
 
-    @SuppressWarnings("deprecation")
-    @SubscribeEvent
-    public static void onClientSetup(FMLClientSetupEvent event) {
-        event.enqueueWork(() -> {
-            for (net.neoforged.neoforge.registries.DeferredHolder<Block, ? extends Block> ro : ThaiAlphabetBlockNeoForge.BLOCKS.getEntries()) {
-                ItemBlockRenderTypes.setRenderLayer(ro.get(), RenderType.cutout());
-            }
-        });
-    }
 
     @SubscribeEvent
     public static void registerItemTintSources(RegisterColorHandlersEvent.ItemTintSources event) {
         event.register(
-            ResourceLocation.fromNamespaceAndPath("thai_alphabet_block", "background_tint"),
+            Identifier.fromNamespaceAndPath("thai_alphabet_block", "background_tint"),
             MapCodec.unit(new net.minecraft.client.color.item.ItemTintSource() {
                 @Override
                 public int calculate(ItemStack stack, net.minecraft.client.multiplayer.ClientLevel level, net.minecraft.world.entity.LivingEntity entity) {
@@ -59,7 +47,7 @@ public final class ThaiAlphabetNeoForgeClient {
         );
 
         event.register(
-            ResourceLocation.fromNamespaceAndPath("thai_alphabet_block", "glyph_tint"),
+            Identifier.fromNamespaceAndPath("thai_alphabet_block", "glyph_tint"),
             MapCodec.unit(new net.minecraft.client.color.item.ItemTintSource() {
                 @Override
                 public int calculate(ItemStack stack, net.minecraft.client.multiplayer.ClientLevel level, net.minecraft.world.entity.LivingEntity entity) {

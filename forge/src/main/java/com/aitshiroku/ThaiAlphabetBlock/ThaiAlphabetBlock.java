@@ -9,7 +9,7 @@ import com.aitshiroku.thai_alphabet_block.ThaiAlphabetDefinitions;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -62,16 +62,16 @@ public class ThaiAlphabetBlock {
                                         .build());
 
         public ThaiAlphabetBlock(FMLJavaModLoadingContext context) {
-                var modEventBus = context.getModEventBus();
-                BLOCKS.register(modEventBus);
-                ITEMS.register(modEventBus);
-                CREATIVE_MODE_TABS.register(modEventBus);
+                var modBusGroup = context.getModBusGroup();
+                BLOCKS.register(modBusGroup);
+                ITEMS.register(modBusGroup);
+                CREATIVE_MODE_TABS.register(modBusGroup);
         }
 
         private static void registerCharacterBlocks(
                         Iterable<ThaiAlphabetDefinitions.CharacterDef> definitions) {
                 for (ThaiAlphabetDefinitions.CharacterDef def : definitions) {
-                        ResourceLocation id = ResourceLocation.fromNamespaceAndPath(ThaiAlphabetCommon.MOD_ID, def.id());
+                        Identifier id = Identifier.fromNamespaceAndPath(ThaiAlphabetCommon.MOD_ID, def.id());
                         ResourceKey<Block> blockKey = ResourceKey.create(Registries.BLOCK, id);
                         ResourceKey<Item> itemKey = ResourceKey.create(Registries.ITEM, id);
 
