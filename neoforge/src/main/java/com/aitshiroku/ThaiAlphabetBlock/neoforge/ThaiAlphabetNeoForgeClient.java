@@ -35,7 +35,7 @@ public final class ThaiAlphabetNeoForgeClient {
     public static void registerBlockColors(RegisterColorHandlersEvent.Block event) {
         for (net.neoforged.neoforge.registries.DeferredHolder<Block, ? extends Block> ro : ThaiAlphabetBlockNeoForge.BLOCKS.getEntries()) {
             Block block = ro.get();
-            if (!(block instanceof ThaiLetterBlock) && !(block instanceof ThaiLetterSlabBlock)) {
+            if (!(block instanceof ThaiLetterBlock)) {
                 continue;
             }
             event.register(
@@ -65,7 +65,7 @@ public final class ThaiAlphabetNeoForgeClient {
     public static void registerItemColors(RegisterColorHandlersEvent.Item event) {
         for (net.neoforged.neoforge.registries.DeferredHolder<Block, ? extends Block> ro : ThaiAlphabetBlockNeoForge.BLOCKS.getEntries()) {
             Block block = ro.get();
-            if (!(block instanceof ThaiLetterBlock) && !(block instanceof ThaiLetterSlabBlock)) {
+            if (!(block instanceof ThaiLetterBlock)) {
                 continue;
             }
             event.register(

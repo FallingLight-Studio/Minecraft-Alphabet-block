@@ -36,7 +36,7 @@ public final class ThaiAlphabetForgeClient {
     public static void registerBlockColors(RegisterColorHandlersEvent.Block event) {
         for (RegistryObject<Block> ro : ThaiAlphabetBlock.BLOCKS.getEntries()) {
             Block block = ro.get();
-            if (!(block instanceof ThaiLetterBlock) && !(block instanceof ThaiLetterSlabBlock)) {
+            if (!(block instanceof ThaiLetterBlock)) {
                 continue;
             }
             event.register(
@@ -67,7 +67,7 @@ public final class ThaiAlphabetForgeClient {
     public static void registerItemColors(RegisterColorHandlersEvent.Item event) {
         for (RegistryObject<Block> ro : ThaiAlphabetBlock.BLOCKS.getEntries()) {
             Block block = ro.get();
-            if (!(block instanceof ThaiLetterBlock) && !(block instanceof ThaiLetterSlabBlock)) {
+            if (!(block instanceof ThaiLetterBlock)) {
                 continue;
             }
             event.getItemColors()

@@ -50,18 +50,11 @@ public final class ThaiAlphabetBlockFabric implements ModInitializer {
                 def.id()
             );
 
-            Block block =
-                def.shape() == ThaiAlphabetDefinitions.LetterBlockShape.FULL
-                    ? new ThaiLetterBlock(
-                          BlockBehaviour.Properties.of()
-                              .mapColor(MapColor.COLOR_LIGHT_GRAY)
-                              .strength(1.5f, 6.0f)
-                      )
-                    : new ThaiLetterSlabBlock(
-                          BlockBehaviour.Properties.of()
-                              .mapColor(MapColor.COLOR_PURPLE)
-                              .strength(1.5f, 6.0f)
-                      );
+            Block block = new ThaiLetterBlock(
+                BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_LIGHT_GRAY)
+                    .strength(1.5f, 6.0f)
+            );
             Registry.register(BuiltInRegistries.BLOCK, id, block);
             REGISTERED_BLOCKS.add(block);
 
@@ -115,8 +108,7 @@ public final class ThaiAlphabetBlockFabric implements ModInitializer {
             BlockPos pos = hitResult.getBlockPos();
             BlockState state = world.getBlockState(pos);
 
-            if (!(state.getBlock() instanceof ThaiLetterBlock)
-                    && !(state.getBlock() instanceof ThaiLetterSlabBlock)) {
+            if (!(state.getBlock() instanceof ThaiLetterBlock)) {
                 return InteractionResult.PASS;
             }
             if (BuiltInRegistries.BLOCK.getKey(state.getBlock()).getPath().equals("empty_block")) {
