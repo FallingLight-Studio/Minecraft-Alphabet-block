@@ -8,19 +8,31 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.api.distmarker.Dist;
-import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 import net.minecraft.resources.Identifier;
 import com.mojang.serialization.MapCodec;
 
-@EventBusSubscriber(modid = ThaiAlphabetCommon.MOD_ID, value = Dist.CLIENT)
 public final class ThaiAlphabetNeoForgeClient {
 
     private ThaiAlphabetNeoForgeClient() {
     }
 
-    @SubscribeEvent
+    public static void registerListeners(IEventBus modEventBus) {
+        modEventBus.addListener(ThaiAlphabetNeoForgeClient::onClientSetup);
+        modEventBus.addListener(ThaiAlphabetNeoForgeClient::registerItemTintSources);
+        modEventBus.addListener(ThaiAlphabetNeoForgeClient::registerBlockColors);
+    }
+
+    public static void onClientSetup(net.neoforged.fml.event.lifecycle.FMLClientSetupEvent event) {
+        event.enqueueWork(() -> {
+            for (net.neoforged.neoforge.registries.DeferredHolder<Block, ? extends Block> ro : ThaiAlphabetBlockNeoForge.BLOCKS
+                    .getEntries()) {
+                net.minecraft.client.renderer.ItemBlockRenderTypes.setRenderLayer(ro.get(), net.minecraft.client.renderer.chunk.ChunkSectionLayer.CUTOUT);
+            }
+        });
+    }
+
     public static void registerItemTintSources(RegisterColorHandlersEvent.ItemTintSources event) {
         event.register(
                 Identifier.fromNamespaceAndPath("thai_alphabet_block", "background_tint"),
@@ -71,7 +83,6 @@ public final class ThaiAlphabetNeoForgeClient {
                 }));
     }
 
-    @SubscribeEvent
     public static void registerBlockColors(RegisterColorHandlersEvent.Block event) {
         for (net.neoforged.neoforge.registries.DeferredHolder<Block, ? extends Block> ro : ThaiAlphabetBlockNeoForge.BLOCKS
                 .getEntries()) {

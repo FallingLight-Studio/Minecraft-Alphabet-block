@@ -26,6 +26,10 @@ public final class ThaiAlphabetForgeClient {
     @SubscribeEvent
     public static void onClientSetup(FMLClientSetupEvent event) {
         event.enqueueWork(() -> {
+            for (net.minecraftforge.registries.RegistryObject<Block> ro : ThaiAlphabetBlock.BLOCKS.getEntries()) {
+                net.minecraft.client.renderer.ItemBlockRenderTypes.setRenderLayer(ro.get(), net.minecraft.client.renderer.chunk.ChunkSectionLayer.CUTOUT);
+            }
+
             // Register custom item tint sources
             net.minecraft.client.color.item.ItemTintSources.ID_MAPPER.put(
                     Identifier.fromNamespaceAndPath("thai_alphabet_block", "background_tint"),
@@ -77,7 +81,10 @@ public final class ThaiAlphabetForgeClient {
         });
     }
 
-    @SubscribeEvent
+    public static void registerListeners() {
+        RegisterColorHandlersEvent.Block.BUS.addListener(ThaiAlphabetForgeClient::registerBlockColors);
+    }
+
     public static void registerBlockColors(RegisterColorHandlersEvent.Block event) {
         for (RegistryObject<Block> ro : ThaiAlphabetBlock.BLOCKS.getEntries()) {
             Block block = ro.get();

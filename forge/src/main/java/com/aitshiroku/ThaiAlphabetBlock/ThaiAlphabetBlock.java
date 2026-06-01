@@ -66,6 +66,10 @@ public class ThaiAlphabetBlock {
                 BLOCKS.register(modBusGroup);
                 ITEMS.register(modBusGroup);
                 CREATIVE_MODE_TABS.register(modBusGroup);
+
+                if (net.minecraftforge.fml.loading.FMLEnvironment.dist == net.minecraftforge.api.distmarker.Dist.CLIENT) {
+                        ThaiAlphabetForgeClient.registerListeners();
+                }
         }
 
         private static void registerCharacterBlocks(

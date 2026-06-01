@@ -66,6 +66,10 @@ public class ThaiAlphabetBlockNeoForge {
         ITEMS.register(modEventBus);
         CREATIVE_MODE_TABS.register(modEventBus);
 
+        if (net.neoforged.fml.loading.FMLEnvironment.getDist() == net.neoforged.api.distmarker.Dist.CLIENT) {
+            ThaiAlphabetNeoForgeClient.registerListeners(modEventBus);
+        }
+
         // Register glyph dye handler on the game event bus (not the mod bus)
         NeoForge.EVENT_BUS.register(ThaiAlphabetGlyphDyeHandler.class);
     }
