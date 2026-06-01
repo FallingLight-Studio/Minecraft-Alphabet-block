@@ -15,6 +15,8 @@ import net.minecraftforge.registries.RegistryObject;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import net.minecraft.resources.ResourceLocation;
+import com.mojang.serialization.MapCodec;
 
 @Mod.EventBusSubscriber(modid = ThaiAlphabetCommon.MOD_ID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.MOD)
 public final class ThaiAlphabetForgeClient {
@@ -29,6 +31,53 @@ public final class ThaiAlphabetForgeClient {
             for (RegistryObject<Block> ro : ThaiAlphabetBlock.BLOCKS.getEntries()) {
                 ItemBlockRenderTypes.setRenderLayer(ro.get(), RenderType.cutout());
             }
+            
+            // Register custom item tint sources
+            net.minecraft.client.color.item.ItemTintSources.ID_MAPPER.put(
+                ResourceLocation.fromNamespaceAndPath("thai_alphabet_block", "background_tint"),
+                MapCodec.unit(new net.minecraft.client.color.item.ItemTintSource() {
+                    @Override
+                    public int calculate(ItemStack stack, net.minecraft.client.multiplayer.ClientLevel level, net.minecraft.world.entity.LivingEntity entity) {
+                        if (stack.getItem() instanceof BlockItem blockItem) {
+                            Block block = blockItem.getBlock();
+                            BlockState state = ThaiAlphabetBlockStateUtil.stateFromItemStack(stack, block);
+                            if (state.hasProperty(ThaiLetterBlock.COLOR)) {
+                                ThaiAlphabetColorProperties.ThaiBlockColor color = state.getValue(ThaiLetterBlock.COLOR);
+                                return ThaiAlphabetColorUtil.backgroundArgbFromColor(color);
+                            }
+                        }
+                        return ThaiAlphabetColorUtil.backgroundArgbFromColor(ThaiAlphabetColorProperties.ThaiBlockColor.NONE);
+                    }
+
+                    @Override
+                    public MapCodec<? extends net.minecraft.client.color.item.ItemTintSource> type() {
+                        return MapCodec.unit(this);
+                    }
+                })
+            );
+
+            net.minecraft.client.color.item.ItemTintSources.ID_MAPPER.put(
+                ResourceLocation.fromNamespaceAndPath("thai_alphabet_block", "glyph_tint"),
+                MapCodec.unit(new net.minecraft.client.color.item.ItemTintSource() {
+                    @Override
+                    public int calculate(ItemStack stack, net.minecraft.client.multiplayer.ClientLevel level, net.minecraft.world.entity.LivingEntity entity) {
+                        if (stack.getItem() instanceof BlockItem blockItem) {
+                            Block block = blockItem.getBlock();
+                            BlockState state = ThaiAlphabetBlockStateUtil.stateFromItemStack(stack, block);
+                            if (state.hasProperty(ThaiLetterBlock.GLYPH_COLOR)) {
+                                DyeColor glyphDye = state.getValue(ThaiLetterBlock.GLYPH_COLOR);
+                                return ThaiAlphabetColorUtil.glyphArgbFromDye(glyphDye);
+                            }
+                        }
+                        return ThaiAlphabetColorUtil.glyphArgbFromDye(DyeColor.BLACK);
+                    }
+
+                    @Override
+                    public MapCodec<? extends net.minecraft.client.color.item.ItemTintSource> type() {
+                        return MapCodec.unit(this);
+                    }
+                })
+            );
         });
     }
 
