@@ -1,6 +1,6 @@
 # 🇹🇭 Thai Alphabet Block
 
-A Minecraft mod that adds beautiful Thai alphabet blocks and slabs to the game! Perfect for building signs, decorating schools, creating word-guessing games, or designing Thai-themed worlds.
+A Minecraft mod that adds beautiful Thai alphabet blocks to the game! Perfect for building signs, decorating schools, creating word-guessing games, or designing Thai-themed worlds.
 
 [![Minecraft Versions](https://img.shields.io/badge/Minecraft-1.20.1%20%7C%201.21.1%20%7C%201.21.4%20%7C%201.21.11-blue.svg)](#)
 [![Fabric](https://img.shields.io/badge/Fabric-Supported-brightgreen.svg)](#)
@@ -12,8 +12,8 @@ A Minecraft mod that adds beautiful Thai alphabet blocks and slabs to the game! 
 
 ## ✨ Features
 
-- **69 Thai Character Blocks & Slabs**: Includes all major consonants (ก-ฮ), vowels, and tone marks. Both full block and slab variants are available!
-- **Color Customization (Dyeable!)**: Right-click any Thai alphabet block or slab with any of the 16 Minecraft Dyes to customize the background color. The background will shift color while keeping the wood panel design and making the characters stand out cleanly.
+- **69 Thai Character Blocks**: Includes all major consonants (ก-ฮ), vowels, and tone marks as placeable full blocks.
+- **Color Customization (Dyeable!)**: Right-click any Thai alphabet block with any of the 16 Minecraft Dyes to customize the background color. The background will shift color while keeping the wood panel design and making the characters stand out cleanly.
 - **Improved Visuals**: Rendered using high-quality cutout layers (1.21.11+) ensuring sharp glyph edges and perfect transparency.
 - **Dedicated Creative Tab**: Organized beautifully in a custom creative tab for easy search and access.
 - **Universal Loader Support**: Compiles and runs natively across **Fabric**, **Forge**, and **NeoForge** for Minecraft versions `1.20.1`, `1.21.1`, `1.21.4`, and `1.21.11`.
@@ -22,7 +22,7 @@ A Minecraft mod that adds beautiful Thai alphabet blocks and slabs to the game! 
 
 ## 🎨 How to Dye Blocks
 
-1. Place down any Thai Alphabet Block or Slab.
+1. Place down any Thai Alphabet Block.
 2. Hold any Minecraft **Dye** (16 colors available) in your hand.
 3. **Right-click** the block to apply the dye! The background panel changes color instantly.
 
@@ -43,12 +43,12 @@ A Minecraft mod that adds beautiful Thai alphabet blocks and slabs to the game! 
 
 # 🇹🇭 ภาษาไทย (Thai)
 
-ม็อด Minecraft ที่เพิ่มบล็อกและแผ่นครึ่ง (Slab) ตัวอักษรภาษาไทยเข้ามาในเกม! เหมาะสำหรับนำไปสร้างป้ายข้อความ ตกแต่งโรงเรียน ทำกิจกรรมทายคำ หรือสร้างสรรค์สิ่งก่อสร้างในธีมไทยอันแสนอบอุ่น
+ม็อด Minecraft ที่เพิ่มบล็อกตัวอักษรภาษาไทยเข้ามาในเกม! เหมาะสำหรับนำไปสร้างป้ายข้อความ ตกแต่งโรงเรียน ทำกิจกรรมทายคำ หรือสร้างสรรค์สิ่งก่อสร้างในธีมไทยอันแสนอบอุ่น
 
 ## ✨ ฟีเจอร์เด่น
 
-- **บล็อกอักษรไทย 69 ตัวอักษร (ทั้งแบบบล็อกเต็มและ Slab)**: ครอบคลุมทั้งพยัญชนะ (ก-ฮ) สระ และวรรณยุกต์ทั้งหมดในเกม
-- **ย้อมสีพื้นหลังได้อิสระ (Dyeable!)**: ใช้สีย้อม (Dye) ทั้ง 16 สีในเกมคลิกขวาที่ตัวบล็อก/Slab เพื่อย้อมสีพื้นหลังได้ทันที โดยจะเปลี่ยนสีเฉพาะแผ่นไม้ด้านหลัง และตัวอักษรจะยังคงเด่นชัดสวยงาม
+- **บล็อกอักษรไทย 69 ตัวอักษร**: ครอบคลุมทั้งพยัญชนะ (ก-ฮ) สระ และวรรณยุกต์ทั้งหมดในเกมเป็นบล็อกเต็มตัว
+- **ย้อมสีพื้นหลังได้อิสระ (Dyeable!)**: ใช้สีย้อม (Dye) ทั้ง 16 สีในเกมคลิกขวาที่ตัวบล็อกเพื่อย้อมสีพื้นหลังได้ทันที โดยจะเปลี่ยนสีเฉพาะแผ่นไม้ด้านหลัง และตัวอักษรจะยังคงเด่นชัดสวยงาม
 - **การแสดงผลที่คมชัดยิ่งขึ้น**: ใช้ Render Layer แบบ Cutout (สำหรับ 1.21.11+) หมดห่วงเรื่องขอบบล็อกโปร่งใสเพี้ยนหรือขอบหยัก
 - **หน้าต่าง Creative Tab แยกเฉพาะ**: จัดหมวดหมู่อย่างเป็นระเบียบ ค้นหาและใช้งานได้ง่ายในโหมดสร้างสรรค์
 - **รองรับครอบคลุมทุก Mod Loader**: รองรับการใช้งานทั้งบน **Fabric**, **Forge**, และ **NeoForge** สำหรับเวอร์ชัน `1.20.1`, `1.21.1`, `1.21.4` และ `1.21.11`
@@ -57,9 +57,9 @@ A Minecraft mod that adds beautiful Thai alphabet blocks and slabs to the game! 
 
 ## 🎨 วิธีย้อมสีบล็อก
 
-1. วางบล็อกหรือ Slab ตัวอักษรไทยในจุดที่ต้องการ
+1. วางบล็อกตัวอักษรไทยในจุดที่ต้องการ
 2. ถือ **สีย้อม (Dye)** สีใดก็ได้ที่คุณชื่นชอบในมือ
-3. **คลิกขวา** ที่บล็อก/Slab นั้น! สีพื้นหลังของแผ่นไม้จะถูกเปลี่ยนเป็นสีย้อมนั้นทันที
+3. **คลิกขวา** ที่บล็อกนั้น! สีพื้นหลังของแผ่นไม้จะถูกเปลี่ยนเป็นสีย้อมนั้นทันที
 
 ---
 
