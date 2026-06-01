@@ -82,15 +82,9 @@ public class ThaiAlphabetBlockNeoForge {
                     id -> {
                         BlockBehaviour.Properties props = BlockBehaviour.Properties.of()
                                 .setId(ResourceKey.create(Registries.BLOCK, id))
-                                .mapColor(
-                                        def.shape() == ThaiAlphabetDefinitions.LetterBlockShape.FULL
-                                                ? MapColor.COLOR_LIGHT_GRAY
-                                                : MapColor.COLOR_PURPLE)
+                                .mapColor(MapColor.COLOR_LIGHT_GRAY)
                                 .strength(1.5f, 6.0f);
-                        if (def.shape() == ThaiAlphabetDefinitions.LetterBlockShape.FULL) {
-                            return new ThaiLetterBlock(props);
-                        }
-                        return new ThaiLetterSlabBlock(props);
+                        return new ThaiLetterBlock(props);
                     });
             DeferredItem<Item> registeredItem = ITEMS.register(def.id(),
                     () -> {
