@@ -90,7 +90,7 @@ public final class ThaiAlphabetNeoForgeClient {
         for (net.neoforged.neoforge.registries.DeferredHolder<Block, ? extends Block> ro : ThaiAlphabetBlockNeoForge.BLOCKS
                 .getEntries()) {
             Block block = ro.get();
-            if (!(block instanceof ThaiLetterBlock) && !(block instanceof ThaiLetterSlabBlock)) {
+            if (!(block instanceof ThaiLetterBlock)) {
                 continue;
             }
             event.register(

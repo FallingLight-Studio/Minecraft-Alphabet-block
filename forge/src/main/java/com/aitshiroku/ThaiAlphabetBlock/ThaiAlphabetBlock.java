@@ -77,19 +77,13 @@ public class ThaiAlphabetBlock {
 
                         RegistryObject<Block> registeredBlock = BLOCKS.register(
                                         def.id(),
-                                        () -> {
-                                                BlockBehaviour.Properties props = BlockBehaviour.Properties.of()
+                                         () -> {
+                                                 BlockBehaviour.Properties props = BlockBehaviour.Properties.of()
                                                                  .setId(blockKey)
-                                                                 .mapColor(
-                                                                                 def.shape() == ThaiAlphabetDefinitions.LetterBlockShape.FULL
-                                                                                                 ? MapColor.COLOR_LIGHT_GRAY
-                                                                                                 : MapColor.COLOR_PURPLE)
+                                                                 .mapColor(MapColor.COLOR_LIGHT_GRAY)
                                                                  .strength(1.5f, 6.0f);
-                                                if (def.shape() == ThaiAlphabetDefinitions.LetterBlockShape.FULL) {
-                                                         return new ThaiLetterBlock(props);
-                                                }
-                                                return new ThaiLetterSlabBlock(props);
-                                        });
+                                                 return new ThaiLetterBlock(props);
+                                         });
                         RegistryObject<Item> registeredItem = ITEMS.register(def.id(),
                                          () -> new BlockItem(registeredBlock.get(), new Item.Properties().setId(itemKey).useBlockDescriptionPrefix()));
                         REGISTERED_ITEMS.put(def.id(), registeredItem);
