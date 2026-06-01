@@ -41,6 +41,11 @@ A Minecraft mod that adds beautiful Thai alphabet blocks to the game! Perfect fo
 
 ---
 
+## 🌍 Readme Language
+English | [ภาษาไทย](README-TH.md)
+
+---
+
 ### 📝 License
 
 This project is licensed under the [Apache License 2.0](LICENSE).
