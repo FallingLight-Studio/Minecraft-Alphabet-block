@@ -66,7 +66,7 @@ public final class ThaiAlphabetFabricClient implements ClientModInitializer {
         );
 
         for (Block block : ThaiAlphabetBlockFabric.letterBlocksView()) {
-            if (!(block instanceof ThaiLetterBlock) && !(block instanceof ThaiLetterSlabBlock)) {
+            if (!(block instanceof ThaiLetterBlock)) {
                 continue;
             }
             BlockRenderLayerMap.putBlock(block, ChunkSectionLayer.CUTOUT);

@@ -43,8 +43,7 @@ public final class ThaiAlphabetGlyphDyeHandler {
         BlockPos pos = event.getPos();
         BlockState state = level.getBlockState(pos);
 
-        if (!(state.getBlock() instanceof ThaiLetterBlock)
-                && !(state.getBlock() instanceof ThaiLetterSlabBlock)) {
+        if (!(state.getBlock() instanceof ThaiLetterBlock)) {
             return;
         }
         if (net.minecraft.core.registries.BuiltInRegistries.BLOCK.getKey(state.getBlock()).getPath()
