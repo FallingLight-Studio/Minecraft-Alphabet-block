@@ -1,7 +1,5 @@
 package com.aitshiroku.ThaiAlphabetBlock.neoforge;
 
-import com.aitshiroku.thai_alphabet_block.ThaiAlphabetCommon;
-
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -34,10 +32,12 @@ public final class ThaiAlphabetGlyphDyeHandler {
     @SubscribeEvent
     public static void onRightClickBlock(PlayerInteractEvent.RightClickBlock event) {
         Player player = event.getEntity();
-        if (!player.isShiftKeyDown()) return;
+        if (!player.isShiftKeyDown())
+            return;
 
         ItemStack stack = event.getItemStack();
-        if (!(stack.getItem() instanceof DyeItem dyeItem)) return;
+        if (!(stack.getItem() instanceof DyeItem dyeItem))
+            return;
 
         Level level = player.level();
         BlockPos pos = event.getPos();
@@ -47,10 +47,12 @@ public final class ThaiAlphabetGlyphDyeHandler {
                 && !(state.getBlock() instanceof ThaiLetterSlabBlock)) {
             return;
         }
-        if (net.minecraft.core.registries.BuiltInRegistries.BLOCK.getKey(state.getBlock()).getPath().equals("empty_block")) {
+        if (net.minecraft.core.registries.BuiltInRegistries.BLOCK.getKey(state.getBlock()).getPath()
+                .equals("empty_block")) {
             return;
         }
-        if (!state.hasProperty(ThaiAlphabetColorProperties.GLYPH_COLOR)) return;
+        if (!state.hasProperty(ThaiAlphabetColorProperties.GLYPH_COLOR))
+            return;
 
         DyeColor newColor = dyeItem.getDyeColor();
 
