@@ -27,7 +27,8 @@ public final class ThaiAlphabetNeoForgeClient {
     @SubscribeEvent
     public static void onClientSetup(FMLClientSetupEvent event) {
         event.enqueueWork(() -> {
-            for (net.neoforged.neoforge.registries.DeferredHolder<Block, ? extends Block> ro : ThaiAlphabetBlockNeoForge.BLOCKS.getEntries()) {
+            for (net.neoforged.neoforge.registries.DeferredHolder<Block, ? extends Block> ro : ThaiAlphabetBlockNeoForge.BLOCKS
+                    .getEntries()) {
                 ItemBlockRenderTypes.setRenderLayer(ro.get(), RenderType.cutout());
             }
         });
@@ -36,55 +37,58 @@ public final class ThaiAlphabetNeoForgeClient {
     @SubscribeEvent
     public static void registerItemTintSources(RegisterColorHandlersEvent.ItemTintSources event) {
         event.register(
-            ResourceLocation.fromNamespaceAndPath("thai_alphabet_block", "background_tint"),
-            MapCodec.unit(new net.minecraft.client.color.item.ItemTintSource() {
-                @Override
-                public int calculate(ItemStack stack, net.minecraft.client.multiplayer.ClientLevel level, net.minecraft.world.entity.LivingEntity entity) {
-                    if (stack.getItem() instanceof BlockItem blockItem) {
-                        Block block = blockItem.getBlock();
-                        BlockState state = ThaiAlphabetBlockStateUtil.stateFromItemStack(stack, block);
-                        if (state.hasProperty(ThaiLetterBlock.COLOR)) {
-                            ThaiAlphabetColorProperties.ThaiBlockColor color = state.getValue(ThaiLetterBlock.COLOR);
-                            return ThaiAlphabetColorUtil.backgroundArgbFromColor(color);
+                ResourceLocation.fromNamespaceAndPath("thai_alphabet_block", "background_tint"),
+                MapCodec.unit(new net.minecraft.client.color.item.ItemTintSource() {
+                    @Override
+                    public int calculate(ItemStack stack, net.minecraft.client.multiplayer.ClientLevel level,
+                            net.minecraft.world.entity.LivingEntity entity) {
+                        if (stack.getItem() instanceof BlockItem blockItem) {
+                            Block block = blockItem.getBlock();
+                            BlockState state = ThaiAlphabetBlockStateUtil.stateFromItemStack(stack, block);
+                            if (state.hasProperty(ThaiLetterBlock.COLOR)) {
+                                ThaiAlphabetColorProperties.ThaiBlockColor color = state
+                                        .getValue(ThaiLetterBlock.COLOR);
+                                return ThaiAlphabetColorUtil.backgroundArgbFromColor(color);
+                            }
                         }
+                        return ThaiAlphabetColorUtil
+                                .backgroundArgbFromColor(ThaiAlphabetColorProperties.ThaiBlockColor.NONE);
                     }
-                    return ThaiAlphabetColorUtil.backgroundArgbFromColor(ThaiAlphabetColorProperties.ThaiBlockColor.NONE);
-                }
 
-                @Override
-                public MapCodec<? extends net.minecraft.client.color.item.ItemTintSource> type() {
-                    return MapCodec.unit(this);
-                }
-            })
-        );
+                    @Override
+                    public MapCodec<? extends net.minecraft.client.color.item.ItemTintSource> type() {
+                        return MapCodec.unit(this);
+                    }
+                }));
 
         event.register(
-            ResourceLocation.fromNamespaceAndPath("thai_alphabet_block", "glyph_tint"),
-            MapCodec.unit(new net.minecraft.client.color.item.ItemTintSource() {
-                @Override
-                public int calculate(ItemStack stack, net.minecraft.client.multiplayer.ClientLevel level, net.minecraft.world.entity.LivingEntity entity) {
-                    if (stack.getItem() instanceof BlockItem blockItem) {
-                        Block block = blockItem.getBlock();
-                        BlockState state = ThaiAlphabetBlockStateUtil.stateFromItemStack(stack, block);
-                        if (state.hasProperty(ThaiLetterBlock.GLYPH_COLOR)) {
-                            DyeColor glyphDye = state.getValue(ThaiLetterBlock.GLYPH_COLOR);
-                            return ThaiAlphabetColorUtil.glyphArgbFromDye(glyphDye);
+                ResourceLocation.fromNamespaceAndPath("thai_alphabet_block", "glyph_tint"),
+                MapCodec.unit(new net.minecraft.client.color.item.ItemTintSource() {
+                    @Override
+                    public int calculate(ItemStack stack, net.minecraft.client.multiplayer.ClientLevel level,
+                            net.minecraft.world.entity.LivingEntity entity) {
+                        if (stack.getItem() instanceof BlockItem blockItem) {
+                            Block block = blockItem.getBlock();
+                            BlockState state = ThaiAlphabetBlockStateUtil.stateFromItemStack(stack, block);
+                            if (state.hasProperty(ThaiLetterBlock.GLYPH_COLOR)) {
+                                DyeColor glyphDye = state.getValue(ThaiLetterBlock.GLYPH_COLOR);
+                                return ThaiAlphabetColorUtil.glyphArgbFromDye(glyphDye);
+                            }
                         }
+                        return ThaiAlphabetColorUtil.glyphArgbFromDye(DyeColor.BLACK);
                     }
-                    return ThaiAlphabetColorUtil.glyphArgbFromDye(DyeColor.BLACK);
-                }
 
-                @Override
-                public MapCodec<? extends net.minecraft.client.color.item.ItemTintSource> type() {
-                    return MapCodec.unit(this);
-                }
-            })
-        );
+                    @Override
+                    public MapCodec<? extends net.minecraft.client.color.item.ItemTintSource> type() {
+                        return MapCodec.unit(this);
+                    }
+                }));
     }
 
     @SubscribeEvent
     public static void registerBlockColors(RegisterColorHandlersEvent.Block event) {
-        for (net.neoforged.neoforge.registries.DeferredHolder<Block, ? extends Block> ro : ThaiAlphabetBlockNeoForge.BLOCKS.getEntries()) {
+        for (net.neoforged.neoforge.registries.DeferredHolder<Block, ? extends Block> ro : ThaiAlphabetBlockNeoForge.BLOCKS
+                .getEntries()) {
             Block block = ro.get();
             if (!(block instanceof ThaiLetterBlock) && !(block instanceof ThaiLetterSlabBlock)) {
                 continue;
