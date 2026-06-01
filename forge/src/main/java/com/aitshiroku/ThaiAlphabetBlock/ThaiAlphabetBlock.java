@@ -84,7 +84,7 @@ public class ThaiAlphabetBlock {
                                                 return new ThaiLetterSlabBlock(props);
                                         });
                         RegistryObject<Item> registeredItem = ITEMS.register(def.id(),
-                                        () -> new BlockItem(registeredBlock.get(), new Item.Properties()));
+                                        () -> new BlockItem(registeredBlock.get(), new Item.Properties().useBlockDescriptionPrefix()));
                         REGISTERED_ITEMS.put(def.id(), registeredItem);
                 }
         }

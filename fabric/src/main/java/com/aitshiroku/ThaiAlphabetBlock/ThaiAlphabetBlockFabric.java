@@ -69,7 +69,7 @@ public final class ThaiAlphabetBlockFabric implements ModInitializer {
             Registry.register(BuiltInRegistries.BLOCK, blockKey, block);
             REGISTERED_BLOCKS.add(block);
 
-            Item item = new BlockItem(block, new Item.Properties().setId(itemKey));
+            Item item = new BlockItem(block, new Item.Properties().setId(itemKey).useBlockDescriptionPrefix());
             Registry.register(BuiltInRegistries.ITEM, itemKey, item);
             REGISTERED_ITEMS.put(def.id(), item);
         }

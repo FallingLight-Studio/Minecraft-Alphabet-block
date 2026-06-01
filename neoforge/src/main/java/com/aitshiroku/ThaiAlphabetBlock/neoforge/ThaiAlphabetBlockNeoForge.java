@@ -86,7 +86,7 @@ public class ThaiAlphabetBlockNeoForge {
                         return new ThaiLetterSlabBlock(props);
                     });
             DeferredItem<Item> registeredItem = ITEMS.register(def.id(),
-                    () -> new BlockItem(registeredBlock.get(), new Item.Properties()));
+                    () -> new BlockItem(registeredBlock.get(), new Item.Properties().useBlockDescriptionPrefix()));
             REGISTERED_ITEMS.put(def.id(), registeredItem);
         }
     }
