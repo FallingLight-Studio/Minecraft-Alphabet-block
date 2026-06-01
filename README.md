@@ -78,4 +78,4 @@ A Minecraft mod that adds beautiful Thai alphabet blocks to the game! Perfect fo
 
 ### 📝 License
 
-โครงการนี้พัฒนาภายใต้สัญญาอนุญาต [Apache License 2.0](LICENSE).
+This project is licensed under the [Apache License 2.0](LICENSE).
