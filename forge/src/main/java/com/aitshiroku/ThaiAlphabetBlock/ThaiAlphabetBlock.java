@@ -8,6 +8,8 @@ import com.aitshiroku.thai_alphabet_block.ThaiAlphabetDefinitions;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -69,22 +71,27 @@ public class ThaiAlphabetBlock {
         private static void registerCharacterBlocks(
                         Iterable<ThaiAlphabetDefinitions.CharacterDef> definitions) {
                 for (ThaiAlphabetDefinitions.CharacterDef def : definitions) {
+                        ResourceLocation id = ResourceLocation.fromNamespaceAndPath(ThaiAlphabetCommon.MOD_ID, def.id());
+                        ResourceKey<Block> blockKey = ResourceKey.create(Registries.BLOCK, id);
+                        ResourceKey<Item> itemKey = ResourceKey.create(Registries.ITEM, id);
+
                         RegistryObject<Block> registeredBlock = BLOCKS.register(
                                         def.id(),
                                         () -> {
                                                 BlockBehaviour.Properties props = BlockBehaviour.Properties.of()
-                                                                .mapColor(
-                                                                                def.shape() == ThaiAlphabetDefinitions.LetterBlockShape.FULL
-                                                                                                ? MapColor.COLOR_LIGHT_GRAY
-                                                                                                : MapColor.COLOR_PURPLE)
-                                                                .strength(1.5f, 6.0f);
+                                                                 .setId(blockKey)
+                                                                 .mapColor(
+                                                                                 def.shape() == ThaiAlphabetDefinitions.LetterBlockShape.FULL
+                                                                                                 ? MapColor.COLOR_LIGHT_GRAY
+                                                                                                 : MapColor.COLOR_PURPLE)
+                                                                 .strength(1.5f, 6.0f);
                                                 if (def.shape() == ThaiAlphabetDefinitions.LetterBlockShape.FULL) {
-                                                        return new ThaiLetterBlock(props);
+                                                         return new ThaiLetterBlock(props);
                                                 }
                                                 return new ThaiLetterSlabBlock(props);
                                         });
                         RegistryObject<Item> registeredItem = ITEMS.register(def.id(),
-                                        () -> new BlockItem(registeredBlock.get(), new Item.Properties().useBlockDescriptionPrefix()));
+                                         () -> new BlockItem(registeredBlock.get(), new Item.Properties().setId(itemKey).useBlockDescriptionPrefix()));
                         REGISTERED_ITEMS.put(def.id(), registeredItem);
                 }
         }

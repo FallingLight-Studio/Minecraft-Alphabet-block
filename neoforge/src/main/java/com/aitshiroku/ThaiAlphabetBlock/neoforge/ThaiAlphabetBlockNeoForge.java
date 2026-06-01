@@ -9,6 +9,8 @@ import com.aitshiroku.thai_alphabet_block.ThaiAlphabetDefinitions;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -75,6 +77,7 @@ public class ThaiAlphabetBlockNeoForge {
                     def.id(),
                     id -> {
                         BlockBehaviour.Properties props = BlockBehaviour.Properties.of()
+                                .setId(ResourceKey.create(Registries.BLOCK, id))
                                 .mapColor(
                                         def.shape() == ThaiAlphabetDefinitions.LetterBlockShape.FULL
                                                 ? MapColor.COLOR_LIGHT_GRAY
@@ -86,7 +89,13 @@ public class ThaiAlphabetBlockNeoForge {
                         return new ThaiLetterSlabBlock(props);
                     });
             DeferredItem<Item> registeredItem = ITEMS.register(def.id(),
-                    () -> new BlockItem(registeredBlock.get(), new Item.Properties().useBlockDescriptionPrefix()));
+                    () -> {
+                        ResourceKey<Item> itemKey = ResourceKey.create(
+                            Registries.ITEM,
+                            ResourceLocation.fromNamespaceAndPath(ThaiAlphabetCommon.MOD_ID, def.id())
+                        );
+                        return new BlockItem(registeredBlock.get(), new Item.Properties().setId(itemKey).useBlockDescriptionPrefix());
+                    });
             REGISTERED_ITEMS.put(def.id(), registeredItem);
         }
     }
