@@ -1,7 +1,0 @@
-{
-  "parent": "thai_alphabet_block:block/thai_tinted_cube",
-  "textures": {
-    "background": "thai_alphabet_block:block/white_base",
-    "glyph": "thai_alphabet_block:block/tone_mai_chattawa"
-  }
-}

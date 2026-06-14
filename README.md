@@ -1,51 +1,50 @@
-# 🇹🇭 Thai Alphabet Block
+# Alphabet Block Mod
 
-A Minecraft mod that adds beautiful Thai alphabet blocks to the game! Perfect for building signs, decorating schools, creating word-guessing games, or designing Thai-themed worlds.
+A Minecraft mod that adds beautiful, fully dyeable A-Z alphabet blocks to the game! decorating building or creating word-guessing games.
+offical fork from [Thai Alphabet blocks](https://github.com/aitshiroku/thai-alphabet-blocks)
 
-[![Minecraft Versions](https://img.shields.io/badge/Minecraft-1.20.1%20%7C%201.21.1%20%7C%201.21.4%20%7C%201.21.11-blue.svg)](#)
+[![Minecraft Versions](https://img.shields.io/badge/Minecraft-1.21.11-blue.svg)](#)
 [![Fabric](https://img.shields.io/badge/Fabric-Supported-brightgreen.svg)](#)
 [![Forge](https://img.shields.io/badge/Forge-Supported-green.svg)](#)
 [![NeoForge](https://img.shields.io/badge/NeoForge-Supported-green.svg)](#)
-[![License](https://img.shields.io/badge/License-Apache%202.0-yellow.svg)](https://opensource.org/licenses/Apache-2.0)
+[![License](https://img.shields.io/badge/License-Apache%202.0-yellow.svg)](LICENSE)
 
 ---
 
 ## ✨ Features
 
-- **69 Thai Character Blocks**: Includes all major consonants (ก-ฮ), vowels, and tone marks as placeable full blocks.
-- **Color Customization (Dyeable!)**: Right-click any Thai alphabet block with any of the 16 Minecraft Dyes to customize the background color. The background will shift color while keeping the wood panel design and making the characters stand out cleanly.
-- **Improved Visuals**: Rendered using high-quality cutout layers (1.21.11+) ensuring sharp glyph edges and perfect transparency.
-- **Dedicated Creative Tab**: Organized beautifully in a custom creative tab for easy search and access.
-- **Universal Loader Support**: Compiles and runs natively across **Fabric**, **Forge**, and **NeoForge** for Minecraft versions `1.20.1`, `1.21.1`, `1.21.4`, and `1.21.11`.
+- **27 Placeable Alphabet Blocks**: Includes all English letters (A-Z) and a matching empty wood block.
+- **Dual-Layer Dyeing System**:
+  - **Background Panel Customization**: Right-click a block with any of the 16 Minecraft Dyes to dye the background wood panel.
+  - **Glyph/Letter Customization**: Sneak + Right-click a block with any dye to customize the letter color independently!
+- **High-Quality Cutout Rendering**: Crafted using transparent cutout layers, ensuring sharp letter edges, crisp visibility, and integration with the surrounding wood texture.
+- **Dedicated Creative Tab**: Comes with an organized custom Creative Tab containing all the letters in alphabetical order for quick access.
+- **Multi-Loader Support**: Runs natively on **Fabric**, **Forge**, and **NeoForge** for Minecraft `1.21.11`.
 
 ---
 
-## 🎨 How to Dye Blocks
+## 🎨 Dyeing Guide
 
-1. Place down any Thai Alphabet Block.
-2. Hold any Minecraft **Dye** (16 colors available) in your hand.
-3. **Right-click** the block to apply the dye! The background panel changes color instantly.
+| Action                           | Target                | Description                                                                  |
+| :------------------------------- | :-------------------- | :--------------------------------------------------------------------------- |
+| **Right-Click with Dye**         | Background Wood Panel | Colors the background panel to any of the 16 vanilla dye colors.             |
+| **Shift + Right-Click with Dye** | Glyph / Letter        | Colors the character (letter) itself. _(Does not apply to the Empty Block)._ |
 
 ---
 
 ## 📥 Installation
 
-1. Ensure you have installed the correct Mod Loader for your Minecraft version:
-   * [Fabric Loader](https://fabricmc.net/)
-   * [NeoForge](https://neoforged.net/)
-   * [Minecraft Forge](https://files.minecraftforge.net/)
-2. _(For Fabric users)_ Install the required [Fabric API](https://modrinth.com/mod/fabric-api).
-3. Download the mod version matching your Minecraft version (`1.20.1`, `1.21.1`, `1.21.4`, or `1.21.11`) from GitHub Releases or Modrinth.
-4. Place the downloaded `.jar` file in your `.minecraft/mods` directory.
-5. Launch the game and enjoy!
+1. Make sure you have installed the mod loader of your choice:
+   - [Fabric Loader](https://fabricmc.net/)
+   - [Forge](https://files.minecraftforge.net/)
+   - [NeoForge](https://neoforged.net/)
+2. _(Fabric Users)_ Download and install the [Fabric API](https://modrinth.com/mod/fabric-api) for your version of Minecraft.
+3. Download the mod `.jar` file matching your Mod Loader and Minecraft version `1.21.11`.
+4. Place the downloaded `.jar` file into your `.minecraft/mods/` folder.
+5. Boot up the game and look for the **Alphabet Blocks** creative tab!
 
 ---
 
-## 🌍 Readme Language
-English | [ภาษาไทย](README-TH.md)
-
----
-
-### 📝 License
+## 📝 License
 
 This project is licensed under the [Apache License 2.0](LICENSE).

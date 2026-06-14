@@ -11,10 +11,10 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.aitshiroku.ThaiAlphabetBlock.ThaiAlphabetBlockFabric"
+      "com.aitshiroku.AlphabetBlock.AlphabetBlockFabric"
     ],
     "client": [
-      "com.aitshiroku.ThaiAlphabetBlock.ThaiAlphabetFabricClient"
+      "com.aitshiroku.AlphabetBlock.AlphabetFabricClient"
     ]
   },
   "depends": {

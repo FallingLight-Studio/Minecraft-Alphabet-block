@@ -1,0 +1,9 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "alphabet_block:block/letter_w"
+      }
+    }
+  ]
+}

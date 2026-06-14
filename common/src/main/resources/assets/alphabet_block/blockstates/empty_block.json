@@ -1,0 +1,7 @@
+{
+  "multipart": [
+    {
+      "apply": { "model": "alphabet_block:block/empty_block" }
+    }
+  ]
+}

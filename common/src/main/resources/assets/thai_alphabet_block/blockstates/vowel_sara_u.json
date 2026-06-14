@@ -1,9 +1,0 @@
-{
-  "multipart": [
-    {
-      "apply": {
-        "model": "thai_alphabet_block:block/vowel_sara_u"
-      }
-    }
-  ]
-}

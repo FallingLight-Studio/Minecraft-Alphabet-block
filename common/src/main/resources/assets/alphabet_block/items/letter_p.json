@@ -1,0 +1,14 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "alphabet_block:block/letter_p",
+    "tints": [
+      {
+        "type": "alphabet_block:background_tint"
+      },
+      {
+        "type": "alphabet_block:glyph_tint"
+      }
+    ]
+  }
+}

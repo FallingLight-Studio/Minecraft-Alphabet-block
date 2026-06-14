@@ -1,9 +1,0 @@
-{
-  "multipart": [
-    {
-      "apply": {
-        "model": "thai_alphabet_block:block/consonant_cho_ching"
-      }
-    }
-  ]
-}

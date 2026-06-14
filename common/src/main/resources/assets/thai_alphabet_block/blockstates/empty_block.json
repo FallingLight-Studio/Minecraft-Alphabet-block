@@ -1,7 +1,0 @@
-{
-  "multipart": [
-    {
-      "apply": { "model": "thai_alphabet_block:block/empty_block" }
-    }
-  ]
-}
