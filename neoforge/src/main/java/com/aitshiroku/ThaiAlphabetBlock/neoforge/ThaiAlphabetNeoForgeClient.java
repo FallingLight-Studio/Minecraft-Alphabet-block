@@ -21,6 +21,7 @@ public final class ThaiAlphabetNeoForgeClient {
         modEventBus.addListener(ThaiAlphabetNeoForgeClient::registerBlockColors);
     }
 
+    @SuppressWarnings("deprecation")
     public static void onClientSetup(net.neoforged.fml.event.lifecycle.FMLClientSetupEvent event) {
         event.enqueueWork(() -> {
             for (net.neoforged.neoforge.registries.DeferredHolder<Block, ? extends Block> ro : ThaiAlphabetBlockNeoForge.BLOCKS
