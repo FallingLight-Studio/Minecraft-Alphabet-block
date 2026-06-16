@@ -1,7 +1,7 @@
 # Alphabet Block Mod
 
 A Minecraft mod that adds beautiful, fully dyeable A-Z alphabet blocks to the game! decorating building or creating word-guessing games.
-offical fork from [Thai Alphabet blocks](https://github.com/aitshiroku/thai-alphabet-blocks)
+offical fork from [Thai Alphabet blocks](https://github.com/AitShiroKu/Thai-alphabet-block)
 
 [![Minecraft Versions](https://img.shields.io/badge/Minecraft-1.21.11-blue.svg)](#)
 [![Fabric](https://img.shields.io/badge/Fabric-Supported-brightgreen.svg)](#)
