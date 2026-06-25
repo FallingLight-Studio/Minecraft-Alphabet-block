@@ -20,6 +20,8 @@ offical fork from [Thai Alphabet blocks](https://github.com/AitShiroKu/Thai-alph
 - **High-Quality Cutout Rendering**: Crafted using transparent cutout layers, ensuring sharp letter edges, crisp visibility, and integration with the surrounding wood texture.
 - **Dedicated Creative Tab**: Comes with an organized custom Creative Tab containing all the letters in alphabetical order for quick access.
 - **Multi-Loader Support**: Runs natively on **Fabric**, **Forge**, and **NeoForge** for Minecraft `1.21.11`.
+  
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/527e8d76-53af-4273-9d52-0a9131026431" />
 
 ---
 
