@@ -18,7 +18,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
@@ -44,7 +44,7 @@ public final class AlphabetBlockFabric implements ModInitializer {
     public void onInitialize() {
         // Register all blocks and items
         for (AlphabetDefinitions.CharacterDef def : AlphabetDefinitions.all()) {
-            Identifier id = Identifier.fromNamespaceAndPath(
+            ResourceLocation id = ResourceLocation.fromNamespaceAndPath(
                 AlphabetCommon.MOD_ID,
                 def.id()
             );
@@ -54,14 +54,13 @@ public final class AlphabetBlockFabric implements ModInitializer {
 
             Block block = new LetterBlock(
                 BlockBehaviour.Properties.of()
-                    .setId(blockKey)
                     .mapColor(MapColor.COLOR_LIGHT_GRAY)
                     .strength(1.5f, 6.0f)
             );
             Registry.register(BuiltInRegistries.BLOCK, blockKey, block);
             REGISTERED_BLOCKS.add(block);
 
-            Item item = new BlockItem(block, new Item.Properties().setId(itemKey).useBlockDescriptionPrefix());
+            Item item = new BlockItem(block, new Item.Properties());
             Registry.register(BuiltInRegistries.ITEM, itemKey, item);
             REGISTERED_ITEMS.put(def.id(), item);
         }
@@ -69,7 +68,7 @@ public final class AlphabetBlockFabric implements ModInitializer {
         // Create tab ResourceKey
         ResourceKey<CreativeModeTab> tabKey = ResourceKey.create(
             Registries.CREATIVE_MODE_TAB,
-            Identifier.fromNamespaceAndPath(AlphabetCommon.MOD_ID, "alphabet_tab")
+            ResourceLocation.fromNamespaceAndPath(AlphabetCommon.MOD_ID, "alphabet_tab")
         );
 
         // Register custom creative tab

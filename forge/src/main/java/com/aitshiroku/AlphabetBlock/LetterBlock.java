@@ -4,7 +4,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
+import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.DyeItem;
@@ -34,7 +34,7 @@ public class LetterBlock extends Block {
     }
 
     @Override
-    protected InteractionResult useItemOn(
+    protected ItemInteractionResult useItemOn(
             ItemStack stack,
             BlockState state,
             Level level,
@@ -48,7 +48,7 @@ public class LetterBlock extends Block {
             DyeColor dyeColor = dyeItem.getDyeColor();
             AlphabetColorProperties.BlockColor newColor = AlphabetColorProperties.BlockColor.fromDyeColor(dyeColor);
             if (state.getValue(COLOR) == newColor) {
-                return InteractionResult.CONSUME;
+                return ItemInteractionResult.CONSUME;
             }
             if (!level.isClientSide()) {
                 level.setBlock(pos, state.setValue(COLOR, newColor), 3);
@@ -57,8 +57,8 @@ public class LetterBlock extends Block {
                 }
                 level.playSound(null, pos, SoundEvents.DYE_USE, SoundSource.BLOCKS, 1.0F, 1.0F);
             }
-            return level.isClientSide() ? InteractionResult.SUCCESS : InteractionResult.CONSUME;
+            return ItemInteractionResult.sidedSuccess(level.isClientSide());
         }
-        return InteractionResult.PASS;
+        return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
     }
 }

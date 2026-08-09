@@ -13,17 +13,9 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
-import net.minecraftforge.eventbus.api.listener.SubscribeEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
-/**
- * Handles Shift + Right-click with Dye to change the glyph (letter) color.
- *
- * This MUST be handled via a Forge event because vanilla Minecraft skips
- * {@code Block.useItemOn()} when the player is sneaking while holding an item.
- * {@code PlayerInteractEvent.RightClickBlock} fires BEFORE that sneak-bypass
- * check, so we can intercept the interaction here.
- */
 @Mod.EventBusSubscriber(modid = AlphabetCommon.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public final class AlphabetGlyphDyeHandler {
 
@@ -31,31 +23,32 @@ public final class AlphabetGlyphDyeHandler {
     }
 
     @SubscribeEvent
-    public static boolean onRightClickBlock(PlayerInteractEvent.RightClickBlock event) {
+    public static void onRightClickBlock(PlayerInteractEvent.RightClickBlock event) {
         Player player = event.getEntity();
-        if (!player.isShiftKeyDown()) return false;
+        if (!player.isShiftKeyDown()) return;
 
         ItemStack stack = event.getItemStack();
-        if (!(stack.getItem() instanceof DyeItem dyeItem)) return false;
+        if (!(stack.getItem() instanceof DyeItem dyeItem)) return;
 
         Level level = player.level();
         BlockPos pos = event.getPos();
         BlockState state = level.getBlockState(pos);
 
         if (!(state.getBlock() instanceof LetterBlock)) {
-            return false;
+            return;
         }
         if (net.minecraft.core.registries.BuiltInRegistries.BLOCK.getKey(state.getBlock()).getPath().equals("empty_block")) {
-            return false;
+            return;
         }
-        if (!state.hasProperty(AlphabetColorProperties.GLYPH_COLOR)) return false;
+        if (!state.hasProperty(AlphabetColorProperties.GLYPH_COLOR)) return;
 
         DyeColor newColor = dyeItem.getDyeColor();
 
         // Same color already applied — consume the interaction but do nothing
         if (state.getValue(AlphabetColorProperties.GLYPH_COLOR) == newColor) {
+            event.setCanceled(true);
             event.setCancellationResult(InteractionResult.CONSUME);
-            return true;
+            return;
         }
 
         // Apply glyph color change on the server side
@@ -67,7 +60,7 @@ public final class AlphabetGlyphDyeHandler {
             level.playSound(null, pos, SoundEvents.DYE_USE, SoundSource.BLOCKS, 1.0F, 0.8F);
         }
 
+        event.setCanceled(true);
         event.setCancellationResult(level.isClientSide() ? InteractionResult.SUCCESS : InteractionResult.CONSUME);
-        return true;
     }
 }

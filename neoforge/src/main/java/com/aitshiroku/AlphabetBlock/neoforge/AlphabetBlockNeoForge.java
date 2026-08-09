@@ -9,8 +9,6 @@ import com.aitshiroku.alphabet_block.AlphabetDefinitions;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -66,10 +64,6 @@ public class AlphabetBlockNeoForge {
         ITEMS.register(modEventBus);
         CREATIVE_MODE_TABS.register(modEventBus);
 
-        if (net.neoforged.fml.loading.FMLEnvironment.getDist() == net.neoforged.api.distmarker.Dist.CLIENT) {
-            AlphabetNeoForgeClient.registerListeners(modEventBus);
-        }
-
         // Register glyph dye handler on the game event bus (not the mod bus)
         NeoForge.EVENT_BUS.register(AlphabetGlyphDyeHandler.class);
     }
@@ -81,19 +75,12 @@ public class AlphabetBlockNeoForge {
                     def.id(),
                     id -> {
                         BlockBehaviour.Properties props = BlockBehaviour.Properties.of()
-                                .setId(ResourceKey.create(Registries.BLOCK, id))
                                 .mapColor(MapColor.COLOR_LIGHT_GRAY)
                                 .strength(1.5f, 6.0f);
                         return new LetterBlock(props);
                     });
             DeferredItem<Item> registeredItem = ITEMS.register(def.id(),
-                    () -> {
-                        ResourceKey<Item> itemKey = ResourceKey.create(
-                            Registries.ITEM,
-                            Identifier.fromNamespaceAndPath(AlphabetCommon.MOD_ID, def.id())
-                        );
-                        return new BlockItem(registeredBlock.get(), new Item.Properties().setId(itemKey).useBlockDescriptionPrefix());
-                    });
+                    () -> new BlockItem(registeredBlock.get(), new Item.Properties()));
             REGISTERED_ITEMS.put(def.id(), registeredItem);
         }
     }
