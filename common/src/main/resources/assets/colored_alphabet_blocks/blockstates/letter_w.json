@@ -1,0 +1,9 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "colored_alphabet_blocks:block/letter_w"
+      }
+    }
+  ]
+}

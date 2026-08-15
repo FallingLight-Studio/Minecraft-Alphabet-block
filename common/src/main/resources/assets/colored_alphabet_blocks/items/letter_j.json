@@ -1,0 +1,14 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "colored_alphabet_blocks:block/letter_j",
+    "tints": [
+      {
+        "type": "colored_alphabet_blocks:background_tint"
+      },
+      {
+        "type": "colored_alphabet_blocks:glyph_tint"
+      }
+    ]
+  }
+}
