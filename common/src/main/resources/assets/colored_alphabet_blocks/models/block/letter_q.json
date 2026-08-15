@@ -1,0 +1,7 @@
+{
+  "parent": "colored_alphabet_blocks:block/alphabet_tinted_cube",
+  "textures": {
+    "background": "colored_alphabet_blocks:block/white_base",
+    "glyph": "colored_alphabet_blocks:block/letter_q"
+  }
+}

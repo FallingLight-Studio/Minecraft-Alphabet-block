@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.aitshiroku.ColoredAlphabetBlocks.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "MappedRegistryMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

@@ -29,7 +29,7 @@ plugins {
     id 'org.gradle.toolchains.foojay-resolver-convention' version '0.7.0'
 }
 
-rootProject.name = 'alphabet-block'
+rootProject.name = 'colored-alphabet-blocks'
 
 // Include all subprojects
 include 'common'

@@ -1,0 +1,7 @@
+{
+  "multipart": [
+    {
+      "apply": { "model": "colored_alphabet_blocks:block/empty_block" }
+    }
+  ]
+}

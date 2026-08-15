@@ -99,7 +99,11 @@ tasks.named('jar', Jar).configure {
                 'Implementation-Title'    : project.name,
                 'Implementation-Version'  : project.jar.archiveVersion,
                 'Implementation-Vendor'   : mod_authors,
-                'Implementation-Timestamp': new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
+                'Implementation-Timestamp': new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
+                // Mixin reads its configs from this manifest attribute. No
+                // refmap is generated or needed: this Forge version runs on
+                // official mappings, so the targeted names match at runtime.
+                'MixinConfigs'            : "${mod_id}.mixins.json"
         ])
     }
 }
