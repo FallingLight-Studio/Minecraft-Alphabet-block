@@ -63,11 +63,16 @@ sourceSets.main.resources {
     srcDir rootProject.project(':common').file('src/main/resources')
 }
 
+// Merge common sources directly so NeoForge ModDev sees one sourceSet with all
+// mod classes, avoiding NoClassDefFoundError for common classes at runtime.
+sourceSets.main.java {
+    srcDirs += project(':common').sourceSets.main.java.srcDirs
+}
+
 repositories {
 }
 
 dependencies {
-    implementation project(':common')
 }
 
 tasks.named('processResources', ProcessResources).configure {

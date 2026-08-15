@@ -61,12 +61,20 @@ sourceSets.main.resources {
 }
 sourceSets.main.output.resourcesDir = file("$buildDir/classes/java/main")
 
+// Merge the common (loader-agnostic) Java sources directly into this project's
+// source set so they compile into forge/build/classes/java/main. This gives
+// ForgeGradle exactly one classes directory for the mod module and avoids the
+// JPMS split-package ResolutionException that occurs when the common jar is
+// present as a separate module on the module path alongside the forge classes.
+sourceSets.main.java {
+    srcDirs += project(':common').sourceSets.main.java.srcDirs
+}
+
 repositories {
 }
 
 dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
-    implementation project(':common')
 }
 
 

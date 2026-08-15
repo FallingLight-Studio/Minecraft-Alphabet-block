@@ -34,6 +34,15 @@ processResources {
     }
 }
 
+tasks.named('jar', Jar).configure {
+    manifest {
+        // Give the common helper jar an explicit JPMS module name so it does
+        // not collide with the loader-specific jars (which share the same
+        // Java package) on the Forge/NeoForge module path.
+        attributes(['Automatic-Module-Name': "${mod_id}.common"])
+    }
+}
+
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
 }
