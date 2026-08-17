@@ -1,6 +1,6 @@
 {
   "block.colored_alphabet_blocks.empty_block": "Empty Block",
-  "itemGroup.colored_alphabet_blocks": "Alphabet Blocks",
+  "itemGroup.colored_alphabet_blocks": "Colored Alphabet Blocks",
   "colored_alphabet_blocks.tip.dye": "Right-click with dye: background uses tint 0 (dye color); glyph uses tint 1 (white on dark dyes, black on light). Use *_bg.png (opaque base) and *_glyph.png (letter on transparency).",
   "block.colored_alphabet_blocks.letter_a": "Letter A",
   "block.colored_alphabet_blocks.letter_b": "Letter B",
